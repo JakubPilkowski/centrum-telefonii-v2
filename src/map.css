@@ -1,0 +1,143 @@
+#map {
+  position: relative;
+  background-color: transparent;
+  padding: 100px 0;
+}
+
+#map::after {
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  border-top: 100px solid #fdc029;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 0 solid transparent;
+}
+
+.map-title-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.map-title-wrapper {
+  background-color: #fdc029;
+  border-radius: 4px;
+  transform: scale(0);
+}
+
+.map-title {
+  font-family: "Ubuntu", sans-serif;
+  display: inline-block;
+  text-align: center;
+  color: #171820;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.map-title-animated {
+  transition: transform 600ms;
+  transform: scale(1);
+}
+
+.maps-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-container {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.map-container iframe {
+  height: 300px;
+  width: 100%;
+  border: 1px solid #fdc029;
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  #map::after {
+    border-top: 100px solid #fdc029;
+  }
+  .map-title-wrapper {
+    padding: 6px 24px;
+    margin: 20px 0 0;
+  }
+  .map-title {
+    font-size: 28px;
+  }
+  .map-container {
+    width: 100%;
+    padding: 5%;
+  }
+  .map-container iframe {
+    height: 300px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1279px) {
+  #map::after {
+    border-top: 125px solid #fdc029;
+  }
+  .map-title-wrapper {
+    padding: 6px 24px;
+    margin: 50px 0 0;
+  }
+  .map-title {
+    font-size: 30px;
+  }
+  .map-container {
+    width: 100%;
+    padding: 5%;
+  }
+  .map-container iframe {
+    height: 400px;
+  }
+}
+
+/* dekstop small*/
+@media (min-width: 1280px) and (max-width: 1536px) {
+  #map::after {
+    border-top: 150px solid #fdc029;
+  }
+  .map-title-wrapper {
+    padding: 6px 24px;
+    margin: 100px 0 0;
+  }
+  .map-title {
+    font-size: 32px;
+  }
+  .map-container {
+    width: 50%;
+    padding: 2.5%;
+  }
+  .map-container iframe {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1537px) {
+  #map::after {
+    border-top: 150px solid #fdc029;
+  }
+  .map-title-wrapper {
+    padding: 6px 24px;
+    margin: 100px 0 0;
+  }
+  .map-title {
+    font-size: 32px;
+  }
+  .map-container {
+    width: 50%;
+    padding: 2.5%;
+  }
+  .map-container iframe {
+    height: 500px;
+  }
+}

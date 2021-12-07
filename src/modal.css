@@ -1,0 +1,110 @@
+.modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  user-select: none;
+  z-index: 1000;
+  transition: transform 800ms;
+}
+
+.modal-container-open {
+  transform: scale(1);
+}
+
+.modal-card {
+  position: relative;
+  z-index: 1100;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: #f1f1f1;
+  height: 70%;
+  max-height: 70%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-card header {
+  margin-bottom: 0px;
+}
+
+.modal-card button {
+  position: absolute;
+  top: 4%;
+  left: 4%;
+}
+
+.modal-card button span {
+  color: #222;
+  padding: 4px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  transition: box-shadow 200ms, border-color 200ms, transform 200ms;
+}
+
+.modal-card button span:hover {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.modal-card button:active {
+  transform: scale(0.95);
+  transform-origin: center;
+}
+
+.modal-card h2 {
+  color: #171820;
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  padding: 2% 0;
+}
+
+#promotion-modal {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#promotion-modal h3 {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  padding: 5% 0;
+}
+
+@media (max-width: 480px) {
+  .modal-card {
+    width: 90%;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1279px) {
+  .modal-card {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1536px) {
+  .modal-card {
+    width: 60%;
+  }
+}
+
+/* desktop */
+@media (min-width: 1537px) {
+  .modal-card {
+    width: 50%;
+  }
+}

@@ -1,0 +1,60 @@
+#promotion {
+  background-color: #fdc029;
+  position: relative;
+  padding: 5% 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+#promotion::after {
+  top: -100px;
+  left: 0;
+  content: "";
+  position: absolute;
+  border-top: 100px solid transparent;
+  border-left: 50vw solid #fdc029;
+  border-right: 50vw solid #fdc029;
+  border-bottom: 0 solid #fdc029;
+}
+
+#promotion h1 {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  #promotion {
+    min-height: 300px;
+  }
+  #promotion h1 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1279px) {
+  #promotion {
+    min-height: 300px;
+  }
+  #promotion h1 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1536px) {
+  #promotion {
+    min-height: 500px;
+  }
+  #promotion h1 {
+    font-size: 32px;
+  }
+}
+
+/* dekstop */
+@media (min-width: 1537px) {
+  #promotion {
+    min-height: 650px;
+  }
+  #promotion h1 {
+    font-size: 34px;
+  }
+}

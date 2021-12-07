@@ -3,7 +3,13 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: [
+    "./src/index.js",
+    "./src/utils.js",
+    "./src/map.js",
+    "./src/counter.js",
+    "./src/carousel.js",
+  ],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "centrum-telefonii.bundle.js",
@@ -13,15 +19,15 @@ module.exports = {
       {
         test: /\.(png|jpg|webp|svg|ico)$/i,
         loader: "file-loader",
-        // options: {
-        //   name: "[path][name].[ext]",
-        //   outputhPath: "./images/",
-        // },
+        options: {
+          name: "[path][name].[ext]",
+          outputhPath: "./images/",
+        },
       },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
+      // {
+      //   test: /\.css$/i,
+      //   use: ["style-loader", "css-loader"],
+      // },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,

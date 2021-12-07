@@ -1,0 +1,167 @@
+#timers {
+  background-color: #fdc029;
+  box-sizing: border-box;
+}
+
+.timers-wrapper {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#timers .title {
+  color: #171820;
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+}
+
+.timer-item {
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-icon {
+  height: 128px;
+  width: 128px;
+  color: #171820;
+  font-size: 128px;
+  margin-bottom: 20px;
+}
+
+.timer-item h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.timer-item h2 {
+  margin: 0;
+  color: rgba(23, 24, 32, 0.6);
+  text-align: center;
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  #timers {
+    padding: 10%;
+  }
+  #timers .title {
+    font-size: 28px;
+    margin: 0 0 20px;
+  }
+
+  #clients {
+    transform: translateX(300%);
+  }
+
+  #repairs {
+    transform: translateX(-300%);
+  }
+
+  #brand {
+    transform: translateX(300%);
+  }
+
+  .translate {
+    transform: translate(0) !important;
+    transition: transform 1500ms;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1279px) {
+  #timers {
+    padding: 5%;
+  }
+  #timers .title {
+    font-size: 30px;
+    margin: 0 0 40px;
+  }
+  .timer-item {
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  #clients {
+    transform: translateX(300%);
+  }
+
+  #repairs {
+    transform: translateX(-300%);
+  }
+
+  #brand {
+    transform: translateX(300%);
+  }
+
+  .translate {
+    transform: translateX(0) !important;
+    transition: transform 1500ms;
+  }
+}
+
+/* dekstop */
+@media (min-width: 1280px) and (max-width: 1536px) {
+  #timers {
+    padding: 2.5%;
+  }
+  #timers .title {
+    font-size: 32px;
+    margin: 0 0 60px;
+  }
+  .timer-item {
+    width: 33%;
+  }
+  #clients {
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  #repairs {
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  #brand {
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  .translate {
+    transform: scale(1) !important;
+    transition: transform 1500ms;
+  }
+}
+
+@media (min-width: 1537px) {
+  #timers {
+    padding: 2.5%;
+  }
+  #timers .title {
+    font-size: 32px;
+    margin: 0 0 60px;
+  }
+  .timer-item {
+    width: 33%;
+  }
+  #clients {
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  #repairs {
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  #brand {
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  .translate {
+    transform: scale(1) !important;
+    transition: transform 1500ms;
+  }
+}

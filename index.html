@@ -1,76 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>Centrum Telefonii s.c. - Naprawa Telefonów Olsztyn. Akcesoria Do telefonów.</title>
-  
-    <meta name="description" content="Firma telekomunikacyjna zajmująca sie naprawą telefonów oraz sprzedażą akcesorii i
-                                      telefonów komórkowych. Jesteśmy najdłużej działającą firmą w Olsztynie.">
-    <meta name="keywords" content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, telefonii">
-    <meta name="author" content="Jakub Piłkowski">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="src/images/ct_header_icon.png" >
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <title>
+    Centrum Telefonii s.c. - Naprawa Telefonów Olsztyn. Akcesoria Do
+    telefonów.
+  </title>
+
+  <meta name="description" content="Firma telekomunikacyjna zajmująca sie naprawą telefonów oraz sprzedażą akcesorii i
+                                      telefonów komórkowych. Jesteśmy najdłużej działającą firmą w Olsztynie." />
+  <meta name="keywords" content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, telefonii" />
+  <meta name="author" content="Jakub Piłkowski" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="icon" type="image/png" href="src/images/ct_icon_orange.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;700&family=Ubuntu:ital,wght@0,500;0,700;1,300&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <script src="https://cdn.builder.io/js/webcomponents"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+  <!-- <script src="./src/index.js"></script>
+  <script src="./src/utils.js"></script>
+  <script src="./src/map.js"></script>
+  <script src="./src/card.js"></script>
+  <script src="./src/counter.js"></script>
+  <script src="./src/carousel.js"></script> -->
+
+  <link rel="stylesheet" href="./src/styles.css" />
+  <link rel="stylesheet" href="./src/nav.css" />
+  <link rel="stylesheet" href="./src/header.css" />
+  <link rel="stylesheet" href="./src/modal.css" />
+  <link rel="stylesheet" href="./src/button.css" />
+  <link rel="stylesheet" href="./src/triangle.css" />
+  <link rel="stylesheet" href="./src/timers.css" />
+  <link rel="stylesheet" href="./src/map.css" />
+  <link rel="stylesheet" href="./src/promotion.css" />
+  <link rel="stylesheet" href="./src/footer.css" />
 
 </head>
+
 <body>
-    <header>
-        <div class="navbar">
-            <div class="panel-left">
-                <div class="logo-container">
-                    <img src="src/images/ct_header_icon.png" height="50" width="50"  />
-                    <div>
-                        <h2 class="title">Centrum</h2>
-                        <h2 class="subtitle">Telefonii</h2>
-                    </div>
+  <div class="modal-container">
+    <div class="modal-card">
+      <header>
+        <button>
+          <span class="material-icons"> close </span>
+        </button>
+        <h2>Promocja</h2>
+      </header>
+      <section id="promotion-modal">
+        <builder-component model="promotion" api-key="914e09fa9b484b2d9314f6a0475ea35a">
+          <h3>Ładowanie promocji...</h3>
+        </builder-component>
+      </section>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-main">
+      <div class="image-wrapper">
+        <img src="./images/ct_icon_white.png" height="50" width="50" />
+      </div>
+      <h2>Centrum Telefonii</h2>
+    </div>
+    <div class="nav-links is-desktop">
+      <button class="nav-link" id="home-link">Główna</button>
+      <button class="nav-link" id="timers-link">O nas</button>
+      <button class="nav-link" id="map-link">Jak dojechać</button>
+      <button class="nav-link" id="promotion-link">Promocja</button>
+      <button class="nav-link" id="footer-link">Kontakt</button>
+    </div>
+  </nav>
+  <header class="jumbotron" id="home">
+    <img src="./images/ct_kosciuszki.jpg" class="background" />
+    <div class="
+          card-triangle card-triangle-top-left card-triangle-top-left-medium
+        "></div>
+    <div class="
+          card-triangle card-triangle-top-right card-triangle-top-right-medium
+        "></div>
+    <div class="
+          card-triangle
+          card-triangle-bottom-right
+          card-triangle-bottom-right-medium
+        "></div>
+    <div class="
+          card-triangle
+          card-triangle-bottom-left
+          card-triangle-bottom-left-medium
+        "></div>
+    <div class="jumbotron-container">
+      <div class="content main" data-index="0">
+        <div class="content-wrapper">
+          <div class="information">
+            <h1></h1>
+            <ul>
+              <li>Wymiana ekranów, gniazd, baterii, aparatów</li>
+              <li>Naprawa głośników, mikrofonów, aparatów w telefonie</li>
+              <li>Wymiana gniazd oraz baterii</li>
+              <li>Wgrywanie nowego oprogramowania</li>
+              <li>Ściąganie simlocków oraz innych blokad</li>
+              <li>Czyszczenie telefonów po zalaniu</li>
+              <li>Wykonywanie ekspertyzy</li>
+              <li>Inne drobne usługi (zgrywanie danych, konfiguracja)</li>
+            </ul>
+          </div>
+          <div class="gallery">
+            <div class="gallery-grid">
+              <div class="flip-box">
+                <div class="flip-box-front">
+                  <img src="./images/phone_black_d.jpg" alt="Telefony czarny zepsuty" />
+                  <h2>Przed</h2>
                 </div>
-                <div class="triangle triangle-left"></div>
-            </div>
-            <div class="panel-right">
-                <div class="triangle triangle-right"></div>
-                <div class="links-container">
-                    <div class="triangle triangle-left-small">
-                    </div>
-                    <a>Główna</a>
-                    <div class="triangle triangle-right-small">
-                    </div>
-    
-                    <div class="triangle triangle-left-small">
-                    </div>
-                    <a>Oferta</a>
-                    <div class="triangle triangle-right-small">
-                    </div>
-    
-                    <div class="triangle triangle-left-small">
-                    </div>
-                    <a>Kontakt</a>
-                    <div class="triangle triangle-right-small">
-                    </div>
+                <div class="flip-box-back flip-box-back-vertical">
+                  <img src="./images/phone_black_r.jpg" alt="Telefon czarny naprawiony" />
+                  <h2>Po</h2>
                 </div>
+              </div>
+              <div class="flip-box is-desktop">
+                <div class="flip-box-front">
+                  <img src="./images/phone_white_d.jpg" alt="Telefon biały zepsuty" />
+                  <h2>Przed</h2>
+                </div>
+                <div class="flip-box-back flip-box-back-vertical">
+                  <img src="./images/phone_white_r.jpg" alt="Telefon biały naprawiony" />
+                  <h2>Po</h2>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="exposition-background-image">
-            <div class="exposition-opacity">
-
-                <div class="desc desc-left">
-                   
+      </div>
+      <div class="content next" data-index="1">
+        <div class="content-wrapper">
+          <div class="information">
+            <h1></h1>
+            <ul>
+              <li>Etui, pokrowce oraz casy</li>
+              <li>Szkła hartowane</li>
+              <li>Kable, ładowarki sieciowe oraz samochodowe</li>
+              <li>Baterie oraz powerbanki</li>
+              <li>Uchwyty samochodowe na szybę oraz na wentylacje</li>
+              <li>Słuchawki przewodowe i bezprzewodowe</li>
+              <li>Karty pamięci</li>
+            </ul>
+          </div>
+          <div class="gallery">
+            <div class="gallery-grid">
+              <div class="flip-box">
+                <div class="flip-box-front">
+                  <img src="./images/etui_venus.png" alt="Etui marki venus" />
                 </div>
-                <div class="desc desc-right">
-
+                <div class="flip-box-back flip-box-back-vertical">
+                  <img src="./images/bateria_samsung.png" alt="Bateria samsung" />
                 </div>
+              </div>
+              <div class="flip-box">
+                <div class="flip-box-front">
+                  <img src="./images/szklo_9d.png" alt="Szkło hartowane 9D" />
+                </div>
+                <div class="flip-box-back flip-box-back-vertical">
+                  <img src="./images/sluchawki.png" alt="Słuchawki" />
+                </div>
+              </div>
+              <div class="flip-box is-desktop">
+                <div class="flip-box-front">
+                  <img src="./images/guma_jelly.png" alt="Case marki Jelly" />
+                </div>
+                <div class="flip-box-back flip-box-back-vertical">
+                  <img src="./images/uchwyt_na_szybe.png" alt="Uchwyt na szybę" />
+                </div>
+              </div>
+              <div class="flip-box is-desktop">
+                <div class="flip-box-front">
+                  <img src="./images/ladowarka.png" alt="Ładowarka sieciowa" />
+                </div>
+                <div class="flip-box-back flip-box-back-vertical">
+                  <img src="./images/ladowarka_samochodow.png" alt="Ładowarka samochodowa" />
+                </div>
+              </div>
             </div>
+            <h2>Zdjęcia poglądowe</h2>
+          </div>
         </div>
-        <div class="clip-wrap">
-            <div class="exposition-border-down exposition-border-inner" >
+      </div>
+      <div class="content last" data-index="2">
+        <div class="content-wrapper">
+          <div class="information">
+            <h1></h1>
+            <ul>
+              <li>Smartphony</li>
+              <li>Telefony komórkowe</li>
+              <li>Telefony dla seniorów</li>
+            </ul>
+          </div>
+          <div class="gallery">
+            <div class="gallery-grid">
+              <div class="flip-box">
+                <div class="flip-box-front">
+                  <img src="./images/smartphone.png" alt="Smartphone" />
+                </div>
+                <div class="flip-box-back flip-box-back-vertical">
+                  <img src="./images/telefon_dla_seniora.png" alt="Telefon dla seniora" />
+                </div>
+              </div>
             </div>
+            <h2>Zdjęcia poglądowe</h2>
+          </div>
         </div>
-    </header>
-    <section>
-        Sekcja
-    </section>
-    <footer>
+      </div>
+    </div>
+  </header>
+  <a href="tel:+48 (89)533-71-32">
+    <button class="floating-button action-button call-button">
+      <span class="is-desktop"> Wycena naprawy? </span>
+      <span class="material-icons icon">call</span>
+    </button>
+  </a>
 
-    </footer>
+  <a
+    href="https://www.google.com/search?q=centrum+telefonii&client=firefox-b-d&sxsrf=ALeKk01XaB92F7V-cOmIS2_BORlHsMkHMg%3A1627138495065&ei=vyn8YOfCA8SGwPAP-pmNgAM&oq=centrum+telefonii&gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELADECcyBwgjELADECcyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANKBAhBGABQAFgAYKqHBGgBcAJ4AIABP4gBP5IBATGYAQCqAQdnd3Mtd2l6yAEKwAEB&sclient=gws-wiz&ved=0ahUKEwinnv6f-_vxAhVEAxAIHfpMAzAQ4dUDCA4&uact=5">
+    <button class="floating-button action-button opinion-button">
+      <span class="material-icons icon"> grade </span>
+      <span class="is-desktop"> Wystaw opinie </span>
+    </button>
+  </a>
+
+  <button class="floating-button direction-button">
+    Jak Dojechać
+    <span class="material-icons"> place </span>
+  </button>
+
+  <div class="container">
+    <div class="container-wrapper">
+      <section id="timers">
+        <h1 class="title">Centrum Telefonii to...</h1>
+        <div class="timers-wrapper">
+          <div id="clients" class="timer-item">
+            <span class="material-icons timer-icon">
+              sentiment_satisfied_alt
+            </span>
+            <h1>9999</h1>
+            <h2>tysiące zadowolonych klientów</h2>
+          </div>
+
+          <div id="repairs" class="timer-item">
+            <img src="./images/klucz_francuski.svg" class="timer-icon" />
+            <h1>999</h1>
+            <h2>setki naprawionych telefonów</h2>
+          </div>
+
+          <div id="brand" class="timer-item">
+            <img src="./images/22_years.svg" class="timer-icon" />
+            <h1>22</h1>
+            <h2>najdłużej funkcjonująca firma telefoniczna w Olsztynie</h2>
+          </div>
+        </div>
+      </section>
+      <section id="map">
+        <div class="map-title-container">
+          <div class="map-title-wrapper">
+            <h1 class="map-title">Jak dojechać</h1>
+          </div>
+        </div>
+
+        <div class="maps-wrapper">
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1178.6821797835114!2d20.494077557566143!3d53.78300233965278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e2793305f876e3%3A0x6aeeae6bfa02a819!2sCentrum+Telefonii+s.c.!5e0!3m2!1spl!2spl!4v1557851864282!5m2!1spl!2spl"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2357.5073313268567!2d20.488660815991853!3d53.78045744980634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e27932a8723f9f%3A0x1f8d7a896ca9d506!2sCentrum%20Telefonii%20s.c.%20%C5%9Awi%C4%99cicki%20G.%2C%20Gromek-%20Pi%C5%82kowska%20H.E.!5e0!3m2!1spl!2spl!4v1600695864194!5m2!1spl!2spl"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+      <section id="promotion">
+        <h1>Promocja</h1>
+        <div class="promotion-section">
+          <builder-component model="promotion" api-key="914e09fa9b484b2d9314f6a0475ea35a">
+            <h3>Ładowanie promocji...</h3>
+          </builder-component>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer>
+    <div class="row">
+      <h3 class="label">Centrum Telefonii s.c. ®</h3>
+      <h4 class="text">E-mail: centrumtelefoniiolsztyn@gmail.com</h4>
+    </div>
+    <div class="row">
+      <h3 class="label">CT na ulicy Kościuszki</h3>
+      <a class="text" href="tel:668-226-158"> 668-226-158 </a>
+      <a class="text" href="tel:+48 (89)533-71-32"> +48 (89)533-71-32 </a>
+      <h4 class="text">ul.Kościuszki 19/2</h4>
+      <h4 class="text">Poniedziałek-Piątek: 9:00-18:00</h4>
+      <h4 class="text">Sobota: 9:00-15:00</h4>
+    </div>
+    <div class="row">
+      <h3 class="label">CT w Manhattanie</h3>
+      <a class="text" href="tel:698-390-390"> 698-390-390 </a>
+      <a class="text" href="tel:+48(89)533-71-32"> +48 (89)533-71-32 </a>
+      <h4 class="text">Plac Pułaskiego 7 lokal 62</h4>
+      <h4 class="text">Poniedziałek-Piątek: 10:00-18:00</h4>
+      <h4 class="text">Sobota: 10:00-15:00</h4>
+    </div>
+  </footer>
 </body>
+
 </html>
