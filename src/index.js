@@ -1,43 +1,34 @@
-import { closeModal, scrollToElement } from "./utils";
+import "./snow.scss";
+import "./modal.css";
+import "./nav.css";
+import "./styles.css";
+import "./header.css";
+import "./button.css";
+import "./offer.css";
+import "./timers.css";
+import "./map.css";
+import "./news.css";
+import "./footer.css";
 
-$(window).on("scroll", function () {
-  if (window.scrollY > 0) {
-    $("nav").addClass("nav-moving");
-  } else {
-    $("nav").removeClass("nav-moving");
-  }
-});
+import "./services.js";
+import "./nav.js";
+import "./header.js";
+import "./offer.js";
+import "./counter.js";
+import "./map.js";
+import "./utils";
+import { closeModal } from "./utils";
 
 $(document).ready(function () {
   $(".modal-container button").click(() => {
     closeModal();
   });
 
+  new Array(20).fill(0).forEach(() => {
+    $("#news").append("<div class='snowflake'></div>");
+  });
+
   // $(".modal-card").click(() => {
   //   closeModal();
   // });
-
-  $(".direction-button").click(() => {
-    scrollToElement(".map-title");
-  });
-
-  $("#home-link").click(() => {
-    scrollToElement("#home");
-  });
-
-  $("#timers-link").click(() => {
-    scrollToElement("#timers");
-  });
-
-  $("#map-link").click(() => {
-    scrollToElement(".map-title");
-  });
-
-  $("#promotion-link").click(() => {
-    scrollToElement("#promotion");
-  });
-
-  $("#footer-link").click(() => {
-    scrollToElement("footer");
-  });
 });

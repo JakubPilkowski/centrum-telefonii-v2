@@ -16,86 +16,118 @@ body {
   border: 0;
 }
 
-.container {
-  background-image: url("../images/ct_manhattan.jpg");
+.wrapper-outer {
   background-size: 100% 100%;
 }
 
-.container-wrapper {
+.wrapper {
   background-color: rgba(23, 24, 32, 0.7);
   position: relative;
 }
 
+.offer-wrapper-outer {
+  background-image: url("../images/ct_kosciuszki_inside.jpg");
+}
+
+.main-wrapper-outer {
+  background-image: url("../images/ct_manhattan.jpg");
+}
+
 /* mobile */
 @media (max-width: 480px) {
-  .container {
+  .wrapper-outer {
     background-size: 100% 25%;
     background-repeat: repeat-y;
   }
   .is-desktop {
-    display: none !important;
+    display: none;
   }
   .is-tablet {
-    display: none !important;
+    display: none;
+  }
+  .is-mobile {
+    display: inherit;
   }
 }
 
-/* @media (min-width: 481px) and (max-width: 1279px) {
-  .is-desktop {
-    display: none !important;
-  }
-  .is-tablet {
-    display: inherit;
-  }
-} */
 @media (min-width: 768px) and (max-width: 1279px) and (max-height: 800px) {
-  .container {
+  .wrapper-outer {
     background-attachment: fixed;
   }
   .is-desktop {
-    display: none !important;
+    display: none;
   }
-
+  .is-mobile {
+    display: none;
+  }
   .is-tablet {
-    display: inherit;
+    display: inherit !important;
   }
 }
 
 @media (min-width: 481px) and (max-width: 800px) and (min-height: 962px) and (max-height: 1280px) {
-  .container {
+  .wrapper-outer {
     background-attachment: fixed;
   }
 
   .is-desktop {
-    display: none !important;
+    display: none;
+  }
+
+  .is-mobile {
+    display: none;
   }
 
   .is-tablet {
-    display: inherit;
+    display: inherit !important;
   }
 }
 
-/* dekstop */
+@media (min-width: 481px) and (max-width: 1279px) {
+  .wrapper-outer {
+    background-attachment: fixed;
+  }
+
+  .is-desktop {
+    display: none;
+  }
+
+  .is-tablet {
+    display: inherit !important;
+  }
+
+  .is-mobile {
+    display: none;
+  }
+}
+
+/* desktop */
 @media (min-width: 1280px) and (max-width: 1536px) {
-  .container {
+  .wrapper-outer {
     background-attachment: fixed;
   }
   .is-desktop {
-    display: inherit;
+    display: inherit !important;
   }
   .is-tablet {
-    display: inherit;
+    display: none;
+  }
+  .is-mobile {
+    display: none;
   }
 }
 
 @media (min-width: 1537px) {
-  .container {
+  .wrapper-outer {
     background-attachment: fixed;
   }
   .is-desktop {
-    display: inherit;
+    display: inherit !important;
   }
   .is-tablet {
-    display: inherit;
+    display: none;
+  }
+  .is-mobile {
+    display: none;
   }
 }

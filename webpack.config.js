@@ -1,19 +1,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: [
-    "./src/index.js",
-    "./src/utils.js",
-    "./src/map.js",
-    "./src/counter.js",
-    "./src/carousel.js",
-  ],
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "centrum-telefonii.bundle.js",
-  },
+  entry: ["./src/index.js"],
   module: {
     rules: [
       {
@@ -24,10 +13,14 @@ module.exports = {
           outputhPath: "./images/",
         },
       },
-      // {
-      //   test: /\.css$/i,
-      //   use: ["style-loader", "css-loader"],
-      // },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,

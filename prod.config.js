@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
@@ -8,7 +9,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
-    // filename: "centrum-telefonii.bundle.js",
   },
   module: {
     rules: [
@@ -19,6 +19,23 @@ module.exports = {
           name: "[path][name].[ext]",
           outputhPath: "./images/",
         },
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false,
+            },
+          },
+          "css-loader",
+        ],
       },
       {
         test: /\.m?js$/,
@@ -36,6 +53,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
     }),
   ],
 };
