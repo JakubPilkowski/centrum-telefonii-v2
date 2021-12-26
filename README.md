@@ -9,11 +9,12 @@ Centrum Telefonii Website
 Additionally site contains builder.io CMS
 
 ### Development
-You need to provide `services.js` file in `src` folder to make `index.js` file works as expected. File can be empty.
+1. Run `npm install` or `npm ci`
+2. Provide `services.js` file in `src` folder to make `index.js` file works as expected. File can be empty.
+3. Run dev server using `npm run start`
 
-Run dev server - `npm run start`
-
-Build app - `npm run build`
+### Build
+`npm run build`
 
 ### Description
 Simple website created for displaying info about Centrum Telefoni company.
