@@ -10,7 +10,9 @@ Additionally site contains builder.io CMS
 
 ### Development
 You need to provide `services.js` file in `src` folder to make `index.js` file works as expected. File can be empty.
+
 Run dev server - `npm run start`
+
 Build app - `npm run build`
 
 ### Description
