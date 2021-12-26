@@ -1,44 +1,107 @@
 export function scrollToElement(element) {
-  const scrollTop =
-    $(element).get(0).getBoundingClientRect().top + window.scrollY;
+  const scrollTop = getDocumentElementPosition($(element));
+  const windowY = window.scrollY;
 
-  $("HTML, BODY").animate(
-    {
-      scrollTop: scrollTop - 65,
-      // scrollTop > window.innerHeight
-      //   ? scrollTop + window.innerHeight - 65
-      //   : scrollTop,
+  animate(750, {
+    onStep: (progress) => {
+      const navigationHeight = $("nav").height();
+      $("HTML, BODY").get(0).scrollTop =
+        (scrollTop.top - (windowY + navigationHeight)) * progress + windowY;
+      return true;
     },
-    750
-  );
+  });
 }
 
 export function closeModal() {
   const modal = $(".modal-container");
   modal.remove();
-  // $("HTML").css({ overflowY: "scroll" });
-  // document.body.style.overflowY = "scroll";
 }
 
-export function detectContent(identifier, onDetect, onLeave) {
-  const content = $(identifier).get(0);
-  const contentScrollTop = content.getBoundingClientRect().top;
+export function getDocumentElementPosition(obj) {
+  const { top, left, bottom, right } = obj.get(0).getBoundingClientRect();
+  return {
+    top: Math.abs(top + window.scrollY),
+    left: Math.abs(left + window.scrollX),
+    bottom: Math.abs(bottom + window.scrollY),
+    right: Math.abs(right + window.scrollX),
+  };
+}
 
+export function animate(
+  duration,
+  options = {
+    onStep,
+    onEnd,
+  }
+) {
+  let startTimestamp = null;
+
+  const { onStep, onEnd } = {
+    onStep: () => true,
+    onEnd: () => {},
+    ...options,
+  };
+
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    const onStepResult = onStep(progress);
+    if (!onStepResult) {
+      return;
+    }
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      onEnd();
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+export function detectContent(
+  identifier,
+  options = {
+    detectorOffset: 0,
+    onDetect: () => {},
+    onLeave: () => {},
+    detectOnMount: false,
+  }
+) {
+  const { detectorOffset, onDetect, onLeave, detectOnMount } = {
+    detectorOffset: 0,
+    detectOnMount: false,
+    ...options,
+  };
+  const contentScrollTop = getDocumentElementPosition($(identifier)).top;
   let contentDetected = false;
   let contentLeaved = false;
 
-  $(window).on("scroll", () => {
-    const windowY = window.scrollY + window.innerHeight;
+  const detect = () => {
+    const windowY = window.scrollY;
 
-    if (windowY > contentScrollTop && !contentDetected) {
+    if (
+      windowY + detectorOffset > contentScrollTop &&
+      !contentDetected &&
+      onDetect
+    ) {
+      onDetect($(identifier));
       contentDetected = true;
       contentLeaved = false;
-      onDetect($(identifier));
-      // animateValue(clients.get(0), 1000, 9999, 2000);
-    } else if (windowY < contentScrollTop && onLeave && !contentLeaved) {
+    } else if (
+      windowY + detectorOffset < contentScrollTop &&
+      onLeave &&
+      !contentLeaved &&
+      contentDetected
+    ) {
+      onLeave($(identifier));
       contentDetected = false;
       contentLeaved = true;
-      onLeave($(identifier));
     }
+  };
+
+  if (detectOnMount) detect();
+
+  $(window).on("scroll", () => {
+    detect();
   });
 }

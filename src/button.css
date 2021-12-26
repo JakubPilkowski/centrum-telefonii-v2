@@ -9,37 +9,55 @@ button:hover {
   cursor: pointer;
 }
 
-.floating-button {
-  position: fixed;
+a {
+  text-decoration: none;
 }
 
 .action-button {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Rosa", sans-serif;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 200ms;
+  width: max-content;
   color: #f1f1f1;
+  transition: transform 200ms ease-in, width 200ms ease-in;
   font-size: 16px;
   line-height: 20px;
   box-sizing: border-box;
-  text-transform: uppercase;
   font-weight: bold;
+  border-radius: 99px;
+  padding: 12px 6px;
+  height: 52px;
+  margin: 5px 0;
 }
 
-.action-button .icon {
-  font-size: 16px;
-  line-height: 20px;
+.floating-button {
+  position: fixed;
+  right: -52px;
 }
 
 .action-button:hover {
   transform: scale(1.2);
 }
 
+.action-button > p {
+  margin: 0 0 0 6px;
+  transition: transform 1s ease-in;
+  transform-origin: 0 0;
+}
+
+.action-button > span {
+  font-size: 16px;
+  line-height: 20px;
+  width: 20px;
+  background-color: #f1f1f1;
+  padding: 4px;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
 .call-button {
-  bottom: 4%;
-  right: 4%;
   background-color: #008000;
 }
 
@@ -48,149 +66,58 @@ button:hover {
 }
 
 .direction-button {
-  bottom: 4%;
-  left: 50%;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  box-sizing: border-box;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #f1f1f1;
   background-color: #aa3d01;
-  display: flex;
-  align-items: center;
-  width: max-content;
-  justify-content: space-between;
-  transform: translateX(-50%);
 }
 
-.direction-button:hover {
-  background: radial-gradient(#aa3d01, rgba(170, 61, 1, 0.7));
+.call-button > span {
+  color: #008000;
+}
+
+.opinion-button > span {
+  color: #df861d;
 }
 
 .direction-button > span {
-  font-size: 16px;
-  line-height: 20px;
-  width: 20px;
   color: #aa3d01;
-  background-color: #f1f1f1;
-  padding: 4px;
-  border-radius: 50%;
-  margin: 0 6px 0 15px;
 }
 
-.direction-button-show {
-  transition: transform 500ms;
-  transform: translateY(0) translateX(-50%);
+.call-button.floating-button {
+  bottom: 4vw;
+}
+.direction-button.floating-button {
+  bottom: calc(4vw + 52px);
+}
+.opinion-button.floating-button {
+  bottom: calc(4vw + 104px);
 }
 
-.direction-button-hide {
-  transition: transform 500ms;
-  transform: translateY(500%) translateX(-50%);
-}
-
-.icon {
-  color: white;
-}
-
-/* mobile */
 @media (max-width: 480px) {
-  .action-button {
-    border-radius: 24px;
-    padding: 12px;
+  .action-button.floating-button {
+    height: 46px;
+    width: 46px;
+    margin: 0;
+    padding: 9px 3px;
   }
 
-  .action-button .icon {
-    width: 24px;
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  .opinion-button {
-    bottom: calc(6% + 48px);
-    right: 4%;
-  }
-
-  .opinion-button .icon {
-    margin-right: 0;
-  }
-
-  .call-button .icon {
-    margin-left: 0;
-  }
-
-  .direction-button {
-    padding: 6px 0 6px 15px;
-    border-radius: 20px;
-  }
-
-  .direction-button > span {
-    margin: 0 6px 0 15px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 1200px) {
-  .action-button {
-    border-radius: 24px;
-    padding: 12px;
-  }
-
-  .action-button .icon {
-    width: 24px;
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  .opinion-button {
-    bottom: calc(6% + 56px);
-    right: 4%;
-  }
-
-  .opinion-button .icon {
-    margin-right: 0;
-  }
-
-  .call-button .icon {
-    margin-left: 0;
-  }
-
-  .direction-button {
-    padding: 9px 0 9px 18px;
-    border-radius: 46px;
-  }
-
-  .direction-button > span {
-    margin: 0 9px 0 18px;
-  }
-}
-
-/* dekstop */
-@media (min-width: 1201px) {
-  .action-button {
-    border-radius: 25px;
-    padding: 15px;
-  }
-
-  .opinion-button {
+  /* .call-button.floating-button {
     bottom: 4%;
-    left: 4%;
   }
-
-  .opinion-button .icon {
-    margin-right: 15px;
+  .direction-button.floating-button {
+    bottom: calc(4% + 64px)
   }
-
-  .call-button .icon {
-    margin-left: 15px;
-  }
-
-  .direction-button {
-    padding: 12px 0 12px 21px;
-    border-radius: 25px;
-  }
-
-  .direction-button > span {
-    margin: 0 12px 0 21px;
-  }
+  .opinion-button.floating-button {
+    bottom: calc(4% + 128px)
+  } */
 }
+
+/* @media (min-width: 481px) and (max-width: 1279px) {
+  .call-button.floating-button {
+    bottom: 4%;
+  }
+  .direction-button.floating-button {
+    bottom: 10%;
+  }
+  .opinion-button.floating-button {
+    bottom: 16%;
+  }
+} */
