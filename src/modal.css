@@ -88,6 +88,14 @@
   padding: 5% 0;
 }
 
+.modal-image {
+  min-height: 300px !important;
+}
+
+.modal-image img {
+  height: 300px;
+}
+
 @media (max-width: 480px) {
   .modal-card {
     width: 90%;

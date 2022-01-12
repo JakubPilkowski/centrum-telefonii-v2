@@ -1,4 +1,3 @@
-import "./snow.scss";
 import "./modal.css";
 import "./nav.css";
 import "./styles.css";
@@ -23,12 +22,4 @@ $(document).ready(function () {
   $(".modal-container button").click(() => {
     closeModal();
   });
-
-  new Array(20).fill(0).forEach(() => {
-    $("#news").append("<div class='snowflake'></div>");
-  });
-
-  // $(".modal-card").click(() => {
-  //   closeModal();
-  // });
 });
