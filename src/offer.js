@@ -20,7 +20,7 @@ $(document).ready(() => {
       });
 
       setInterval(() => {
-        $(`#accessories-images .image-container.hide`).each(function () {
+        $(`#accessories-images .imageContainer.hide`).each(function () {
           $(this).animate(
             {
               opacity: 1,
@@ -31,7 +31,7 @@ $(document).ready(() => {
             }
           );
         });
-        $(`#accessories-images .image-container.show`).each(function () {
+        $(`#accessories-images .imageContainer.show`).each(function () {
           $(this).animate(
             {
               opacity: 0,
@@ -47,7 +47,7 @@ $(document).ready(() => {
     detectorOffset: window.innerHeight,
     detectOnMount: true,
   });
-  detectContent("#service-list", {
+  detectContent("#serviceList", {
     onDetect: (content) => {
       content.css({
         opacity: 1,
@@ -57,7 +57,7 @@ $(document).ready(() => {
     detectorOffset: window.innerHeight,
     detectOnMount: true,
   });
-  detectContent("#service-images", {
+  detectContent("#serviceImages", {
     onDetect: (content) => {
       content.css({
         opacity: 1,
@@ -65,7 +65,7 @@ $(document).ready(() => {
       });
       let isRepaired = false;
       setInterval(() => {
-        $(`#service-images .image-container.hide`).each(function () {
+        $(`#serviceImages .imageContainer.hide`).each(function () {
           $(this).animate(
             {
               opacity: 1,
@@ -76,7 +76,7 @@ $(document).ready(() => {
             }
           );
         });
-        $(`#service-images .image-container.show`).each(function () {
+        $(`#serviceImages .imageContainer.show`).each(function () {
           $(this).animate(
             {
               opacity: 0,
@@ -88,7 +88,7 @@ $(document).ready(() => {
           );
         });
         isRepaired = !isRepaired;
-        $(".image-label").html(isRepaired ? "Po" : "Przed");
+        $(".imageLabel").html(isRepaired ? "Po" : "Przed");
       }, 3000);
     },
     detectorOffset: window.innerHeight,

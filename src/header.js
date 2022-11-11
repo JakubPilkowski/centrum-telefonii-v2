@@ -113,7 +113,7 @@ function setForeground() {
   } else {
     foregroundPath.attr("d", `M0 0 L45 0 Q50 65 100 80 L100 100 L0 100 Z`);
   }
-  $(".jumbotron-card").css({
+  $(".jumbotronCard").css({
     visibility: "visible",
   });
 }
@@ -122,8 +122,8 @@ function detectMoveAnimation() {
   const callButton = $("#header-call-button");
   const opinionButton = $("#header-opinion-button");
   const directionButton = $("#header-direction-button");
-  const buttonsHeight = $(".jumbotron-buttons").height();
-  $(".jumbotron-buttons").css({
+  const buttonsHeight = $(".jumbotronButtons").height();
+  $(".jumbotronButtons").css({
     height: buttonsHeight,
   });
   hideText($(".call-button > p"));
@@ -169,7 +169,7 @@ function leaveMoveAnimation(
 
   showText($(".opinion-button > p"));
   hook(opinionButton, initialOpinionButtonRect, 800, callback, () => {
-    $(".jumbotron-buttons").css({
+    $(".jumbotronButtons").css({
       height: "max-content",
     });
   });
@@ -208,7 +208,7 @@ $(document).ready(() => {
 
   let hookAnimation = true;
 
-  detectContent(".jumbotron-buttons", {
+  detectContent(".jumbotronButtons", {
     onDetect: (buttons) => {
       const windowWidth = window.innerWidth;
       if (windowWidth > 1280) {
@@ -254,7 +254,7 @@ $(document).ready(() => {
       //   800,
       //   () => hookAnimation,
       //   () => {
-      //     $(".jumbotron-buttons").css({
+      //     $(".jumbotronButtons").css({
       //       height: "max-content",
       //     });
       //   }

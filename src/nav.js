@@ -5,30 +5,30 @@ function assignScrollFunctionality(selector) {
     const element = this.getAttribute("data-move-to");
     $(this).click(() => {
       scrollToElement(element);
-      $(".hamburger-menu").addClass("menu-closed").removeClass("menu-open");
+      $(".hamburgerMenu").addClass("menuClosed").removeClass("menuOpen");
     });
   });
 }
 
 $(document).ready(function () {
-  assignScrollFunctionality(".nav-link");
+  assignScrollFunctionality(".navLink");
   assignScrollFunctionality(".nav-brand");
-  assignScrollFunctionality(".hamburger-item");
+  assignScrollFunctionality(".hamburgerItem");
   assignScrollFunctionality(".direction-button");
 
   $("#hamburger").click(() => {
-    $(".hamburger-menu").addClass("menu-open").removeClass("menu-closed");
+    $(".hamburgerMenu").addClass("menuOpen").removeClass("menuClosed");
   });
 
-  $("#hamburger-close").click(() => {
-    $(".hamburger-menu").addClass("menu-closed").removeClass("menu-open");
+  $("#hamburgerClose").click(() => {
+    $(".hamburgerMenu").addClass("menuClosed").removeClass("menuOpen");
   });
 
   const onNavScroll = () => {
     if (window.scrollY > 0) {
-      $("nav").addClass("nav-moving");
+      $("nav").addClass("navMoving");
     } else {
-      $("nav").removeClass("nav-moving");
+      $("nav").removeClass("navMoving");
     }
   };
 

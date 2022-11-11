@@ -17,37 +17,12 @@
   border-bottom: 0 solid transparent;
 }
 
-#accessories {
-  box-sizing: border-box;
-  padding: 100px 7.5%;
-  position: relative;
-  font-family: "Rosa", sans-serif;
-}
-
-#accessories::after {
-  bottom: 0;
-  left: 0;
-  content: "";
-  position: absolute;
-  border-top: 100px solid transparent;
-  border-left: 50vw solid #fdc029;
-  border-right: 50vw solid #fdc029;
-  border-bottom: 0 solid #fdc029;
-}
-
 .offer h1 {
   color: #171820;
 }
 
 .offer h1 span {
   vertical-align: middle;
-}
-
-#accessories h1 {
-  background-color: #fdc029;
-  border-radius: 6px;
-  padding: 6px;
-  width: max-content;
 }
 
 #service h1 {
@@ -102,10 +77,6 @@
   content: "\e869";
 }
 
-.accessories-list li::before {
-  content: "\e32c";
-}
-
 .offerImages {
   padding: 2.5%;
   box-sizing: border-box;
@@ -156,10 +127,6 @@
   box-shadow: 0 45px 15px 0px rgba(253, 192, 41, 0.5);
 }
 
-.accessories-image-wrapper::after {
-  box-shadow: 0 45px 15px 0px rgba(0, 0, 0, 0.2);
-}
-
 @keyframes levitate {
   0% {
     transform: translatey(0px);
@@ -203,8 +170,7 @@
 }
 
 @media (max-width: 480px) {
-  #service h1,
-  #accessories h1 {
+  #service h1 {
     align-self: center;
   }
 
@@ -247,8 +213,7 @@
 }
 
 @media (min-width: 481px) and (max-width: 1279px) {
-  #service h1,
-  #accessories h1 {
+  #service h1 {
     align-self: center;
   }
   .offer h1 {
