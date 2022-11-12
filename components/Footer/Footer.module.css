@@ -1,4 +1,4 @@
-footer {
+.footer {
   background-color: #171820;
   display: flex;
   flex-wrap: wrap;
@@ -6,11 +6,11 @@ footer {
   box-sizing: border-box;
 }
 
-footer .row {
+.footer .row {
   width: 100%;
 }
 
-footer .label {
+.footer .label {
   color: #f1f1f1;
   font-weight: bold;
   width: max-content;
@@ -21,7 +21,7 @@ footer .label {
   padding: 0 5px 2px;
 }
 
-footer .text {
+.footer .text {
   font-family: "Rosa", sans-serif;
   color: #f1f1f1;
   display: block;
@@ -34,27 +34,27 @@ footer .text {
 }
 
 @media (max-width: 480px) {
-  footer .row {
+  .footer .row {
     width: 100%;
     margin-bottom: 20px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 1279px) {
-  footer .row {
+  .footer .row {
     width: 100%;
     margin-bottom: 20px;
   }
 }
 
 @media (min-width: 1280px) and (max-width: 1536px) {
-  footer .row {
+  .footer .row {
     width: 33%;
   }
 }
 
 @media (min-width: 1537px) {
-  footer .row {
+  .footer .row {
     width: 33%;
   }
 }

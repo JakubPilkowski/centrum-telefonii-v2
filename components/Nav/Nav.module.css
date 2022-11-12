@@ -95,7 +95,7 @@
   font-family: "Rosa", sans-serif;
 }
 
-.navLinks button {
+.navLink {
   margin-left: 60px;
   background-color: transparent;
   position: relative;
@@ -106,7 +106,7 @@
   transition: font-size 200ms ease-in;
 }
 
-.navLinks button::after {
+.navLink::after {
   position: absolute;
   content: "";
   bottom: -4px;
@@ -117,7 +117,7 @@
   transition: width 300ms ease-out;
 }
 
-.navLinks button:hover::after {
+.navLink:hover::after {
   width: 100%;
 }
 
@@ -144,7 +144,6 @@
   position: fixed;
   left: 0;
   top: 0;
-  transition: transform 200ms ease-in, opacity 200ms ease-in;
   width: 100%;
   background-color: #171820;
   border-bottom: 1px solid #fdc029;
@@ -152,12 +151,34 @@
   box-sizing: border-box;
 }
 
-.menuOpen {
+.menuOpenStart {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.menuOpening {
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
   opacity: 1;
   transform: translateX(0);
 }
 
-.menuClosed {
+.menuOpenEnd {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menuCloseStart {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menuClosing {
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.menuCloseEnd {
   opacity: 0;
   transform: translateX(100%);
 }

@@ -1,7 +1,7 @@
 import { detectContent } from "./utils";
 
 $(document).ready(() => {
-  detectContent("#accessories-list", {
+  detectContent("#accessoriesList", {
     onDetect: (content) => {
       content.css({
         opacity: 1,

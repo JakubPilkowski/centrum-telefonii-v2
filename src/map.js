@@ -1,9 +1,9 @@
 import { detectContent } from "./utils";
 
 $(document).ready(function () {
-  detectContent(".map-title-wrapper-inner", {
+  detectContent(".mapTitlewrapperInner", {
     onDetect: (content) => {
-      content.addClass("map-title-animated");
+      content.addClass("mapTitleAnimated");
     },
     detectOnMount: true,
     detectorOffset: window.innerHeight,

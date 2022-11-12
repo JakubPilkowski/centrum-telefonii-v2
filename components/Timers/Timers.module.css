@@ -1,38 +1,38 @@
-#timers {
+.timers {
   background-color: #fdc029;
   box-sizing: border-box;
   padding: 5% 10%;
   position: relative;
 }
 
-.timers-triangle {
+.timersTriangle {
   border-top: 100px solid #fdc029;
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
   border-bottom: 0 solid transparent;
 }
 
-.timers-wrapper {
+.timersWrapper {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-#timers .title {
+.timers .title {
   color: #171820;
   font-family: "Rosa", sans-serif;
   text-align: center;
 }
 
-.timer-item {
+.timerItem {
   font-family: "Rosa", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.timer-icon {
+.timerIcon {
   height: 128px;
   width: 128px;
   color: #171820;
@@ -40,12 +40,12 @@
   margin-bottom: 20px;
 }
 
-.timer-item h1 {
+.timerItem h1 {
   font-size: 32px;
   margin: 0;
 }
 
-.timer-item h2 {
+.timerItem h2 {
   margin: 0;
   font-family: "Rosa", sans-serif;
   color: rgba(23, 24, 32, 0.8);
@@ -56,16 +56,16 @@
 
 /* mobile */
 @media (max-width: 480px) {
-  #timers .title {
+  .timers .title {
     font-size: 28px;
     margin: 0 0 5%;
   }
 
-  .timers-triangle {
+  .timersTriangle {
     border-top: 100px solid #fdc029;
   }
 
-  .timer-item {
+  .timerItem {
     width: 100%;
     margin-bottom: 100px;
   }
@@ -89,15 +89,15 @@
 }
 
 @media (min-width: 481px) and (max-width: 1279px) {
-  #timers .title {
+  .timers .title {
     font-size: 30px;
     margin: 0 0 5%;
   }
-  .timers-triangle {
+  .timersTriangle {
     border-top: 125px solid #fdc029;
   }
 
-  .timer-item {
+  .timerItem {
     width: 100%;
     margin-bottom: 80px;
   }
@@ -121,15 +121,15 @@
 
 /* dekstop */
 @media (min-width: 1280px) and (max-width: 1536px) {
-  #timers .title {
+  .timers .title {
     font-size: 32px;
     margin: 0 0 5%;
   }
-  .timers-triangle {
+  .timersTriangle {
     border-top: 150px solid #fdc029;
   }
 
-  .timer-item {
+  .timerItem {
     width: 33%;
     /* margin-bottom: 80px; */
   }
@@ -155,14 +155,14 @@
 }
 
 @media (min-width: 1537px) {
-  #timers .title {
+  .timers .title {
     font-size: 32px;
     margin: 0 0 80px;
   }
-  .timers-triangle {
+  .timersTriangle {
     border-top: 150px solid #fdc029;
   }
-  .timer-item {
+  .timerItem {
     width: 33%;
     margin-bottom: 80px;
     /* margin-bottom: 4%; */

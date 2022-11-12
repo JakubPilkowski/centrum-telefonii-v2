@@ -2,10 +2,16 @@ import React, { FC } from "react";
 import clsx from "clsx";
 
 import styles from "./Service.module.css";
+import Image from "next/image";
+
+import whiteBrokenPhone from "public/phone_white_d.jpg";
+import blackBrokenPhone from "public/phone_black_d.jpg";
+import whiteFixedPhone from "public/phone_white_r.jpg";
+import blackFixedPhone from "public/phone_black_r.jpg";
 
 const Service: FC = () => {
   return (
-    <section id="service" className={styles.offer}>
+    <section id="service" className={clsx(styles.offer, styles.service)}>
       <div className={styles.offerContainer}>
         <div
           className={clsx(
@@ -23,11 +29,11 @@ const Service: FC = () => {
                   styles.serviceImageWrapper
                 )}
               >
-                {/* <img
-                  src="./images/phone_white_d.jpg"
-                  className={styles.img-first"
+                <Image
+                  src={whiteBrokenPhone}
+                  className={styles.imgFirst}
                   alt="Telefon biały zepsuty"
-                /> */}
+                />
               </div>
               <div
                 className={clsx(
@@ -35,11 +41,11 @@ const Service: FC = () => {
                   styles.serviceImageWrapper
                 )}
               >
-                {/* <img
-                  src="./images/phone_black_d.jpg"
-                  className={styles.img-first"
-                  alt="Telefony czarny zepsuty"
-                /> */}
+                <Image
+                  src={blackBrokenPhone}
+                  className={styles.imgFirst}
+                  alt="Telefon czarny zepsuty"
+                />
               </div>
             </div>
             <div className={clsx(styles.imageContainer, styles.hide)}>
@@ -49,11 +55,11 @@ const Service: FC = () => {
                   styles.serviceImageWrapper
                 )}
               >
-                {/* <img
-                  src="./images/phone_white_r.jpg"
-                  className={styles.img-first"
-                  alt="Telefon biały zepsuty"
-                /> */}
+                <Image
+                  src={whiteFixedPhone}
+                  className={styles.imgFirst}
+                  alt="Telefon biały naprawiony"
+                />
               </div>
               <div
                 className={clsx(
@@ -61,11 +67,11 @@ const Service: FC = () => {
                   styles.serviceImageWrapper
                 )}
               >
-                {/* <img
-                  src="./images/phone_black_r.jpg"
-                  className={styles.img-first"
-                  alt="Telefony czarny zepsuty"
-                /> */}
+                <Image
+                  src={blackFixedPhone}
+                  className={styles.imgFirst}
+                  alt="Telefon czarny naprawiony"
+                />
               </div>
             </div>
           </div>

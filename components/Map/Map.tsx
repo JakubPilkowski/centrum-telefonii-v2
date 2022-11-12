@@ -1,18 +1,20 @@
 import React, { FC } from "react";
 
+import styles from "./Map.module.css";
+
 const Map: FC = () => {
   return (
-    <section id="map">
-      <div className="map-title-wrapperOuter">
-        <div className="map-title-wrapper-inner">
-          <h1 className="map-title">Jak dojechać</h1>
+    <section id="map" className={styles.map}>
+      <div className={styles.mapTitlewrapperOuter}>
+        <div className={styles.mapTitlewrapperInner}>
+          <h1 className={styles.mapTitle}>Jak dojechać</h1>
         </div>
       </div>
 
-      <div className="maps">
-        <div className="map-wrapper">
-          <header className="map-iframe-header">
-            <h3 className="map-iframe-title">
+      <div className={styles.maps}>
+        <div className={styles.mapWrapper}>
+          <header className={styles.mapIframeHeader}>
+            <h3 className={styles.mapIframeTitle}>
               Punkt nr 1: ulica Kościuszki 19/2
             </h3>
           </header>
@@ -22,9 +24,9 @@ const Map: FC = () => {
           ></iframe>
         </div>
 
-        <div className="map-wrapper">
-          <header className="map-iframe-header">
-            <h3 className="map-iframe-title">
+        <div className={styles.mapWrapper}>
+          <header className={styles.mapIframeHeader}>
+            <h3 className={styles.mapIframeTitle}>
               Punkt nr 2: Plac Pułaskiego 7 lokal 62
             </h3>
           </header>

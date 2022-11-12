@@ -1,15 +1,42 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import Image from "next/image";
+
+import useNavigate from "hooks/useNavigate";
+
+import brandImage from "public/ct_icon_white.png";
 
 import styles from "./Nav.module.css";
 
 const Nav: FC = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const [navigate] = useNavigate();
+
+  const handleMenuOpen = () => {
+    setMenuOpen(true);
+  };
+
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+  };
+
+  const handleNavigate = (id: string) => () => {
+    navigate(id);
+    handleMenuClose();
+  };
+
   return (
     <>
       <nav className={styles.nav}>
         <div className={styles.navMain}>
-          <button className={styles.navBrand} data-move-to="#home">
+          <button className={styles.navBrand} onClick={handleNavigate("home")}>
             <div className={styles.brandImageContainer}>
-              {/* <img src="./images/ct_icon_white.png" className={styles.brandImage" /> */}
+              <Image
+                src={brandImage}
+                alt="Ikona aplikacji"
+                className={styles.brandImage}
+              />
             </div>
             <div className={styles.brandBell}></div>
 
@@ -20,69 +47,108 @@ const Nav: FC = () => {
         </div>
         {/* is-desktop */}
         <div className={styles.navLinks}>
-          <button className={styles.navLink} data-move-to="#service">
+          <button
+            onClick={handleNavigate("service")}
+            className={styles.navLink}
+          >
             Oferta
           </button>
-          <button className={styles.navLink} data-move-to="#map">
+          <button onClick={handleNavigate("map")} className={styles.navLink}>
             Jak dojechać
           </button>
-          <button className={styles.navLink} data-move-to="#news">
+          <button onClick={handleNavigate("news")} className={styles.navLink}>
             Aktualności
           </button>
-          <button className={styles.navLink} data-move-to="footer">
+          <button onClick={handleNavigate("footer")} className={styles.navLink}>
             Kontakt
           </button>
         </div>
         {/* is-mobile is-tablet */}
-        <button id="hamburger" className={styles.hamburgerIcon}>
+        <button className={styles.hamburgerIcon} onClick={handleMenuOpen}>
           <div className={styles.hamburgerBell}></div>
           <div className={styles.hamburgerBell}></div>
           <div className={styles.hamburgerBell}></div>
         </button>
       </nav>
-      {/* menuClosed is-mobile is-tablet */}
-      {/* <div className={styles.hamburgerMenu}>
-        <div className={styles.hamburgerContainer}>
-          <div className={styles.hamburgerHeader}>
-            <button className={styles.navBrand} data-move-to="#home">
-              <div className={styles.brandImageContainer}>
-                <img src="./images/ct_icon_white.png" className={styles.brandImage} />
-              </div>
-              <div className={styles.brandBell}></div>
-              <h2 className={styles.brandName}>
-                Centrum <br /> Telefonii
-              </h2>
-            </button>
-            <button id="hamburgerClose" className={styles.hamburgerClose}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="45"
-                height="45"
-                viewBox="0 0 24 24"
-                id="vector"
+      {/*  is-mobile is-tablet */}
+      <CSSTransition
+        in={isMenuOpen}
+        timeout={200}
+        unmountOnExit
+        classNames={{
+          enter: styles.menuOpenStart,
+          enterActive: styles.menuOpening,
+          enterDone: styles.menuOpenEnd,
+          exit: styles.menuCloseStart,
+          exitActive: styles.menuClosing,
+          exitDone: styles.menuCloseEnd,
+        }}
+      >
+        <div className={styles.hamburgerMenu}>
+          <div className={styles.hamburgerContainer}>
+            <div className={styles.hamburgerHeader}>
+              <button
+                className={styles.navBrand}
+                onClick={handleNavigate("home")}
               >
-                <path
-                  id="path"
-                  d="M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z"
-                  fill="#f1f1f1"
-                />
-              </svg>
+                <div className={styles.brandImageContainer}>
+                  <Image
+                    src={brandImage}
+                    alt="Ikona aplikacji"
+                    className={styles.brandImage}
+                  />
+                </div>
+                <div className={styles.brandBell}></div>
+                <h2 className={styles.brandName}>
+                  Centrum <br /> Telefonii
+                </h2>
+              </button>
+              <button
+                className={styles.hamburgerClose}
+                onClick={handleMenuClose}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="45"
+                  height="45"
+                  viewBox="0 0 24 24"
+                  id="vector"
+                >
+                  <path
+                    id="path"
+                    d="M 19 6.41 L 17.59 5 L 12 10.59 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.59 L 6.41 19 L 12 13.41 L 17.59 19 L 19 17.59 L 13.41 12 Z"
+                    fill="#f1f1f1"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              onClick={handleNavigate("service")}
+              className={styles.hamburgerItem}
+            >
+              Oferta
+            </button>
+            <button
+              onClick={handleNavigate("map")}
+              className={styles.hamburgerItem}
+            >
+              Jak dojechać
+            </button>
+            <button
+              onClick={handleNavigate("news")}
+              className={styles.hamburgerItem}
+            >
+              Aktualności
+            </button>
+            <button
+              onClick={handleNavigate("footer")}
+              className={styles.hamburgerItem}
+            >
+              Kontakt
             </button>
           </div>
-          <button className={styles.hamburgerItem} data-move-to="#service">
-            Oferta
-          </button>
-          <button className={styles.hamburgerItem} data-move-to="#map">
-            Jak dojechać
-          </button>
-          <button className={styles.hamburgerItem} data-move-to="#news">
-            Aktualności
-          </button>
-          <button className={styles.hamburgerItem} data-move-to="footer">
-            Kontakt
-          </button>
         </div>
-      </div> */}
+      </CSSTransition>
     </>
   );
 };

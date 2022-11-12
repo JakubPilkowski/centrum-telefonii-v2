@@ -1,11 +1,11 @@
-#accessories {
+.accessories {
   box-sizing: border-box;
   padding: 100px 7.5%;
   position: relative;
   font-family: "Rosa", sans-serif;
 }
 
-#accessories::after {
+.accessories::after {
   bottom: 0;
   left: 0;
   content: "";
@@ -24,7 +24,7 @@
   vertical-align: middle;
 }
 
-#accessories h1 {
+.accessories h1 {
   background-color: #fdc029;
   border-radius: 6px;
   padding: 6px;
@@ -75,7 +75,7 @@
   vertical-align: middle;
 }
 
-.accessories-list li::before {
+.accessoriesList li::before {
   content: "\e32c";
 }
 
@@ -125,7 +125,7 @@
   left: 5%;
 }
 
-.accessories-image-wrapper::after {
+.accessoriesImageWrapper::after {
   box-shadow: 0 45px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -172,7 +172,7 @@
 }
 
 @media (max-width: 480px) {
-  #accessories h1 {
+  .accessories h1 {
     align-self: center;
   }
 
@@ -207,7 +207,7 @@
 }
 
 @media (min-width: 481px) and (max-width: 1279px) {
-  #accessories h1 {
+  .accessories h1 {
     align-self: center;
   }
   .offer h1 {

@@ -8,11 +8,11 @@
 }
 
 .offerWrapperOuter {
-  /* background-image: url("../images/ct_kosciuszki_inside.jpg"); */
+  background-image: url("../../public/ct_kosciuszki_inside.jpg");
 }
 
 .mainWrapperOuter {
-  /* background-image: url("../images/ct_manhattan.jpg"); */
+  background-image: url("../../public/ct_manhattan.jpg");
 }
 
 /* mobile */

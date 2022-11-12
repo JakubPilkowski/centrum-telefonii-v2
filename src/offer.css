@@ -102,7 +102,7 @@
   content: "\e869";
 }
 
-.accessories-list li::before {
+.accessoriesList li::before {
   content: "\e32c";
 }
 
@@ -156,7 +156,7 @@
   box-shadow: 0 45px 15px 0px rgba(253, 192, 41, 0.5);
 }
 
-.accessories-image-wrapper::after {
+.accessoriesImageWrapper::after {
   box-shadow: 0 45px 15px 0px rgba(0, 0, 0, 0.2);
 }
 

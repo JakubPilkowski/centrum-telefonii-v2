@@ -1,4 +1,7 @@
-import React, { FC } from "react";
+import Image from "next/image";
+import React from "react";
+
+import ctKosciuszkiPhoto from "public/ct_kosciuszki.jpg";
 
 import styles from "./Header.module.css";
 
@@ -6,7 +9,11 @@ const Header = () => {
   return (
     <>
       <header className={styles.jumbotron} id="home">
-        {/* <img src="./images/ct_kosciuszki.jpg" className={styles.background" /> */}
+        <Image
+          src={ctKosciuszkiPhoto}
+          className={styles.background}
+          alt="Tło strony"
+        />
         <div className={styles.jumbotronCard}>
           <div className={styles.jumbotronDetails}>
             <h1 className={styles.jumbotronTitle}>Centrum Telefonii</h1>
