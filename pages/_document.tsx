@@ -19,10 +19,6 @@ class MyDocument extends Document {
             content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, telefonii"
           />
           <meta name="author" content="Jakub Piłkowski" />
-          <meta
-            name="viewport"
-            content="user-scalable=no, width=device-width, initial-scale=1"
-          />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <link rel="icon" type="image/png" href="images/ct_icon_orange.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />

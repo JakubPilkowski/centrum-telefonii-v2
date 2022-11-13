@@ -1,25 +1,39 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import clsx from "clsx";
 
 import styles from "./Service.module.css";
+import slideStyles from "styles/Slide.module.css";
+
 import Image from "next/image";
 
 import whiteBrokenPhone from "public/phone_white_d.jpg";
 import blackBrokenPhone from "public/phone_black_d.jpg";
 import whiteFixedPhone from "public/phone_white_r.jpg";
 import blackFixedPhone from "public/phone_black_r.jpg";
+import ScrollAnimationComponent from "components/ScrollAnimationComponent";
 
 const Service: FC = () => {
+  const handleDetect = useCallback(
+    (window: Window, element: HTMLElement, distanceFromTop: number) => {
+      const windowY = window.scrollY + window.innerHeight;
+      return windowY > distanceFromTop;
+    },
+    []
+  );
+
   return (
     <section id="service" className={clsx(styles.offer, styles.service)}>
       <div className={styles.offerContainer}>
-        <div
+        <ScrollAnimationComponent
+          onDetect={handleDetect}
           className={clsx(
             styles.offerImages,
-            styles.serviceImages
+            styles.serviceImages,
+            slideStyles.slide,
+            slideStyles.slideOut
             // styles.slideAnimationLeft
           )}
-          id="serviceImages"
+          inClassName={slideStyles.slideIn}
         >
           <div className={styles.imageContainerWrapper}>
             <div className={clsx(styles.imageContainer, styles.show)}>
@@ -76,7 +90,7 @@ const Service: FC = () => {
             </div>
           </div>
           <h3 className={styles.imageLabel}>Przed</h3>
-        </div>
+        </ScrollAnimationComponent>
         <div
           className={clsx(
             styles.offerListContainer,

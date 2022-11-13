@@ -18,7 +18,9 @@
     "paths": {
       "components/*": ["components/*"],
       "public/*": ["public/*"],
-      "globals/*": ["globals/*"]
+      "globals/*": ["globals/*"],
+      "hooks/*": ["hooks/*"],
+      "styles/*": ["styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

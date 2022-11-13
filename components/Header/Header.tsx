@@ -82,7 +82,7 @@ const Header = () => {
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
         >
-          <path fill="#171820" />
+          <path fill="#171820" d="M0 0 L20 0 L100 80 L100 100 L0 100 Z" />
         </svg>
       </header>
       {/* <a href="tel:+48 (89)533-71-32">

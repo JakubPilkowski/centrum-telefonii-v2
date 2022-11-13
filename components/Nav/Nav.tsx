@@ -1,8 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC, useCallback, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import Image from "next/image";
 
 import useNavigate from "hooks/useNavigate";
+
+import ScrollAnimationComponent from "components/ScrollAnimationComponent";
 
 import brandImage from "public/ct_icon_white.png";
 
@@ -26,9 +28,18 @@ const Nav: FC = () => {
     handleMenuClose();
   };
 
+  const handleDetect = useCallback((window: Window) => {
+    return window.scrollY >= 50;
+  }, []);
+
   return (
     <>
-      <nav className={styles.nav}>
+      <ScrollAnimationComponent
+        tag="nav"
+        className={styles.nav}
+        inClassName={styles.navBackground}
+        onDetect={handleDetect}
+      >
         <div className={styles.navMain}>
           <button className={styles.navBrand} onClick={handleNavigate("home")}>
             <div className={styles.brandImageContainer}>
@@ -69,7 +80,7 @@ const Nav: FC = () => {
           <div className={styles.hamburgerBell}></div>
           <div className={styles.hamburgerBell}></div>
         </button>
-      </nav>
+      </ScrollAnimationComponent>
       {/*  is-mobile is-tablet */}
       <CSSTransition
         in={isMenuOpen}
