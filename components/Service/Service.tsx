@@ -1,23 +1,30 @@
-import React, { FC, useCallback } from "react";
+import React, { FC, useCallback, useState } from "react";
 import clsx from "clsx";
-
-import styles from "./Service.module.css";
-import slideStyles from "styles/Slide.module.css";
-
 import Image from "next/image";
+
+import ScrollAnimationComponent from "components/ScrollAnimationComponent";
 
 import whiteBrokenPhone from "public/phone_white_d.jpg";
 import blackBrokenPhone from "public/phone_black_d.jpg";
 import whiteFixedPhone from "public/phone_white_r.jpg";
 import blackFixedPhone from "public/phone_black_r.jpg";
-import ScrollAnimationComponent from "components/ScrollAnimationComponent";
+
+import styles from "./Service.module.css";
+import slideStyles from "styles/Slide.module.css";
 
 const Service: FC = () => {
+  const [hasServiceAnimation, setServiceAnimation] = useState(false);
+
   const handleDetect = useCallback(
     (window: Window, element: HTMLElement, distanceFromTop: number) => {
       const windowY = window.scrollY + window.innerHeight;
       return windowY > distanceFromTop;
     },
+    []
+  );
+
+  const handleServiceAnimation = useCallback(
+    () => setServiceAnimation(true),
     []
   );
 
@@ -31,12 +38,19 @@ const Service: FC = () => {
             styles.serviceImages,
             slideStyles.slide,
             slideStyles.slideOut
-            // styles.slideAnimationLeft
           )}
+          noReverseAnimation
+          onAnimIn={handleServiceAnimation}
           inClassName={slideStyles.slideIn}
         >
           <div className={styles.imageContainerWrapper}>
-            <div className={clsx(styles.imageContainer, styles.show)}>
+            <div
+              className={clsx(
+                styles.imageContainer,
+                styles.show,
+                hasServiceAnimation && styles.serviceAnimation
+              )}
+            >
               <div
                 className={clsx(
                   styles.offerImageWrapper,
@@ -62,7 +76,13 @@ const Service: FC = () => {
                 />
               </div>
             </div>
-            <div className={clsx(styles.imageContainer, styles.hide)}>
+            {/* <div
+              className={clsx(
+                styles.imageContainer,
+                styles.hide,
+                hasServiceAnimation && styles.serviceAnimation
+              )}
+            >
               <div
                 className={clsx(
                   styles.offerImageWrapper,
@@ -87,17 +107,20 @@ const Service: FC = () => {
                   alt="Telefon czarny naprawiony"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
           <h3 className={styles.imageLabel}>Przed</h3>
         </ScrollAnimationComponent>
-        <div
+        <ScrollAnimationComponent
           className={clsx(
             styles.offerListContainer,
-            styles.serviceListContainer
-            // styles.slideAnimationRight
+            styles.serviceListContainer,
+            slideStyles.slide,
+            slideStyles.slideOut
           )}
-          id="serviceList"
+          onDetect={handleDetect}
+          noReverseAnimation
+          inClassName={slideStyles.slideIn}
         >
           <h1>
             <span className={clsx("material-icons", styles.buildIcon)}>
@@ -115,7 +138,7 @@ const Service: FC = () => {
             <li>Wykonywanie ekspertyzy</li>
             <li>Inne drobne usługi (zgrywanie danych, konfiguracja)</li>
           </ul>
-        </div>
+        </ScrollAnimationComponent>
       </div>
     </section>
   );

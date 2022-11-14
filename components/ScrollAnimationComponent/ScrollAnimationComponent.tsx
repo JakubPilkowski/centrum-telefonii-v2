@@ -12,6 +12,7 @@ type ScrollAnimationComponentProps = Omit<ScrollComponentProps, "onDetect"> & {
   ) => boolean;
   inClassName: string;
   outClassName?: string;
+  noReverseAnimation?: boolean;
   onAnimIn?: () => void;
   onAnimOut?: () => void;
 };
@@ -26,6 +27,7 @@ const ScrollAnimationComponent: FC<ScrollAnimationComponentProps> = ({
   className,
   onAnimIn = defaultFunction,
   onAnimOut = defaultFunction,
+  noReverseAnimation = false,
   ...props
 }) => {
   const ref = useRef<HTMLElement>(null);
@@ -44,21 +46,20 @@ const ScrollAnimationComponent: FC<ScrollAnimationComponentProps> = ({
     (window: Window) => {
       const elem = ref.current;
       const distance = distanceFromTop.current;
-      if (!elem || !distance) return;
+      if (!elem || typeof distance !== "number") return;
       const isElementDetected = onDetect(window, elem, distance);
-      console.log(isElementDetected);
 
       if (!isIn && isElementDetected) {
         setIn(true);
         onAnimIn();
       }
 
-      if (isIn && !isElementDetected) {
+      if (isIn && !isElementDetected && !noReverseAnimation) {
         setIn(false);
         onAnimOut();
       }
     },
-    [isIn, onAnimIn, onAnimOut, onDetect]
+    [isIn, onAnimIn, onAnimOut, onDetect, noReverseAnimation]
   );
 
   return (

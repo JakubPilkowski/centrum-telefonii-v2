@@ -24,7 +24,6 @@
 .mapTitlewrapperInner {
   background-color: #fdc029;
   border-radius: 4px;
-  transform: scale(0);
 }
 
 .mapTitle {
@@ -35,11 +34,6 @@
   letter-spacing: 0.5px;
   font-weight: bold;
   margin: 0;
-}
-
-.mapTitleAnimated {
-  transition: transform 600ms;
-  transform: scale(1);
 }
 
 .maps {
