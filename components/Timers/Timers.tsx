@@ -3,9 +3,10 @@ import clsx from "clsx";
 
 import ScrollAnimationComponent from "components/ScrollAnimationComponent";
 
+import textCounterAnimation from "utils/textCounterAnimation";
+
 import styles from "./Timers.module.css";
 import slideStyles from "styles/Slide.module.css";
-import textCounterAnimation from "utils/textCounterAnimation";
 
 const Timers: FC = () => {
   const clientsTitleRef = useRef<HTMLHeadingElement>(null);

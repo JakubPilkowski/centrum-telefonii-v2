@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
+import ActionButton from "components/ActionButton";
 import ctKosciuszkiPhoto from "public/ct_kosciuszki.jpg";
 
 import styles from "./Header.module.css";
@@ -45,6 +46,7 @@ const Header = () => {
             </div>
             <div className={styles.jumbotronButtons}>
               <a href="tel:+48 (89)533-71-32">
+                <ActionButton text="Wycena naprawy?" type="call" />
                 {/* <button
                   className={styles.action-button call-button}
                   id="header-call-button"
@@ -53,6 +55,9 @@ const Header = () => {
                   <span className={styles.material-icons}>call</span>
                 </button> */}
               </a>
+              <button>
+                <ActionButton text="Jak dojechać?" type="direction" />
+              </button>
 
               {/* <button
                 className={styles.action-button direction-button is-tablet is-desktop}
@@ -64,6 +69,7 @@ const Header = () => {
               </button> */}
 
               <a href="https://www.google.com/search?q=centrum+telefonii&client=firefox-b-d&sxsrf=ALeKk01XaB92F7V-cOmIS2_BORlHsMkHMg%3A1627138495065&ei=vyn8YOfCA8SGwPAP-pmNgAM&oq=centrum+telefonii&gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELADECcyBwgjELADECcyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANKBAhBGABQAFgAYKqHBGgBcAJ4AIABP4gBP5IBATGYAQCqAQdnd3Mtd2l6yAEKwAEB&sclient=gws-wiz&ved=0ahUKEwinnv6f-_vxAhVEAxAIHfpMAzAQ4dUDCA4&uact=5">
+                <ActionButton text="Wystaw opinie" type="opinion" />
                 {/* <button
                   className={styles.action-button opinion-button}
                   id="header-opinion-button"

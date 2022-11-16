@@ -20,7 +20,8 @@
       "public/*": ["public/*"],
       "globals/*": ["globals/*"],
       "hooks/*": ["hooks/*"],
-      "styles/*": ["styles/*"]
+      "styles/*": ["styles/*"],
+      "utils/*": ["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
