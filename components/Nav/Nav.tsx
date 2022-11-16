@@ -67,9 +67,9 @@ const Nav: FC = () => {
           <button onClick={handleNavigate("map")} className={styles.navLink}>
             Jak dojechać
           </button>
-          <button onClick={handleNavigate("news")} className={styles.navLink}>
+          {/* <button onClick={handleNavigate("news")} className={styles.navLink}>
             Aktualności
-          </button>
+          </button> */}
           <button onClick={handleNavigate("footer")} className={styles.navLink}>
             Kontakt
           </button>
@@ -145,12 +145,12 @@ const Nav: FC = () => {
             >
               Jak dojechać
             </button>
-            <button
+            {/* <button
               onClick={handleNavigate("news")}
               className={styles.hamburgerItem}
             >
               Aktualności
-            </button>
+            </button> */}
             <button
               onClick={handleNavigate("footer")}
               className={styles.hamburgerItem}

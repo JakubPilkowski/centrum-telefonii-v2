@@ -13,7 +13,7 @@ import styles from "./Accessories.module.css";
 import slideStyles from "styles/Slide.module.css";
 
 const Accessories: FC = () => {
-  const [hasServiceAnimation, setServiceAnimation] = useState(false);
+  const [hasAccessoriesAnimation, setAccessoriesAnimation] = useState(false);
 
   const handleDetect = useCallback(
     (window: Window, element: HTMLElement, distanceFromTop: number) => {
@@ -24,7 +24,7 @@ const Accessories: FC = () => {
   );
 
   const handleServiceAnimation = useCallback(
-    () => setServiceAnimation(true),
+    () => setAccessoriesAnimation(true),
     []
   );
 
@@ -73,7 +73,13 @@ const Accessories: FC = () => {
           inClassName={slideStyles.slideIn}
         >
           <div className={styles.imageContainerWrapper}>
-            <div className={clsx(styles.imageContainer, styles.show)}>
+            <div
+              className={clsx(
+                styles.imageContainer,
+                styles.show,
+                hasAccessoriesAnimation && styles.serviceAnimationFromIn
+              )}
+            >
               <div
                 className={clsx(
                   styles.offerImageWrapper,
@@ -91,7 +97,13 @@ const Accessories: FC = () => {
                 <Image src={glass9dPhoto} alt="Szkło hartowane 9D" />
               </div>
             </div>
-            <div className={clsx(styles.imageContainer, styles.hide)}>
+            <div
+              className={clsx(
+                styles.imageContainer,
+                styles.hide,
+                hasAccessoriesAnimation && styles.serviceAnimationFromOut
+              )}
+            >
               <div
                 className={clsx(
                   styles.offerImageWrapper,

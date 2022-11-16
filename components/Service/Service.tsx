@@ -48,7 +48,7 @@ const Service: FC = () => {
               className={clsx(
                 styles.imageContainer,
                 styles.show,
-                hasServiceAnimation && styles.serviceAnimation
+                hasServiceAnimation && styles.serviceAnimationFromIn
               )}
             >
               <div
@@ -76,11 +76,11 @@ const Service: FC = () => {
                 />
               </div>
             </div>
-            {/* <div
+            <div
               className={clsx(
                 styles.imageContainer,
                 styles.hide,
-                hasServiceAnimation && styles.serviceAnimation
+                hasServiceAnimation && styles.serviceAnimationFromOut
               )}
             >
               <div
@@ -107,9 +107,28 @@ const Service: FC = () => {
                   alt="Telefon czarny naprawiony"
                 />
               </div>
-            </div> */}
+            </div>
           </div>
-          <h3 className={styles.imageLabel}>Przed</h3>
+          <div className={styles.imageLabelWrapper}>
+            <h3
+              className={clsx(
+                styles.imageLabel,
+                styles.show,
+                hasServiceAnimation && styles.serviceAnimationFromIn
+              )}
+            >
+              Przed
+            </h3>
+            <h3
+              className={clsx(
+                styles.imageLabel,
+                styles.hide,
+                hasServiceAnimation && styles.serviceAnimationFromOut
+              )}
+            >
+              Po
+            </h3>
+          </div>
         </ScrollAnimationComponent>
         <ScrollAnimationComponent
           className={clsx(
