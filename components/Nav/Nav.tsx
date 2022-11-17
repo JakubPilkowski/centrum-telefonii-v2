@@ -9,6 +9,17 @@ import ScrollAnimationComponent from "components/ScrollAnimationComponent";
 import brandImage from "public/ct_icon_white.png";
 
 import styles from "./Nav.module.css";
+import getBySlug from "utils/getBySlug";
+
+// export async function getStaticProps() {
+//   const home = getBySlug("content/pages", "home");
+
+//   return {
+//     props: {
+//       home,
+//     },
+//   };
+// }
 
 const Nav: FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);

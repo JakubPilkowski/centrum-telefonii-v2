@@ -35,6 +35,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Ole&display=swap"
             rel="stylesheet"
           ></link>
+          <script
+            async
+            src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          ></script>
         </Head>
         <body>
           <Main />

@@ -1,0 +1,19 @@
+backend:
+  # name: git-gateway
+  name: "test-repo"
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: public/uploads
+public_folder: uploads
+collections:
+  - name: "pages"
+    label: "Strony"
+    folder: "content"
+    format: "json"
+    extension: "json"
+    files:
+      - label: "Ogłoszenia"
+        name: "news"
+        file: "content/news.json"
+        fields:
+          - { label: "Title", name: "title" }
+        #   - { label: "Title", name: "title", widget: "string" }
