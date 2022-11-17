@@ -1,0 +1,13 @@
+.slide {
+  transition: transform 400ms ease-out, opacity 800ms ease-out;
+}
+
+.slideOut {
+  opacity: 0;
+  transform: translateY(500%);
+}
+
+.slideIn {
+  opacity: 1;
+  transform: translateY(0);
+}
