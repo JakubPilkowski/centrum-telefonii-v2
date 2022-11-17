@@ -154,6 +154,10 @@
   margin: 0 5%;
 }
 
+.floatingButtonWrapper {
+  display: block;
+}
+
 /* mobile */
 @media (max-width: 480px) {
   .jumbotron {

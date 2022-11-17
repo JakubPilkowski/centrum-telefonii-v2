@@ -1,15 +1,43 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import clsx from "clsx";
+
+import useNavigate from "hooks/useNavigate";
 
 import ActionButton from "components/ActionButton";
+import ScrollComponent from "components/ScrollComponent";
+
 import ctKosciuszkiPhoto from "public/ct_kosciuszki.jpg";
 
+import slideStyles from "styles/ButtonSlide.module.css";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  const [hasFloatingButtons, setFloatingButtons] = useState(false);
+  const [navigate] = useNavigate();
+
+  const handleNavigate = (id: string) => () => {
+    navigate(id);
+  };
+
+  const handleDetect = (window: Window) => {
+    if (!hasFloatingButtons && window.scrollY > window.innerHeight / 2) {
+      setFloatingButtons(true);
+      return;
+    }
+    if (hasFloatingButtons && window.scrollY < window.innerHeight / 2) {
+      setFloatingButtons(false);
+    }
+  };
+
   return (
     <>
-      <header className={styles.jumbotron} id="home">
+      <ScrollComponent
+        tag="header"
+        onDetect={handleDetect}
+        className={styles.jumbotron}
+        id="home"
+      >
         <Image
           src={ctKosciuszkiPhoto}
           className={styles.background}
@@ -47,36 +75,12 @@ const Header = () => {
             <div className={styles.jumbotronButtons}>
               <a href="tel:+48 (89)533-71-32">
                 <ActionButton text="Wycena naprawy?" type="call" />
-                {/* <button
-                  className={styles.action-button call-button}
-                  id="header-call-button"
-                >
-                  <p>Wycena naprawy?</p>
-                  <span className={styles.material-icons}>call</span>
-                </button> */}
               </a>
-              <button>
+              <button onClick={handleNavigate("map")}>
                 <ActionButton text="Jak dojechać?" type="direction" />
               </button>
-
-              {/* <button
-                className={styles.action-button direction-button is-tablet is-desktop}
-                id="header-direction-button"
-                data-move-to="#map"
-              >
-                <p>Jak dojechać</p>
-                <span className={styles.material-icons}> place </span>
-              </button> */}
-
               <a href="https://www.google.com/search?q=centrum+telefonii&client=firefox-b-d&sxsrf=ALeKk01XaB92F7V-cOmIS2_BORlHsMkHMg%3A1627138495065&ei=vyn8YOfCA8SGwPAP-pmNgAM&oq=centrum+telefonii&gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELADECcyBwgjELADECcyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANKBAhBGABQAFgAYKqHBGgBcAJ4AIABP4gBP5IBATGYAQCqAQdnd3Mtd2l6yAEKwAEB&sclient=gws-wiz&ved=0ahUKEwinnv6f-_vxAhVEAxAIHfpMAzAQ4dUDCA4&uact=5">
                 <ActionButton text="Wystaw opinie" type="opinion" />
-                {/* <button
-                  className={styles.action-button opinion-button}
-                  id="header-opinion-button"
-                >
-                  <p>Wystaw opinie</p>
-                  <span className={styles.material-icons}> grade </span>
-                </button> */}
               </a>
             </div>
           </div>
@@ -90,30 +94,46 @@ const Header = () => {
         >
           <path fill="#171820" d="M0 0 L20 0 L100 80 L100 100 L0 100 Z" />
         </svg>
-      </header>
-      {/* <a href="tel:+48 (89)533-71-32">
-        <button
-          className={styles.action-button call-button floating-button"
-          id="floating-call-button"
-        >
-          <span className={styles.material-icons">call</span>
-        </button>
+      </ScrollComponent>
+      <a
+        className={clsx(styles.floatingButtonWrapper)}
+        href="tel:+48 (89)533-71-32"
+      >
+        <ActionButton
+          type="call"
+          isFloating
+          className={clsx(
+            slideStyles.slide,
+            hasFloatingButtons ? slideStyles.slideIn : slideStyles.slideOut
+          )}
+        />
       </a>
       <button
-        className={styles.action-button direction-button floating-button"
-        id="floating-direction-button"
-        data-move-to="#map"
+        className={clsx(styles.floatingButtonWrapper)}
+        onClick={handleNavigate("map")}
       >
-        <span className={styles.material-icons"> place </span>
+        <ActionButton
+          type="direction"
+          isFloating
+          className={clsx(
+            slideStyles.slide,
+            hasFloatingButtons ? slideStyles.slideIn : slideStyles.slideOut
+          )}
+        />
       </button>
-      <a href="https://www.google.com/search?q=centrum+telefonii&client=firefox-b-d&sxsrf=ALeKk01XaB92F7V-cOmIS2_BORlHsMkHMg%3A1627138495065&ei=vyn8YOfCA8SGwPAP-pmNgAM&oq=centrum+telefonii&gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELADECcyBwgjELADECcyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANKBAhBGABQAFgAYKqHBGgBcAJ4AIABP4gBP5IBATGYAQCqAQdnd3Mtd2l6yAEKwAEB&sclient=gws-wiz&ved=0ahUKEwinnv6f-_vxAhVEAxAIHfpMAzAQ4dUDCA4&uact=5">
-        <button
-          className={styles.action-button opinion-button floating-button"
-          id="floating-opinion-button"
-        >
-          <span className={styles.material-icons"> grade </span>
-        </button>
-      </a> */}
+      <a
+        className={clsx(styles.floatingButtonWrapper)}
+        href="https://www.google.com/search?q=centrum+telefonii&client=firefox-b-d&sxsrf=ALeKk01XaB92F7V-cOmIS2_BORlHsMkHMg%3A1627138495065&ei=vyn8YOfCA8SGwPAP-pmNgAM&oq=centrum+telefonii&gs_lcp=Cgdnd3Mtd2l6EAMyBwgjELADECcyBwgjELADECcyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANKBAhBGABQAFgAYKqHBGgBcAJ4AIABP4gBP5IBATGYAQCqAQdnd3Mtd2l6yAEKwAEB&sclient=gws-wiz&ved=0ahUKEwinnv6f-_vxAhVEAxAIHfpMAzAQ4dUDCA4&uact=5"
+      >
+        <ActionButton
+          type="opinion"
+          isFloating
+          className={clsx(
+            slideStyles.slide,
+            hasFloatingButtons ? slideStyles.slideIn : slideStyles.slideOut
+          )}
+        />
+      </a>
     </>
   );
 };

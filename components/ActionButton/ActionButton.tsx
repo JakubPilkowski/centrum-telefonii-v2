@@ -13,19 +13,22 @@ type ActionButtonProps = {
   type: "call" | "opinion" | "direction";
   isFloating?: boolean;
   text?: string;
+  className?: string;
 };
 
 const ActionButton: FC<ActionButtonProps> = ({
   type,
   text,
   isFloating = false,
+  className = "",
 }) => {
   return (
     <div
       className={clsx(
         styles.actionButton,
         styles[`${type}Button`],
-        isFloating && styles.floatingButton
+        isFloating && styles.floatingButton,
+        className
       )}
     >
       {text && <p>{text}</p>}
