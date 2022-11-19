@@ -2,19 +2,16 @@
 export default {
   cms_manual_init: true,
   backend: {
-    name: "test-repo",
-    // repo: "yourname/your-github-repo-name",
+    name: "git-gateway",
+    // name: "test-repo",
     branch: "main",
   },
-  local_backend: true,
   media_folder: "public/uploads",
   public_folder: "uploads",
   collections: [
     {
       name: "pages",
       label: "Strony",
-      folder: "content",
-      create: true,
       format: "json",
       extension: "json",
       files: [
@@ -24,24 +21,49 @@ export default {
           file: "content/news.json",
           fields: [
             {
-              label: "Czy są ogłoszenia?",
+              label: "Czy są aktualności?",
               name: "hasNews",
               widget: "boolean",
-              // required: true,
+              required: true,
             },
-            // {
-            //   label: "Ogłoszenie",
-            //   name: "news",
-            //   widget: "object",
-            //   required: false,
-            //   fields: [
-            //     {
-            //       label: "Tytuł",
-            //       name: "title",
-            //       widget: "string",
-            //     },
-            //   ],
-            // },
+            {
+              label: "Ogłoszenie",
+              name: "news",
+              widget: "object",
+              required: false,
+              fields: [
+                {
+                  label: "Tytuł",
+                  name: "title",
+                  widget: "string",
+                  required: false,
+                },
+                {
+                  label: "Zdjęcie",
+                  name: "photo",
+                  widget: "image",
+                  required: false,
+                },
+                {
+                  label: "Opis",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                },
+                {
+                  label: "Cena przed",
+                  name: "priceBefore",
+                  widget: "number",
+                  required: false,
+                },
+                {
+                  lable: "Cena po",
+                  name: "priceAfter",
+                  widget: "number",
+                  required: false,
+                },
+              ],
+            },
           ],
         },
         // {

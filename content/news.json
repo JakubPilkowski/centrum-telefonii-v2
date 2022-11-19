@@ -1,9 +1,6 @@
 {
-  "fields": [
-    {
-      "label": "Czy są ogłoszenia",
-      "name": "has_news",
-      "widget": "boolean"
-    }
-  ]
+  "hasNews": true,
+  "news": {
+    "title": "Promocja"
+  }
 }

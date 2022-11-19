@@ -2,7 +2,14 @@ import clsx from "clsx";
 import ScrollComponent, {
   ScrollComponentProps,
 } from "components/ScrollComponent";
-import React, { FC, useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  FC,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 type ScrollAnimationComponentProps = Omit<ScrollComponentProps, "onDetect"> & {
   onDetect: (
