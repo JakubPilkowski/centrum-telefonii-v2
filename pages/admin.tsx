@@ -1,7 +1,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import config from "../cms/config";
 import Script from "next/script";
+
+import config from "../cms/config";
 
 const CMS = dynamic(
   () =>
