@@ -10,7 +10,11 @@ import brandImage from "public/ct_icon_white.png";
 
 import styles from "./Nav.module.css";
 
-const Nav: FC = () => {
+type NavProps = {
+  hasNews: boolean;
+};
+
+const Nav: FC<NavProps> = ({ hasNews }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const [navigate] = useNavigate();
@@ -67,9 +71,11 @@ const Nav: FC = () => {
           <button onClick={handleNavigate("map")} className={styles.navLink}>
             Jak dojechać
           </button>
-          {/* <button onClick={handleNavigate("news")} className={styles.navLink}>
-            Aktualności
-          </button> */}
+          {hasNews && (
+            <button onClick={handleNavigate("news")} className={styles.navLink}>
+              Aktualności
+            </button>
+          )}
           <button onClick={handleNavigate("footer")} className={styles.navLink}>
             Kontakt
           </button>
@@ -145,12 +151,14 @@ const Nav: FC = () => {
             >
               Jak dojechać
             </button>
-            {/* <button
-              onClick={handleNavigate("news")}
-              className={styles.hamburgerItem}
-            >
-              Aktualności
-            </button> */}
+            {hasNews && (
+              <button
+                onClick={handleNavigate("news")}
+                className={styles.hamburgerItem}
+              >
+                Aktualności
+              </button>
+            )}
             <button
               onClick={handleNavigate("footer")}
               className={styles.hamburgerItem}

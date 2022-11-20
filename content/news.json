@@ -4,7 +4,7 @@
     "title": "Promocja",
     "photo": "uploads/szklo_9d.png",
     "description": "Szkła 9D w super cenie",
-    "priceBefore": 39,
-    "priceAfter": 9
+    "priceBefore": "39",
+    "priceAfter": "9"
   }
 }

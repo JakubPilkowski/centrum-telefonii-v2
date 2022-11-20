@@ -1,9 +1,11 @@
+import { scrollIntoView } from "seamless-scroll-polyfill";
+
 export default function useNavigate() {
   const handleNavigate = (id: string) => {
     const element = document.getElementById(id);
     if (!element) return;
 
-    element.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    scrollIntoView(element, { behavior: "smooth", block: "nearest" });
   };
 
   return [handleNavigate];
