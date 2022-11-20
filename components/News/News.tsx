@@ -27,7 +27,7 @@ const News: FC<NewsProps> = ({ attributes }) => {
   const handleDetect = useCallback(
     (window: Window, element: HTMLElement, distanceFromTop: number) => {
       const windowY = window.scrollY + window.innerHeight;
-      return windowY > distanceFromTop;
+      return windowY > distanceFromTop - 100;
     },
     []
   );
@@ -50,10 +50,10 @@ const News: FC<NewsProps> = ({ attributes }) => {
           />
         </div>
         <h4 className={styles.newsSubtitle}>{news.description}</h4>
-        <p className={styles.newsPrice}>
-          <span className={styles.newsPriceBefore}>{news.priceBefore}zł</span>
+        <h4 className={styles.newsPrice}>
           <span className={styles.newsPriceAfter}>{news.priceAfter}zł</span>
-        </p>
+          <span className={styles.newsPriceBefore}>{news.priceBefore}zł</span>
+        </h4>
       </ScrollAnimationComponent>
     </div>
   ) : null;
