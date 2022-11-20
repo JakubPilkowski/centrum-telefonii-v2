@@ -1,4 +1,7 @@
 import React from "react";
+import { join } from "path";
+import { readFileSync } from "fs";
+
 import Header from "components/Header";
 import Nav from "components/Nav";
 import Service from "components/Service";
@@ -8,23 +11,26 @@ import Timers from "components/Timers";
 import Map from "components/Map";
 import Footer from "components/Footer";
 import ScrollProvider from "components/ScrollProvider";
-import { join } from "path";
-import { readFileSync } from "fs";
+import News, { NewsCmsAttributes } from "components/News";
 
-export default function Main(props: any) {
-  console.log(props);
+export type CmsProps = {
+  newsAttributes: NewsCmsAttributes;
+};
+
+export default function Main(props: CmsProps) {
+  const { newsAttributes } = props;
   return (
     <ScrollProvider>
-      <Nav />
+      <Nav hasNews={newsAttributes.hasNews} />
       <Header />
       <Wrapper type="offer">
         <Service />
         <Accessories />
       </Wrapper>
-
       <Wrapper type="main">
         <Timers />
         <Map />
+        <News attributes={newsAttributes} />
       </Wrapper>
       <Footer />
     </ScrollProvider>
@@ -46,7 +52,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      news,
+      newsAttributes: news,
     },
   };
 }

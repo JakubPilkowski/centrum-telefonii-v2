@@ -92,7 +92,7 @@ const Header = () => {
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
         >
-          <path fill="#171820" d="M0 0 L20 0 L100 80 L100 100 L0 100 Z" />
+          <path fill="#171820" d="M0 0 L15 0 L100 90 L100 100 L0 100 Z" />
         </svg>
       </ScrollComponent>
       <a

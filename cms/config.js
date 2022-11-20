@@ -53,13 +53,13 @@ export default {
                 {
                   label: "Cena przed",
                   name: "priceBefore",
-                  widget: "number",
+                  widget: "string",
                   required: false,
                 },
                 {
                   lable: "Cena po",
                   name: "priceAfter",
-                  widget: "number",
+                  widget: "string",
                   required: false,
                 },
               ],

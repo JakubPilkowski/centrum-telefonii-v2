@@ -157,6 +157,7 @@
   padding: 2.5%;
   box-sizing: border-box;
   height: 400px;
+  max-width: 50%;
 }
 
 .offerImageWrapper::after {
