@@ -2,7 +2,8 @@
   background-color: #fdc029;
   position: relative;
   font-family: "Rosa", sans-serif;
-  padding: 5% 0;
+  padding: 5%;
+  max-height: 100vh;
 }
 
 .newsTitle {
@@ -14,7 +15,7 @@
   position: relative;
   box-sizing: border-box;
   height: 400px;
-  margin: 2.5% 0;
+  margin: 5% 15%;
 }
 
 .newsPhoto {
@@ -37,10 +38,10 @@
 .newsPriceBefore {
   color: #f20000;
   text-decoration: line-through;
-  margin-right: 20px;
 }
 
 .newsPriceAfter {
+  margin-right: 20px;
   color: #171820;
 }
 
