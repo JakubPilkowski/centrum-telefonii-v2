@@ -1,5 +1,5 @@
 .footer {
-  background-color: #171820;
+  background-color: var(--colorBlack);
   display: flex;
   flex-wrap: wrap;
   padding: 25px 10%;
@@ -11,19 +11,19 @@
 }
 
 .footer .label {
-  color: #f1f1f1;
+  color: var(--colorWhite);
   font-weight: bold;
   width: max-content;
   margin: 15px 0 6px;
-  font-family: "Rosa", sans-serif;
-  border-bottom: solid 2px #fdc029;
+  font-family: var(--fontPrimary);
+  border-bottom: solid 2px var(--colorPrimary);
   box-sizing: border-box;
   padding: 0 5px 2px;
 }
 
 .footer .text {
-  font-family: "Rosa", sans-serif;
-  color: #f1f1f1;
+  font-family: var(--fontPrimary);
+  color: var(--colorWhite);
   display: block;
   font-weight: lighter;
   letter-spacing: 0.05em;

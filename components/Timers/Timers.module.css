@@ -1,12 +1,12 @@
 .timers {
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   box-sizing: border-box;
   padding: 5% 10%;
   position: relative;
 }
 
 .timersTriangle {
-  border-top: 100px solid #fdc029;
+  border-top: 100px solid var(--colorPrimary);
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
   border-bottom: 0 solid transparent;
@@ -20,13 +20,13 @@
 }
 
 .timers .title {
-  color: #171820;
-  font-family: "Rosa", sans-serif;
+  color: var(--colorBlack);
+  font-family: var(--fontPrimary);
   text-align: center;
 }
 
 .timerItem {
-  font-family: "Rosa", sans-serif;
+  font-family: var(--fontPrimary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +35,7 @@
 .timerIcon {
   height: 128px;
   width: 128px;
-  color: #171820;
+  color: var(--colorBlack);
   font-size: 128px !important;
   margin-bottom: 20px;
 }
@@ -47,8 +47,8 @@
 
 .timerItem h2 {
   margin: 0;
-  font-family: "Rosa", sans-serif;
-  color: rgba(23, 24, 32, 0.8);
+  font-family: var(--fontPrimary);
+  color: rgba(var(--colorBlackRGB), 0.8);
   text-align: center;
   padding: 0 10px;
   box-sizing: border-box;
@@ -62,7 +62,7 @@
   }
 
   .timersTriangle {
-    border-top: 100px solid #fdc029;
+    border-top: 100px solid var(--colorPrimary);
   }
 
   .timerItem {
@@ -94,7 +94,7 @@
     margin: 0 0 5%;
   }
   .timersTriangle {
-    border-top: 125px solid #fdc029;
+    border-top: 125px solid var(--colorPrimary);
   }
 
   .timerItem {
@@ -126,7 +126,7 @@
     margin: 0 0 5%;
   }
   .timersTriangle {
-    border-top: 150px solid #fdc029;
+    border-top: 150px solid var(--colorPrimary);
   }
 
   .timerItem {
@@ -160,7 +160,7 @@
     margin: 0 0 80px;
   }
   .timersTriangle {
-    border-top: 150px solid #fdc029;
+    border-top: 150px solid var(--colorPrimary);
   }
   .timerItem {
     width: 33%;

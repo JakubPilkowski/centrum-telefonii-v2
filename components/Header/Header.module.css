@@ -24,7 +24,7 @@
   content: "";
   bottom: 0;
   width: 100%;
-  background-color: rgba(23, 24, 32, 0.7);
+  background-color: rgba(var(--colorBlackRGB), 0.7);
 }
 
 .jumbotronContainer {
@@ -42,10 +42,10 @@
 }
 
 .jumbotronTitle {
-  color: #f1f1f1;
+  color: var(--colorWhite);
   position: relative;
   width: max-content;
-  font-family: "Rosa", sans-serif;
+  font-family: var(--fontPrimary);
 }
 
 .jumbotronTitle::after {
@@ -55,7 +55,7 @@
   bottom: -5px;
   height: 5px;
   width: 0;
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   animation: title-bell-animation 400ms linear 800ms 1 normal forwards;
 }
 
@@ -71,7 +71,7 @@
 .jumbotronBell {
   width: 5px;
   height: 100%;
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   margin-left: 5%;
 }
 
@@ -85,7 +85,7 @@
   left: -5px;
   top: 0;
   width: 5px;
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   height: 0;
   animation: details-bell-animation 400ms linear 400ms 1 normal forwards;
 }
@@ -102,8 +102,8 @@
 .jumbotronDescription {
   font-size: 40px;
   margin: 50px 0 50px 5%;
-  color: #f1f1f1;
-  font-family: "Rosa", sans-serif;
+  color: var(--colorWhite);
+  font-family: var(--fontPrimary);
 }
 
 .jumbotronDescription p {
@@ -120,7 +120,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(23, 24, 32, 1);
+  background-color: rgba(var(--colorBlackRGB), 1);
   content: "";
   bottom: -5px;
   left: 0;
@@ -137,11 +137,11 @@
     height: 100%;
   }
   90% {
-    background-color: rgba(23, 24, 32, 1);
+    background-color: rgba(var(--colorBlackRGB), 1);
     height: 4px;
   }
   100% {
-    background-color: #fdc029;
+    background-color: var(--colorPrimary);
     height: 4px;
   }
 }

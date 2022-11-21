@@ -3,13 +3,13 @@
   border: none;
   outline: none;
   z-index: 500;
-  font-family: "Rosa", sans-serif;
+  font-family: var(--fontPrimary);
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   width: max-content;
-  color: #f1f1f1;
+  color: var(--colorWhite);
   /* transition: transform 200ms ease-in, width 200ms ease-in; */
   font-size: 16px;
   line-height: 20px;
@@ -42,33 +42,33 @@
   font-size: 16px;
   width: 24px;
   line-height: 24px;
-  background-color: #f1f1f1;
+  background-color: var(--colorWhite);
   border-radius: 50%;
   margin: 0 6px;
 }
 
 .callButton {
-  background-color: #008000;
+  background-color: var(--colorCallButton);
 }
 
 .opinionButton {
-  background: #df861d;
+  background: var(--colorRoadButton);
 }
 
 .directionButton {
-  background-color: #aa3d01;
+  background-color: var(--colorOpinionButton);
 }
 
 .callButton > span {
-  color: #008000;
+  color: var(--colorCallButton);
 }
 
 .opinionButton > span {
-  color: #df861d;
+  color: var(--colorRoadButton);
 }
 
 .directionButton > span {
-  color: #aa3d01;
+  color: var(--colorOpinionButton);
 }
 
 .callButton.floatingButton {

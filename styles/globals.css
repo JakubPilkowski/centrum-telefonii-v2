@@ -32,3 +32,37 @@ button:hover {
 a {
   text-decoration: none;
 }
+
+:root {
+  --fontPrimary: "Rosa", sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --colorPrimary: #fdc029;
+    --colorBlack: #171820;
+    --colorWhite: #f1f1f1;
+    --colorRed: #f20000;
+    --colorCallButton: #008000;
+    --colorRoadButton: #df861d;
+    --colorOpinionButton: #aa3d01;
+
+    --colorBlackRGB: 23, 24, 32;
+    --colorPrimaryRGB: 253, 192, 41;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorPrimary: #fdc029;
+    --colorBlack: #171820;
+    --colorWhite: #f1f1f1;
+    --colorRed: #f20000;
+    --colorCallButton: #008000;
+    --colorRoadButton: #df861d;
+    --colorOpinionButton: #aa3d01;
+
+    --colorBlackRGB: 23, 24, 32;
+    --colorPrimaryRGB: 253, 192, 41;
+  }
+}
