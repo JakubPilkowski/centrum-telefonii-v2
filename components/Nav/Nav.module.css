@@ -58,21 +58,21 @@
 .brandBell {
   width: 1px;
   height: 50px;
-  background-color: #f1f1f1;
+  background-color: var(--colorWhite);
   margin: 0 15px;
 }
 
 .brandName {
-  color: #f1f1f1;
-  font-family: "Rosa", sans-serif;
+  color: var(--colorWhite);
+  font-family: var(--fontPrimary);
   font-size: 24px;
   transition: font-size 200ms ease-in;
   margin: 0;
 }
 
 .navBackground {
-  background-color: #171820;
-  border-bottom-color: #fdc029;
+  background-color: var(--colorBlack);
+  border-bottom-color: var(--colorPrimary);
   height: 70px;
 }
 
@@ -92,14 +92,14 @@
 .navLinks {
   display: flex;
   align-items: center;
-  font-family: "Rosa", sans-serif;
+  font-family: var(--fontPrimary);
 }
 
 .navLink {
   margin-left: 60px;
   background-color: transparent;
   position: relative;
-  color: #f1f1f1;
+  color: var(--colorWhite);
   font-size: 24px;
   letter-spacing: 0.03em;
   font-weight: bold;
@@ -113,7 +113,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   transition: width 300ms ease-out;
 }
 
@@ -134,7 +134,7 @@
   margin: 2px 0;
   width: 35px;
   height: 5px;
-  background-color: #f1f1f1;
+  background-color: var(--colorWhite);
   border-radius: 2.5px;
 }
 
@@ -145,8 +145,8 @@
   left: 0;
   top: 0;
   width: 100%;
-  background-color: #171820;
-  border-bottom: 1px solid #fdc029;
+  background-color: var(--colorBlack);
+  border-bottom: 1px solid var(--colorPrimary);
   z-index: 2000;
   box-sizing: border-box;
 }
@@ -213,7 +213,7 @@
   margin-bottom: 50px;
   background-color: transparent;
   position: relative;
-  color: #f1f1f1;
+  color: var(--colorWhite);
   font-size: 36px;
   font-weight: bold;
   width: 100%;
@@ -230,7 +230,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   transition: transform 500ms;
   transform-origin: center center;
   transform: scale(0);

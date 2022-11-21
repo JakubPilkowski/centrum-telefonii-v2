@@ -1,7 +1,7 @@
 .news {
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   position: relative;
-  font-family: "Rosa", sans-serif;
+  font-family: var(--fontPrimary);
   padding: 5%;
   max-height: calc(100vh - 70px);
 }
@@ -36,13 +36,13 @@
 }
 
 .newsPriceBefore {
-  color: #f20000;
+  color: var(--colorRed);
   text-decoration: line-through;
 }
 
 .newsPriceAfter {
   margin-right: 20px;
-  color: #171820;
+  color: var(--colorBlack);
 }
 
 .news::after {
@@ -51,9 +51,9 @@
   content: "";
   position: absolute;
   border-top: 100px solid transparent;
-  border-left: 50vw solid #fdc029;
-  border-right: 50vw solid #fdc029;
-  border-bottom: 0 solid #fdc029;
+  border-left: 50vw solid var(--colorPrimary);
+  border-right: 50vw solid var(--colorPrimary);
+  border-bottom: 0 solid var(--colorPrimary);
 }
 
 @media (max-width: 480px) {

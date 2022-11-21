@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 100px 7.5%;
   position: relative;
-  font-family: "Rosa", sans-serif;
+  font-family: var(--fontPrimary);
 }
 
 .accessories::after {
@@ -11,13 +11,13 @@
   content: "";
   position: absolute;
   border-top: 100px solid transparent;
-  border-left: 50vw solid #fdc029;
-  border-right: 50vw solid #fdc029;
-  border-bottom: 0 solid #fdc029;
+  border-left: 50vw solid var(--colorPrimary);
+  border-right: 50vw solid var(--colorPrimary);
+  border-bottom: 0 solid var(--colorPrimary);
 }
 
 .offer h1 {
-  color: #171820;
+  color: var(--colorBlack);
 }
 
 .offer h1 span {
@@ -25,7 +25,7 @@
 }
 
 .accessories h1 {
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   border-radius: 6px;
   padding: 6px;
   width: max-content;
@@ -61,8 +61,8 @@
 .offerListContainer li {
   font-weight: bold;
   margin-bottom: 15px;
-  background-color: #171820;
-  color: #f1f1f1;
+  background-color: var(--colorBlack);
+  color: var(--colorWhite);
   border-radius: 10px;
   padding: 10px;
   box-shadow: 2px 2px 5px 1px rgba(23, 24, 32, 0.5);
@@ -191,7 +191,7 @@
 .imageLabel {
   text-align: center;
   font-weight: bold;
-  background-color: #fdc029;
+  background-color: var(--colorPrimary);
   border-radius: 6px;
   padding: 6px;
   width: max-content;
