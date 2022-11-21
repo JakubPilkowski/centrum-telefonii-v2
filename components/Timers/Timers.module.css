@@ -48,7 +48,7 @@
 .timerItem h2 {
   margin: 0;
   font-family: var(--fontPrimary);
-  color: rgba(23, 24, 32, 0.8);
+  color: rgba(var(--colorBlackRGB), 0.8);
   text-align: center;
   padding: 0 10px;
   box-sizing: border-box;

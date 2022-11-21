@@ -65,7 +65,7 @@
   color: var(--colorWhite);
   border-radius: 10px;
   padding: 10px;
-  box-shadow: 2px 2px 5px 1px rgba(23, 24, 32, 0.5);
+  box-shadow: 2px 2px 5px 1px rgba(var(--colorBlackRGB), 0.5);
 }
 
 .offerList li::before {

@@ -48,27 +48,27 @@
 }
 
 .callButton {
-  background-color: #008000;
+  background-color: var(--colorCallButton);
 }
 
 .opinionButton {
-  background: #df861d;
+  background: var(--colorRoadButton);
 }
 
 .directionButton {
-  background-color: #aa3d01;
+  background-color: var(--colorOpinionButton);
 }
 
 .callButton > span {
-  color: #008000;
+  color: var(--colorCallButton);
 }
 
 .opinionButton > span {
-  color: #df861d;
+  color: var(--colorRoadButton);
 }
 
 .directionButton > span {
-  color: #aa3d01;
+  color: var(--colorOpinionButton);
 }
 
 .callButton.floatingButton {

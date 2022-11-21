@@ -3,7 +3,7 @@
 }
 
 .wrapper {
-  background-color: rgba(23, 24, 32, 0.7);
+  background-color: rgba(var(--colorBlackRGB), 0.7);
   position: relative;
 }
 
