@@ -1,3 +1,5 @@
-import Accessory from "./Accessory";
+import Accessory, { AccessoryProps } from "./Accessory";
 
 export default Accessory;
+
+export type { AccessoryProps };
