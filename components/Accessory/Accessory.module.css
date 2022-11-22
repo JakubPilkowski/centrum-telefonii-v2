@@ -12,11 +12,24 @@
   );
   box-shadow: rgba(var(--colorPrimary), 0.25) 0px 50px 100px -20px,
     rgba(var(--colorPrimary), 0.3) 0px 30px 60px -30px;
+  height: 250px;
+}
+
+.accessoryImageWrapper {
+  position: relative;
+  padding: 2.5%;
+  padding: 10%;
+  box-sizing: border-box;
+  height: 80%;
+  /* height: 400px; */
+  /* max-width: 50%; */
 }
 
 .accessoryImage {
   object-fit: contain;
-  margin: 10%;
+  /* margin: 10%; */
+  width: 100%;
+  height: 100%;
 }
 
 .accessoryFooter {
@@ -35,6 +48,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--colorPrimary);
+  margin-right: 12px;
 }
 
 .accessoryIcon {
@@ -43,4 +57,13 @@
 }
 
 .accessoryTextWrapper {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--colorBlack);
+}
+
+.accessoryText {
+  /* font-size: 16px;
+  line-height: 24px;
+  color: var(--colorBlack); */
 }

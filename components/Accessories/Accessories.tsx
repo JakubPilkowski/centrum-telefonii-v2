@@ -3,14 +3,11 @@ import React, { FC, useCallback, useState } from "react";
 import Image from "next/image";
 
 import ScrollAnimationComponent from "components/ScrollAnimationComponent";
-
-import venusEtuiPhoto from "public/etui_venus.png";
-import glass9dPhoto from "public/szklo_9d.png";
-import jellyCasePhoto from "public/guma_jelly.png";
-import chargerPhoto from "public/ladowarka.png";
+import Accessory from "components/Accessory";
 
 import styles from "./Accessories.module.css";
 import slideStyles from "styles/Slide.module.css";
+import accessories from "../accessories";
 
 const Accessories: FC = () => {
   const [hasAccessoriesAnimation, setAccessoriesAnimation] = useState(false);
@@ -33,7 +30,22 @@ const Accessories: FC = () => {
       id="accessories"
       className={clsx(styles.offer, styles.accessories)}
     >
-      <div className={clsx(styles.offerContainer)}>
+      <ScrollAnimationComponent
+        onDetect={handleDetect}
+        className={clsx(
+          styles.accessoriesList,
+          slideStyles.slide,
+          slideStyles.slideOut
+        )}
+        noReverseAnimation
+        onAnimIn={handleServiceAnimation}
+        inClassName={slideStyles.slideIn}
+      >
+        {accessories.map(({ id, ...props }) => (
+          <Accessory key={id} {...props} />
+        ))}
+      </ScrollAnimationComponent>
+      {/* <div className={clsx(styles.offerContainer)}>
         <ScrollAnimationComponent
           onDetect={handleDetect}
           className={clsx(
@@ -123,7 +135,7 @@ const Accessories: FC = () => {
             </div>
           </div>
         </ScrollAnimationComponent>
-      </div>
+      </div> */}
     </section>
   );
 };
