@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 import styles from "./Accessories.module.css";
 import { scrollTriggerAnimation } from "utils/animations";
-import accessories from "../accessories";
 import Accessory from "components/Accessory";
+import accessoryItems from "./accessoryItems";
 
 const Accessories: FC = () => {
   return (
@@ -17,7 +17,7 @@ const Accessories: FC = () => {
         className={clsx(styles.accessoriesList)}
         {...scrollTriggerAnimation}
       >
-        {accessories.map(({ id, ...props }) => (
+        {accessoryItems.map(({ id, ...props }) => (
           <Accessory key={id} {...props} />
         ))}
       </motion.div>
