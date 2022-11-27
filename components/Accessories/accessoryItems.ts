@@ -11,7 +11,11 @@ import glassProtection from "public/szklo_9d.png";
 import carHandle from "public/uchwyt_na_szybe.png";
 import headphones from "public/sluchawki.png";
 
-const accessories: AccessoryProps[] = [
+type AccessoryItem = AccessoryProps & {
+  id: string;
+};
+
+const accessoryItems: AccessoryItem[] = [
   {
     id: nanoid(),
     icon: "shield",
@@ -78,4 +82,4 @@ const accessories: AccessoryProps[] = [
   },
 ];
 
-export default accessories;
+export default accessoryItems;

@@ -33,6 +33,21 @@
 
 .accessoriesList {
   display: grid;
+  gap: 1rem;
+  grid-template-rows: 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr; */
+  /* grid-template-rows: 100px 200px 100px; */
+}
+
+@media (min-width: 500px) {
+  .accessoriesList {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; */
+    /* grid-template-rows: 100px 200px 100px; */
+  }
 }
 
 .offerContainer {

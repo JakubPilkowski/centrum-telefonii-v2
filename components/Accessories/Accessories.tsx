@@ -7,7 +7,7 @@ import Accessory from "components/Accessory";
 
 import styles from "./Accessories.module.css";
 import slideStyles from "styles/Slide.module.css";
-import accessories from "../accessories";
+import accessoryItems from "./accessoryItems";
 
 const Accessories: FC = () => {
   const [hasAccessoriesAnimation, setAccessoriesAnimation] = useState(false);
@@ -41,7 +41,7 @@ const Accessories: FC = () => {
         onAnimIn={handleServiceAnimation}
         inClassName={slideStyles.slideIn}
       >
-        {accessories.map(({ id, ...props }) => (
+        {accessoryItems.map(({ id, ...props }) => (
           <Accessory key={id} {...props} />
         ))}
       </ScrollAnimationComponent>
