@@ -32,22 +32,26 @@
 }
 
 .accessoriesList {
-  display: grid;
-  gap: 1rem;
-  grid-template-rows: 1fr;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr; */
-  /* grid-template-rows: 100px 200px 100px; */
-}
+  --grid-layout-gap: 10px;
+  --grid-column-count: 4;
+  --grid-item--min-width: 300px;
 
-@media (min-width: 500px) {
-  .accessoriesList {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr; */
-    /* grid-template-rows: 100px 200px 100px; */
-  }
+  /**
+   * Calculated values.
+   */
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--grid-column-count)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+  );
+  row-gap: 2rem;
+  column-gap: var(--grid-layout-gap);
 }
 
 .offerContainer {

@@ -1,8 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useCallback, useState } from "react";
 import Image, { StaticImageData } from "next/image";
+import clsx from "clsx";
 
 import styles from "./Accessory.module.css";
-import clsx from "clsx";
+import slideStyles from "styles/Slide.module.css";
+import ScrollAnimationComponent from "components/ScrollAnimationComponent";
 
 export type AccessoryProps = {
   image: string | StaticImageData;
@@ -19,25 +21,55 @@ const Accessory: FC<AccessoryProps> = ({
   name,
   price,
 }) => {
+  const [hasAccessoriesAnimation, setAccessoriesAnimation] = useState(false);
+
+  const handleDetect = useCallback(
+    (window: Window, element: HTMLElement, distanceFromTop: number) => {
+      const windowY = window.scrollY + window.innerHeight;
+      return windowY > distanceFromTop - element.offsetHeight / 2;
+    },
+    []
+  );
+
+  const handleServiceAnimation = useCallback(
+    () => setAccessoriesAnimation(true),
+    []
+  );
   return (
-    <div className={styles.accessory}>
-      <div className={styles.accessoryImageWrapperOuter}>
-        <div className={styles.accessoryImageWrapperInner}>
-          <Image src={image} alt={imageAlt} className={styles.accessoryImage} />
+    <ScrollAnimationComponent
+      onDetect={handleDetect}
+      className={clsx(
+        styles.accessory,
+        slideStyles.slide,
+        slideStyles.slideOut
+      )}
+      noReverseAnimation
+      onAnimIn={handleServiceAnimation}
+      inClassName={slideStyles.slideIn}
+    >
+      <div className={styles.accessory}>
+        <div className={styles.accessoryImageWrapperOuter}>
+          <div className={styles.accessoryImageWrapperInner}>
+            <Image
+              src={image}
+              alt={imageAlt}
+              className={styles.accessoryImage}
+            />
+          </div>
+        </div>
+        <div className={styles.accessoryFooter}>
+          <div className={styles.accessoryIconWrapper}>
+            <span className={clsx("material-icons", styles.accessoryIcon)}>
+              {icon}
+            </span>
+          </div>
+          <div className={styles.accessoryTextWrapper}>
+            <p className={styles.accessoryTextName}>{name}</p>
+            <p className={styles.accessoryTextPrice}>{price}</p>
+          </div>
         </div>
       </div>
-      <div className={styles.accessoryFooter}>
-        <div className={styles.accessoryIconWrapper}>
-          <span className={clsx("material-icons", styles.accessoryIcon)}>
-            {icon}
-          </span>
-        </div>
-        <div className={styles.accessoryTextWrapper}>
-          <p className={styles.accessoryText}>{name}</p>
-          <p className={styles.accessoryText}>{price}</p>
-        </div>
-      </div>
-    </div>
+    </ScrollAnimationComponent>
   );
 };
 
