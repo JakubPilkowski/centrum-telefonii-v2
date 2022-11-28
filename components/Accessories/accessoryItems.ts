@@ -42,7 +42,7 @@ const accessoryItems: AccessoryItem[] = [
   },
   {
     id: nanoid(),
-    icon: "battery charging full",
+    icon: "battery_charging_full",
     image: battery,
     imageAlt: "Bateria samsung",
     name: "Baterie",
@@ -50,7 +50,7 @@ const accessoryItems: AccessoryItem[] = [
   },
   {
     id: nanoid(),
-    icon: "phone iphone",
+    icon: "phone_iphone",
     image: smartphone,
     imageAlt: "Smartfon",
     name: "Smartfony",
@@ -58,7 +58,7 @@ const accessoryItems: AccessoryItem[] = [
   },
   {
     id: nanoid(),
-    icon: "phone link lock",
+    icon: "phonelink_lock",
     image: glassProtection,
     imageAlt: "Szkło hartowane",
     name: "Szkła hartowane",
@@ -66,7 +66,7 @@ const accessoryItems: AccessoryItem[] = [
   },
   {
     id: nanoid(),
-    icon: "",
+    icon: "directions_car",
     image: carHandle,
     imageAlt: "Uchwyt samochodowy",
     name: "Uchwyty samochodowe",
