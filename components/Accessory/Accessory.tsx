@@ -21,8 +21,6 @@ const Accessory: FC<AccessoryProps> = ({
   name,
   price,
 }) => {
-  const [hasAccessoriesAnimation, setAccessoriesAnimation] = useState(false);
-
   const handleDetect = useCallback(
     (window: Window, element: HTMLElement, distanceFromTop: number) => {
       const windowY = window.scrollY + window.innerHeight;
@@ -31,10 +29,6 @@ const Accessory: FC<AccessoryProps> = ({
     []
   );
 
-  const handleServiceAnimation = useCallback(
-    () => setAccessoriesAnimation(true),
-    []
-  );
   return (
     <ScrollAnimationComponent
       onDetect={handleDetect}
@@ -44,7 +38,6 @@ const Accessory: FC<AccessoryProps> = ({
         slideStyles.slideOut
       )}
       noReverseAnimation
-      onAnimIn={handleServiceAnimation}
       inClassName={slideStyles.slideIn}
     >
       <div className={styles.accessory}>
