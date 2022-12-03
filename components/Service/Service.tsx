@@ -10,6 +10,7 @@ import blackFixedPhone from "public/phone_black_r.jpg";
 
 import styles from "./Service.module.css";
 import { scrollTriggerAnimation } from "utils/animations";
+import SwapPhoto from "components/SwapPhoto";
 
 const Service = forwardRef<HTMLElement>(function Service(_, ref) {
   return (
@@ -23,84 +24,15 @@ const Service = forwardRef<HTMLElement>(function Service(_, ref) {
           {...scrollTriggerAnimation}
           className={clsx(styles.offerImages, styles.serviceImages)}
         >
-          <div className={styles.imageContainerWrapper}>
-            <motion.div
-              className={clsx(styles.imageContainer)}
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: {
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  repeatDelay: 8,
-                },
-              }}
-            >
-              <div
-                className={clsx(
-                  styles.offerImageWrapper,
-                  styles.serviceImageWrapper
-                )}
-              >
-                <Image
-                  src={whiteBrokenPhone}
-                  className={styles.imgFirst}
-                  alt="Telefon biały zepsuty"
-                />
-              </div>
-              <div
-                className={clsx(
-                  styles.offerImageWrapper,
-                  styles.serviceImageWrapper
-                )}
-              >
-                <Image
-                  src={blackBrokenPhone}
-                  className={styles.imgFirst}
-                  alt="Telefon czarny zepsuty"
-                />
-              </div>
-            </motion.div>
-            <motion.div
-              className={clsx(styles.imageContainer)}
-              initial={{ opacity: 1 }}
-              animate={{
-                opacity: 0,
-                transition: {
-                  duration: 1,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  repeatDelay: 8,
-                },
-              }}
-            >
-              <div
-                className={clsx(
-                  styles.offerImageWrapper,
-                  styles.serviceImageWrapper
-                )}
-              >
-                <Image
-                  src={whiteFixedPhone}
-                  className={styles.imgFirst}
-                  alt="Telefon biały naprawiony"
-                />
-              </div>
-              <div
-                className={clsx(
-                  styles.offerImageWrapper,
-                  styles.serviceImageWrapper
-                )}
-              >
-                <Image
-                  src={blackFixedPhone}
-                  className={styles.imgFirst}
-                  alt="Telefon czarny naprawiony"
-                />
-              </div>
-            </motion.div>
-          </div>
+          <SwapPhoto
+            frontPhoto={whiteBrokenPhone}
+            backPhoto={whiteFixedPhone}
+            frontPhotoAlt="Telefon biały zepsuty"
+            backPhotoAlt="Telefon biały naprawiony"
+            isInfinity
+            isStarted={false}
+            className={styles.imageContainerWrapper}
+          />
           <div className={styles.imageLabelWrapper}>
             <motion.h3
               className={clsx(styles.imageLabel)}
@@ -141,14 +73,13 @@ const Service = forwardRef<HTMLElement>(function Service(_, ref) {
             styles.serviceListContainer
           )}
         >
-          <h1>
-            <span className={clsx("material-icons", styles.buildIcon)}>
-              construction
-            </span>
-            <span>Serwis</span>
-          </h1>
+          <h1>Serwis oraz usługi</h1>
           <ul className={clsx(styles.offerList, styles.serviceList)}>
-            <li>Wymiana ekranów, gniazd, baterii, aparatów</li>
+            <ServiceItem
+              price="30"
+              title="Wymiana gniazd, baterii, aparatów"
+              className={}
+            />
             <li>Naprawa głośników, mikrofonów, aparatów w telefonie</li>
             <li>Wymiana gniazd oraz baterii</li>
             <li>Wgrywanie nowego oprogramowania</li>

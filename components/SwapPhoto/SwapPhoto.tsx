@@ -1,10 +1,18 @@
-import React, { FC, useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  FC,
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import clsx from "clsx";
 import Image from "next/image";
 
 import SwapPhotoProps from "./SwapPhoto.types";
 
 import styles from "./SwapPhoto.module.css";
+import useAnimationState from "hooks/useAnimationState";
 
 const SwapPhoto: FC<SwapPhotoProps> = ({
   isStarted,
@@ -12,46 +20,41 @@ const SwapPhoto: FC<SwapPhotoProps> = ({
   frontPhotoAlt,
   backPhoto,
   backPhotoAlt,
-  animationDuration,
-  delay,
-  reverse,
+  isInfinity,
+  className,
 }) => {
-  const animationDelayRef = useRef<NodeJS.Timeout | null>(null);
-  const animationRef = useRef<NodeJS.Timeout | null>(null);
-
-  const [isAnimationRunning, setAnimationRunning] = useState(false);
-
-  const clearAnimationTimeout = useCallback(() => {
-    if (!animationDelayRef.current) return;
-    clearTimeout(animationDelayRef.current);
-    animationDelayRef.current = null;
-  }, []);
-
-  useEffect(() => {}, []);
-
-  useEffect(() => {
-    if (isStarted) {
-      animationDelayRef.current = setTimeout(() => {
-        setAnimationRunning(true);
-      }, delay);
-    } else {
-      clearAnimationTimeout();
-    }
-  }, [clearAnimationTimeout, delay, isStarted]);
-
-  useEffect(
-    () => () => {
-      clearAnimationTimeout();
-    },
-    [clearAnimationTimeout]
-  );
-
   return (
-    <div className={styles.SwapPhotoContainer}>
-      <div className={styles.PhotoWrapper}>
+    <div className={clsx(styles.SwapPhotoContainer, className)}>
+      <div
+        className={clsx(
+          styles.PhotoWrapper,
+          styles.PhotoWrapperFront,
+          isStarted && styles.PhotoFrontAnimation,
+          isInfinity
+            ? styles.PhotoAnimationIterationInfinity
+            : styles.PhotoAnimationIterationOnce
+        )}
+      >
         <Image
           src={frontPhoto}
           alt={frontPhotoAlt}
+          className={clsx(styles.Photo)}
+        />
+      </div>
+
+      <div
+        className={clsx(
+          styles.PhotoWrapper,
+          styles.PhotoWrapperBack,
+          isStarted && styles.PhotoBackAnimation,
+          isInfinity
+            ? styles.PhotoAnimationIterationInfinity
+            : styles.PhotoAnimationIterationOnce
+        )}
+      >
+        <Image
+          src={backPhoto}
+          alt={backPhotoAlt}
           className={clsx(styles.Photo)}
         />
       </div>

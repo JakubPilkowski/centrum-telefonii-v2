@@ -1,6 +1,6 @@
 type ServiceItemProps = {
   title: string;
-  icon: string;
+  price: string;
 };
 
 export default ServiceItemProps;
