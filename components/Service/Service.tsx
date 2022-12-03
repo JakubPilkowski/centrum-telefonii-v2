@@ -11,9 +11,11 @@ import blackFixedPhone from "public/phone_black_r.jpg";
 
 import styles from "./Service.module.css";
 import slideStyles from "styles/Slide.module.css";
+import SwapPhoto from "components/SwapPhoto";
+import ServiceItem from "./ServiceItem";
 
 const Service: FC = () => {
-  const [hasServiceAnimation, setServiceAnimation] = useState(false);
+  const [hasFirstImageAnimation, setFirstImageAnimation] = useState(false);
 
   const handleDetect = useCallback(
     (window: Window, element: HTMLElement, distanceFromTop: number) => {
@@ -23,8 +25,8 @@ const Service: FC = () => {
     []
   );
 
-  const handleServiceAnimation = useCallback(
-    () => setServiceAnimation(true),
+  const handleImageAnimation = useCallback(
+    () => setFirstImageAnimation(true),
     []
   );
 
@@ -40,15 +42,24 @@ const Service: FC = () => {
             slideStyles.slideOut
           )}
           noReverseAnimation
-          onAnimIn={handleServiceAnimation}
+          onAnimIn={handleImageAnimation}
           inClassName={slideStyles.slideIn}
         >
-          <div className={styles.imageContainerWrapper}>
-            <div
+          {/* <div className={styles.imageContainerWrapper}> */}
+          <SwapPhoto
+            frontPhoto={whiteBrokenPhone}
+            backPhoto={whiteFixedPhone}
+            frontPhotoAlt="Telefon biały zepsuty"
+            backPhotoAlt="Telefon biały naprawiony"
+            isInfinity
+            isStarted={hasFirstImageAnimation}
+            className={styles.imageContainerWrapper}
+          />
+          {/* <div
               className={clsx(
                 styles.imageContainer,
                 styles.show,
-                hasServiceAnimation && styles.serviceAnimationFromIn
+                hasFirstImageAnimation && styles.serviceAnimationFromIn
               )}
             >
               <div
@@ -80,7 +91,7 @@ const Service: FC = () => {
               className={clsx(
                 styles.imageContainer,
                 styles.hide,
-                hasServiceAnimation && styles.serviceAnimationFromOut
+                hasFirstImageAnimation && styles.serviceAnimationFromOut
               )}
             >
               <div
@@ -107,14 +118,14 @@ const Service: FC = () => {
                   alt="Telefon czarny naprawiony"
                 />
               </div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
           <div className={styles.imageLabelWrapper}>
             <h3
               className={clsx(
                 styles.imageLabel,
                 styles.show,
-                hasServiceAnimation && styles.serviceAnimationFromIn
+                hasFirstImageAnimation && styles.serviceAnimationFromIn
               )}
             >
               Przed
@@ -123,7 +134,7 @@ const Service: FC = () => {
               className={clsx(
                 styles.imageLabel,
                 styles.hide,
-                hasServiceAnimation && styles.serviceAnimationFromOut
+                hasFirstImageAnimation && styles.serviceAnimationFromOut
               )}
             >
               Po
@@ -141,14 +152,14 @@ const Service: FC = () => {
           noReverseAnimation
           inClassName={slideStyles.slideIn}
         >
-          <h1>
-            <span className={clsx("material-icons", styles.buildIcon)}>
-              construction
-            </span>
-            <span>Serwis</span>
-          </h1>
+          <h1>Serwis oraz usługi</h1>
           <ul className={clsx(styles.offerList, styles.serviceList)}>
-            <li>Wymiana ekranów, gniazd, baterii, aparatów</li>
+            <ServiceItem
+              price="30"
+              title="Wymiana gniazd, baterii, aparatów"
+              className={}
+            />
+            {/* <li>Wymiana gniazd, baterii, aparatów</li> */}
             <li>Naprawa głośników, mikrofonów, aparatów w telefonie</li>
             <li>Wymiana gniazd oraz baterii</li>
             <li>Wgrywanie nowego oprogramowania</li>

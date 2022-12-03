@@ -5,9 +5,7 @@ type SwapPhotoProps = {
   frontPhotoAlt: string;
   backPhoto: string | StaticImageData;
   backPhotoAlt: string;
-  delay: number;
-  reverse: boolean;
-  animationDuration: number;
+  isInfinity: boolean;
   isStarted: boolean;
   className?: string;
 };
