@@ -4,8 +4,8 @@
 
 .PhotoWrapper {
   position: absolute;
-  width: 300px;
   border-radius: 24px;
+  height: inherit;
   animation-duration: 8000ms;
 }
 

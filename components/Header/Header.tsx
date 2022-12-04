@@ -11,6 +11,7 @@ import ctKosciuszkiPhoto from "public/ct_kosciuszki.jpg";
 
 import slideStyles from "styles/ButtonSlide.module.css";
 import styles from "./Header.module.css";
+import Wave from "components/Wave";
 
 const Header = () => {
   const [hasFloatingButtons, setFloatingButtons] = useState(false);
@@ -97,6 +98,9 @@ const Header = () => {
             d="M0 0 L15 0 L100 90 L100 100 L0 100 Z"
           />
         </svg>
+        <div className={styles.wave}>
+          <Wave />
+        </div>
       </ScrollComponent>
       <a
         className={clsx(styles.floatingButtonWrapper)}
