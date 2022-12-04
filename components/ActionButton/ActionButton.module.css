@@ -10,7 +10,7 @@
   justify-content: center;
   width: max-content;
   color: var(--colorWhite);
-  /* transition: transform 200ms ease-in, width 200ms ease-in; */
+  transition: transform 200ms ease-in;
   font-size: 16px;
   line-height: 20px;
   box-sizing: border-box;

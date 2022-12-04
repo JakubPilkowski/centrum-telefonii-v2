@@ -1,0 +1,8 @@
+.WaveWrapper {
+  position: relative;
+}
+
+.Wave {
+  bottom: 0;
+  position: absolute;
+}

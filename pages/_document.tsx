@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/google-font-display */
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
@@ -24,7 +25,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;700&family=Rosa:ital,wght@0,500;0,700;1,300&display=swap"
+            href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700"
             rel="stylesheet"
           />
           <link
@@ -32,7 +33,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Ole&display=swap"
+            href="https://fonts.googleapis.com/css?family=Quicksand:300,500"
             rel="stylesheet"
           ></link>
         </Head>

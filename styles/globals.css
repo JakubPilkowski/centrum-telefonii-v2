@@ -43,7 +43,20 @@ a {
 }
 
 :root {
-  --fontPrimary: "Rosa", sans-serif;
+  --fontPrimary: "Quicksand", sans-serif;
+  --fontSecondary: "Archivo Black", sans-serif;
+}
+
+body {
+  font-family: var(--fontPrimary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--fontSecondary);
 }
 
 @media (prefers-color-scheme: light) {
