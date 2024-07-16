@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ["assets.tina.io"],
+  },
   // webpack: (config, { isServer }) => {
   //   if (!isServer) {
   // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
