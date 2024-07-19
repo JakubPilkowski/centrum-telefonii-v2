@@ -11,7 +11,7 @@ class MyDocument extends Document {
         >
           <meta
             name="description"
-            content="Firma telekomunikacyjna zajmująca sie naprawą telefonów oraz sprzedażą akcesorii i
+            content="Firma telekomunikacyjna zajmująca się naprawą telefonów oraz sprzedażą akcesorii i
                                       telefonów komórkowych. Jesteśmy najdłużej działającą firmą w Olsztynie."
           />
           <meta
@@ -35,10 +35,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Ole&display=swap"
             rel="stylesheet"
           ></link>
-          <script
-            async
-            src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-          ></script>
         </Head>
         <body>
           <Main />
