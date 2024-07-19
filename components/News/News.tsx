@@ -43,7 +43,7 @@ const News: FC<NewsProps> = ({ attributes }) => {
         <h3 className={styles.newsTitle}>{news.title}</h3>
         <div className={styles.newsPhotoWrapper}>
           <Image
-            src={`/uploads${news.photo}`}
+            src={news.photo}
             className={styles.newsPhoto}
             alt="News photo"
             fill
