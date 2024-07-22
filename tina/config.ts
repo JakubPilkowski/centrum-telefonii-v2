@@ -31,7 +31,7 @@ export default defineConfig({
       {
         name: "pages",
         label: "Strony",
-        path: "content",
+        path: "content/pages",
         format: "json",
         fields: [
           {
