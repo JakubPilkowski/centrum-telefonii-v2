@@ -59,7 +59,7 @@ export default function Main(props: CmsProps) {
 // }
 
 export const getStaticProps = async () => {
-  let postResponse = {};
+  let postResponse;
   try {
     postResponse = await client.queries.pages({
       relativePath: "news.json",
@@ -69,7 +69,7 @@ export const getStaticProps = async () => {
   }
   return {
     props: {
-      newsAttributes: postResponse.data.pages,
+      newsAttributes: postResponse?.data.pages,
     },
   };
 };
