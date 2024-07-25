@@ -1,9 +1,9 @@
 {
   "hasNews": true,
   "news": {
-    "title": "Szkła hartowane -20%",
+    "title": "Szkła hartowane w super cenie!",
     "photo": "/uploads/szklo_9d.png",
-    "priceBefore": "40",
-    "priceAfter": "32"
+    "priceBefore": "",
+    "priceAfter": "9.99"
   }
 }
