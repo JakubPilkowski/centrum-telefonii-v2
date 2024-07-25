@@ -1,6 +1,4 @@
 import React from "react";
-import { join } from "path";
-import { readFileSync } from "fs";
 
 import Header from "components/Header";
 import Nav from "components/Nav";
@@ -37,26 +35,6 @@ export default function Main(props: CmsProps) {
     </ScrollProvider>
   );
 }
-
-// function getPageProps(dir: string, slug: string): Record<string, unknown> {
-//   const fullPath = join(dir, `${slug}.json`);
-//   const data = readFileSync(fullPath, "utf8");
-//   try {
-//     return JSON.parse(data);
-//   } catch (err) {
-//     return {};
-//   }
-// }
-
-// export async function getStaticProps() {
-//   const news = getPageProps("content", "news");
-
-//   return {
-//     props: {
-//       newsAttributes: news,
-//     },
-//   };
-// }
 
 export const getStaticProps = async () => {
   let postResponse;
