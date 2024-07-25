@@ -1,6 +1,4 @@
 import React from "react";
-import { join } from "path";
-import { readFileSync } from "fs";
 
 import Header from "components/Header";
 import Nav from "components/Nav";
@@ -12,6 +10,7 @@ import Map from "components/Map";
 import Footer from "components/Footer";
 import ScrollProvider from "components/ScrollProvider";
 import News, { NewsCmsAttributes } from "components/News";
+import client from "tina/__generated__/client";
 
 export type CmsProps = {
   newsAttributes: NewsCmsAttributes;
@@ -37,22 +36,18 @@ export default function Main(props: CmsProps) {
   );
 }
 
-function getPageProps(dir: string, slug: string): Record<string, unknown> {
-  const fullPath = join(dir, `${slug}.json`);
-  const data = readFileSync(fullPath, "utf8");
+export const getStaticProps = async () => {
+  let postResponse;
   try {
-    return JSON.parse(data);
+    postResponse = await client.queries.pages({
+      relativePath: "news.json",
+    });
   } catch (err) {
-    return {};
+    // swallow errors related to document creation
   }
-}
-
-export async function getStaticProps() {
-  const news = getPageProps("content", "news");
-
   return {
     props: {
-      newsAttributes: news,
+      newsAttributes: postResponse?.data.pages,
     },
   };
-}
+};
