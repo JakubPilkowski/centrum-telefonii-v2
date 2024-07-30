@@ -61,11 +61,11 @@
 .offerListContainer li {
   font-weight: bold;
   margin-bottom: 15px;
-  background-color: var(--colorBlack);
-  color: var(--colorWhite);
+  background-color: var(--colorPrimary);
+  color: var(--colorBlack);
   border-radius: 10px;
   padding: 10px;
-  box-shadow: 2px 2px 5px 1px rgba(var(--colorBlackRGB), 0.5);
+  box-shadow: 2px 2px 5px 1px rgba(var(--colorPrimaryRGB), 0.5);
 }
 
 .offerList li::before {
@@ -99,52 +99,6 @@
   justify-content: space-around;
   width: 100%;
   position: absolute;
-  animation-duration: 8000ms;
-  animation-iteration-count: infinite;
-}
-
-.serviceAnimationFromOut {
-  animation-name: opacityFromOut;
-}
-
-.serviceAnimationFromIn {
-  animation-name: opacityFromIn;
-}
-
-@keyframes opacityFromOut {
-  0% {
-    opacity: 0;
-  }
-  37.5% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  87.5% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes opacityFromIn {
-  0% {
-    opacity: 1;
-  }
-  37.5% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  87.5% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .offerImages img {

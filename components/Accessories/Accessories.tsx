@@ -1,8 +1,7 @@
 import clsx from "clsx";
-import React, { FC, useCallback, useState } from "react";
+import React, { FC } from "react";
 import Image from "next/image";
-
-import ScrollAnimationComponent from "components/ScrollAnimationComponent";
+import { motion } from "framer-motion";
 
 import venusEtuiPhoto from "public/etui_venus.png";
 import glass9dPhoto from "public/szklo_9d.png";
@@ -10,40 +9,18 @@ import jellyCasePhoto from "public/guma_jelly.png";
 import chargerPhoto from "public/ladowarka.png";
 
 import styles from "./Accessories.module.css";
-import slideStyles from "styles/Slide.module.css";
+import { scrollTriggerAnimation } from "utils/animations";
 
 const Accessories: FC = () => {
-  const [hasAccessoriesAnimation, setAccessoriesAnimation] = useState(false);
-
-  const handleDetect = useCallback(
-    (window: Window, element: HTMLElement, distanceFromTop: number) => {
-      const windowY = window.scrollY + window.innerHeight;
-      return windowY > distanceFromTop - element.offsetHeight / 2;
-    },
-    []
-  );
-
-  const handleServiceAnimation = useCallback(
-    () => setAccessoriesAnimation(true),
-    []
-  );
-
   return (
     <section
       id="accessories"
       className={clsx(styles.offer, styles.accessories)}
     >
       <div className={clsx(styles.offerContainer)}>
-        <ScrollAnimationComponent
-          onDetect={handleDetect}
-          className={clsx(
-            styles.offerListContainer,
-            slideStyles.slide,
-            slideStyles.slideOut
-          )}
-          noReverseAnimation
-          onAnimIn={handleServiceAnimation}
-          inClassName={slideStyles.slideIn}
+        <motion.div
+          className={clsx(styles.offerListContainer)}
+          {...scrollTriggerAnimation}
         >
           <h1>
             <span>Akcesoria</span>
@@ -60,25 +37,24 @@ const Accessories: FC = () => {
             <li>Słuchawki przewodowe i bezprzewodowe</li>
             <li>Karty pamięci</li>
           </ul>
-        </ScrollAnimationComponent>
-        <ScrollAnimationComponent
-          onDetect={handleDetect}
-          className={clsx(
-            styles.offerImages,
-            slideStyles.slide,
-            slideStyles.slideOut
-          )}
-          noReverseAnimation
-          onAnimIn={handleServiceAnimation}
-          inClassName={slideStyles.slideIn}
+        </motion.div>
+        <motion.div
+          className={clsx(styles.offerImages)}
+          {...scrollTriggerAnimation}
         >
           <div className={styles.imageContainerWrapper}>
-            <div
-              className={clsx(
-                styles.imageContainer,
-                styles.show,
-                hasAccessoriesAnimation && styles.serviceAnimationFromIn
-              )}
+            <motion.div
+              className={clsx(styles.imageContainer)}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  repeatDelay: 8,
+                },
+              }}
             >
               <div
                 className={clsx(
@@ -96,13 +72,19 @@ const Accessories: FC = () => {
               >
                 <Image src={glass9dPhoto} alt="Szkło hartowane 9D" />
               </div>
-            </div>
-            <div
-              className={clsx(
-                styles.imageContainer,
-                styles.hide,
-                hasAccessoriesAnimation && styles.serviceAnimationFromOut
-              )}
+            </motion.div>
+            <motion.div
+              className={clsx(styles.imageContainer)}
+              initial={{ opacity: 1 }}
+              animate={{
+                opacity: 0,
+                transition: {
+                  duration: 1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  repeatDelay: 8,
+                },
+              }}
             >
               <div
                 className={clsx(
@@ -120,9 +102,9 @@ const Accessories: FC = () => {
               >
                 <Image src={chargerPhoto} alt="Ładowarka sieciowa" />
               </div>
-            </div>
+            </motion.div>
           </div>
-        </ScrollAnimationComponent>
+        </motion.div>
       </div>
     </section>
   );

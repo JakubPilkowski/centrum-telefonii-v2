@@ -15,6 +15,12 @@
   background-image: url("../../public/ct_manhattan.jpg");
 }
 
+.safari {
+  background-image: none;
+  background-attachment: unset;
+  background-color: var(--colorBlack);
+}
+
 /* mobile */
 @media (max-width: 480px) {
   .wrapperOuter {
@@ -68,6 +74,10 @@
 @media (min-width: 481px) and (max-width: 1279px) {
   .wrapperOuter {
     background-attachment: fixed;
+  }
+
+  .nonSafari .wrapperOuter {
+    background-size: 100% 100%;
   }
 
   .is-desktop {

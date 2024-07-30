@@ -1,10 +1,9 @@
-import React, { FC, useCallback, useState } from "react";
-import clsx from "clsx";
+import React, { FC } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import styles from "./News.module.css";
-import slideStyles from "styles/Slide.module.css";
-import ScrollAnimationComponent from "components/ScrollAnimationComponent";
+import { scrollTriggerAnimation } from "utils/animations";
 
 export type NewsCmsAttributes = {
   hasNews: boolean;
@@ -24,22 +23,9 @@ export type NewsProps = {
 const News: FC<NewsProps> = ({ attributes }) => {
   const { hasNews, news } = attributes;
 
-  const handleDetect = useCallback(
-    (window: Window, element: HTMLElement, distanceFromTop: number) => {
-      const windowY = window.scrollY + window.innerHeight;
-      return windowY > distanceFromTop - 100;
-    },
-    []
-  );
-
   return hasNews ? (
-    <div className={styles.news} id="news">
-      <ScrollAnimationComponent
-        onDetect={handleDetect}
-        className={clsx(slideStyles.slide, slideStyles.slideOut)}
-        noReverseAnimation
-        inClassName={slideStyles.slideIn}
-      >
+    <section className={styles.news} id="news">
+      <motion.div {...scrollTriggerAnimation}>
         <h3 className={styles.newsTitle}>{news.title}</h3>
         <div className={styles.newsPhotoWrapper}>
           <Image
@@ -54,8 +40,8 @@ const News: FC<NewsProps> = ({ attributes }) => {
           <span className={styles.newsPriceAfter}>{news.priceAfter}zł</span>
           <span className={styles.newsPriceBefore}>{news.priceBefore}zł</span>
         </h4>
-      </ScrollAnimationComponent>
-    </div>
+      </motion.div>
+    </section>
   ) : null;
 };
 
