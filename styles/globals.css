@@ -33,6 +33,15 @@ a {
   text-decoration: none;
 }
 
+.floatingButtonWrapper {
+  display: block;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 500;
+}
+
 :root {
   --fontPrimary: "Rosa", sans-serif;
 }

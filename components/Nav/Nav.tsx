@@ -1,14 +1,13 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import Image from "next/image";
 
 import useNavigate from "hooks/useNavigate";
 
-import ScrollAnimationComponent from "components/ScrollAnimationComponent";
-
 import brandImage from "public/ct_icon_white.png";
 
 import styles from "./Nav.module.css";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 
 type NavProps = {
   hasNews: boolean;
@@ -16,8 +15,18 @@ type NavProps = {
 
 const Nav: FC<NavProps> = ({ hasNews }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
+  const ref = useRef<HTMLElement>(null);
   const [navigate] = useNavigate();
+  const { scrollY } = useScroll();
+
+  //@ts-ignore
+  useMotionValueEvent(scrollY, "renderRequest", (latest) => {
+    if (latest > 50) {
+      ref.current?.classList.add(styles.navBackground);
+    } else {
+      ref.current?.classList.remove(styles.navBackground);
+    }
+  });
 
   const handleMenuOpen = () => {
     setMenuOpen(true);
@@ -32,18 +41,9 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
     handleMenuClose();
   };
 
-  const handleDetect = useCallback((window: Window) => {
-    return window.scrollY >= 50;
-  }, []);
-
   return (
     <>
-      <ScrollAnimationComponent
-        tag="nav"
-        className={styles.nav}
-        inClassName={styles.navBackground}
-        onDetect={handleDetect}
-      >
+      <nav className={styles.nav} ref={ref}>
         <div className={styles.navMain}>
           <button className={styles.navBrand} onClick={handleNavigate("home")}>
             <div className={styles.brandImageContainer}>
@@ -86,7 +86,7 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
           <div className={styles.hamburgerBell}></div>
           <div className={styles.hamburgerBell}></div>
         </button>
-      </ScrollAnimationComponent>
+      </nav>
       {/*  is-mobile is-tablet */}
       <CSSTransition
         in={isMenuOpen}

@@ -8,9 +8,10 @@ import Accessories from "components/Accessories";
 import Timers from "components/Timers";
 import Map from "components/Map";
 import Footer from "components/Footer";
-import ScrollProvider from "components/ScrollProvider";
 import News, { NewsCmsAttributes } from "components/News";
 import client from "tina/__generated__/client";
+import { useAnimate, useInView } from "framer-motion";
+import Actions from "components/Actions";
 
 export type CmsProps = {
   newsAttributes: NewsCmsAttributes;
@@ -18,10 +19,17 @@ export type CmsProps = {
 
 export default function Main(props: CmsProps) {
   const { newsAttributes } = props;
+
+  const [scope] = useAnimate();
+  const isInView = useInView(scope, { amount: 0.5 });
+
+  const areFloatingActionsVisible = !isInView;
+
   return (
-    <ScrollProvider>
+    <>
       <Nav hasNews={newsAttributes.hasNews} />
-      <Header />
+      <Header ref={scope} />
+      <Actions isVisible={areFloatingActionsVisible} />
       <Wrapper type="offer">
         <Service />
         <Accessories />
@@ -32,7 +40,7 @@ export default function Main(props: CmsProps) {
         <News attributes={newsAttributes} />
       </Wrapper>
       <Footer />
-    </ScrollProvider>
+    </>
   );
 }
 

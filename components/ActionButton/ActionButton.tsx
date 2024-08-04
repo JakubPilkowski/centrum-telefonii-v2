@@ -1,40 +1,49 @@
 import clsx from "clsx";
-import React, { FC, memo } from "react";
+import React, {
+  ComponentPropsWithoutRef,
+  ElementType,
+  ReactElement,
+} from "react";
 
 import styles from "./ActionButton.module.css";
+import Box from "components/Box";
 
 const icons = {
   call: "call",
   direction: "place",
   opinion: "grade",
-};
+} as const;
 
-type ActionButtonProps = {
-  type: "call" | "opinion" | "direction";
+type ActionButtonProps<T extends ElementType> = {
+  iconType: keyof typeof icons;
   isFloating?: boolean;
   text?: string;
-  className?: string;
-};
+  component?: T;
+} & ComponentPropsWithoutRef<T>;
 
-const ActionButton: FC<ActionButtonProps> = ({
-  type,
+const ActionButton = <T extends ElementType>({
+  iconType,
   text,
   isFloating = false,
   className = "",
-}) => {
+  component: Component,
+  ...props
+}: ActionButtonProps<T>): ReactElement => {
   return (
-    <div
+    <Box
       className={clsx(
         styles.actionButton,
-        styles[`${type}Button`],
+        styles[`${iconType}Button`],
         isFloating && styles.floatingButton,
         className
       )}
+      component={Component}
+      {...props}
     >
       {text && <p>{text}</p>}
-      <span className="material-icons"> {icons[type]} </span>
-    </div>
+      <span className="material-icons"> {icons[iconType]} </span>
+    </Box>
   );
 };
 
-export default memo(ActionButton);
+export default ActionButton;
