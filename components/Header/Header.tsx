@@ -65,19 +65,19 @@ const Header = forwardRef<HTMLElement>(function Header(_, ref) {
             </a>
           </div>
         </div>
-        <svg
-          height="100%"
-          width="100%"
-          className={styles.foreground}
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="var(--colorBlack)"
-            d="M0 0 L15 0 L100 90 L100 100 L0 100 Z"
-          />
-        </svg>
       </div>
+      <svg
+        height="100%"
+        width="100%"
+        className={styles.foreground}
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="var(--colorBlack)"
+          d="M0 0 L15 0 L100 90 L100 100 L0 100 Z"
+        />
+      </svg>
       <div className={styles.wave}>
         <Wave />
       </div>

@@ -3,7 +3,6 @@ import React, { FC } from "react";
 import { motion } from "framer-motion";
 
 import styles from "./Accessories.module.css";
-import { scrollTriggerAnimation } from "utils/animations";
 import Accessory from "components/Accessory";
 import accessoryItems from "./accessoryItems";
 import Wave from "components/Wave";
@@ -19,14 +18,11 @@ const Accessories: FC = () => {
           Nasz sklep oferuje szeroki zakres produktów w najniższych cenach
           dzięki czemu zaopatrzysz się w:
         </p>
-        <motion.div
-          className={styles.accessoriesList}
-          {...scrollTriggerAnimation}
-        >
-          {accessoryItems.map(({ id, ...props }) => (
-            <Accessory key={id} {...props} />
+        <div className={styles.accessoriesList}>
+          {accessoryItems.map(({ id, ...props }, index) => (
+            <Accessory key={id} {...props} index={index} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

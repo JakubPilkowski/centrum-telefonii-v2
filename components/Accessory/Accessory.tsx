@@ -1,10 +1,10 @@
 import React, { FC, useCallback, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 import styles from "./Accessory.module.css";
-import slideStyles from "styles/Slide.module.css";
-import ScrollAnimationComponent from "components/ScrollAnimationComponent";
+import { variants } from "./variants";
 
 export type AccessoryProps = {
   image: string | StaticImageData;
@@ -12,6 +12,7 @@ export type AccessoryProps = {
   icon: string;
   name: string;
   price: string;
+  index: number;
 };
 
 const Accessory: FC<AccessoryProps> = ({
@@ -20,25 +21,17 @@ const Accessory: FC<AccessoryProps> = ({
   icon,
   name,
   price,
+  index,
 }) => {
-  const handleDetect = useCallback(
-    (window: Window, element: HTMLElement, distanceFromTop: number) => {
-      const windowY = window.scrollY + window.innerHeight;
-      return windowY > distanceFromTop - element.offsetHeight / 2;
-    },
-    []
-  );
-
   return (
-    <ScrollAnimationComponent
-      onDetect={handleDetect}
-      className={clsx(
-        styles.accessory,
-        slideStyles.slide,
-        slideStyles.slideOut
-      )}
-      noReverseAnimation
-      inClassName={slideStyles.slideIn}
+    <motion.div
+      variants={variants}
+      initial="initial"
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      custom={index} //Pass the index in the custom prop
     >
       <div className={styles.accessory}>
         <div className={styles.accessoryImageWrapperOuter}>
@@ -62,7 +55,7 @@ const Accessory: FC<AccessoryProps> = ({
           </div>
         </div>
       </div>
-    </ScrollAnimationComponent>
+    </motion.div>
   );
 };
 

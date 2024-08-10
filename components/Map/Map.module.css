@@ -2,7 +2,10 @@
   position: relative;
   background-color: transparent;
   padding: 0 0 100px;
+  /* filter: invert(90%) hue-rotate(180deg); */
 }
+
+/* TODO: add maps */
 
 .map::after {
   bottom: 0;
