@@ -1,3 +1,4 @@
+import { format } from "path";
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
@@ -28,6 +29,74 @@ export default defineConfig({
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
+      {
+        name: "navigation",
+        label: "Nawigacja",
+        path: "content/navigation",
+        format: "json",
+        fields: [
+          {
+            type: "object",
+            label: "Strony",
+            name: "pages",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                label: "Nazwa",
+                name: "name",
+              },
+              {
+                type: "string",
+                label: "Ścieżka",
+                name: "path",
+              },
+              {
+                type: "boolean",
+                label: "Aktywna",
+                name: "isActive",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "news",
+        label: "Aktualności",
+        format: "md",
+        path: "content/news",
+        fields: [
+          {
+            type: "string",
+            label: "Title",
+            name: "title",
+          },
+          {
+            type: "rich-text",
+            label: "Post Body",
+            name: "body",
+            isBody: true,
+          },
+        ],
+      },
+      // {
+      //   label: "Blog Posts",
+      //   name: "post",
+      //   path: "content/posts",
+      //   fields: [
+      //     {
+      //       type: "string",
+      //       label: "Title",
+      //       name: "title",
+      //     },
+      //     {
+      //       type: "string",
+      //       label: "Post Body",
+      //       name: "body",
+      //       isBody: true,
+      //     },
+      //   ],
+      // },
       {
         name: "pages",
         label: "Strony",
@@ -75,10 +144,6 @@ export default defineConfig({
           },
         ],
       },
-      // ui: {
-      //   // This is an DEMO router. You can remove this to fit your site
-      //   router: ({ document }) => `/demo/blog/${document._sys.filename}`,
-      // },
     ],
   },
 });
