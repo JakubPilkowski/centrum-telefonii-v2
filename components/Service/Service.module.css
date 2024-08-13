@@ -1,13 +1,24 @@
 .service {
-  background: linear-gradient(
-    var(--colorPrimary) 40%,
-    var(--colorBlack) 60%,
-    var(--colorBlack)
-  );
   box-sizing: border-box;
   position: relative;
   font-family: var(--fontPrimary);
   z-index: 100;
+}
+
+.serviceContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
+.serviceMain {
+  background-color: var(--colorPrimary);
+}
+
+.contentDivider {
+  width: 100%;
+  background: linear-gradient(var(--colorPrimary), var(--colorBlack));
+  aspect-ratio: 1440/320;
 }
 
 .firstSectionContainer,
@@ -20,7 +31,7 @@
 
 /* negative margin */
 .firstSectionContainer {
-  margin: 0 0 20px;
+  /* margin: 0 0 20px; */
 }
 
 /* negative margin */
@@ -129,7 +140,7 @@
 
 @media (min-width: 300px) {
   .service {
-    padding: 10%;
+    /* padding: 0% 10%; */
   }
 }
 

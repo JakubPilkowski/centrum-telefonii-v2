@@ -11,6 +11,8 @@ body {
 
 html {
   overflow-x: hidden;
+  font-size: 1rem;
+  /* font-size: clamp(0.75rem, 1.25vw + 0.25rem, 1.125rem); */
 }
 
 ::-moz-focus-inner {
@@ -42,25 +44,95 @@ a {
   z-index: 500;
 }
 
+/* color theory */
+
+/* 
+color schemes
+- monochromatic - one color in different shades, tones and tints. 
+First color heading, second color text or background, third color background or color text, last two colors are for accents.
+- analogous - three colors next to each other on the color wheel.
+- complementary - two colors opposite each other on the color wheel. Warning: can be too contrasting, use opposite saturation or value.
+- split complementary - one color and two colors adjacent to its complementary color.
+- triadic - three colors equally spaced on the color wheel.
+- custom - combination of colors with similar saturation or chroma (or both). It can also be one color with high chroma and two colors with low chroma.
+ */
+
+/* \
+hue - one of the colors from color wheel.
+colour - version of hue with added white, black or gray.
+chroma - brightness of a color in comparison to white.
+saturation (value) - 
+tone - add gray
+shade - add black
+tint - add white
+ */
+
 :root {
+  /* fonts */
   --fontPrimary: "Quicksand", sans-serif;
   --fontSecondary: "Archivo Black", sans-serif;
+
+  /* colors */
+  /* --gray10: hsl(0, 0%, 10%);
+  --gray30: hsl(0, 0%, 30%);
+  --gray50: hsl(0, 0%, 50%);
+  --gray70: hsl(0, 0%, 70%);
+  --gray90: hsl(0, 0%, 90%); */
+
+  --h1: bold clamp(2rem, 1.5rem + 2vw, 3.5rem) / 1em var(--fontSecondary);
+  --h2: bold clamp(1.5rem, 1.2rem + 1.5vw, 2.7243rem) / 1.2em
+    var(--fontSecondary);
+  --h3: bold clamp(1.25rem, 1rem + 1.2vw, 2.1205rem) / 1.2em
+    var(--fontSecondary);
+  --h4: clamp(1rem, 0.8rem + 1vw, 1.6505rem) / 1.6em var(--fontSecondary);
+  --big: 1.2847rem/1.6em var(--fontSecondary);
+  --p: 1rem/1.5em var(--fontPrimary);
+  --caption: 0.8rem/1.5em var(--fontPrimary);
+  --small: 0.64rem/1.5em var(--fontPrimary);
+
+  /* spacing */
+  --margin-xss: 0.25rem;
+  --margin-xs: 0.5rem;
+  --margin-s: 0.75rem;
+  --margin-m: 1rem;
+  --margin-l: 1.25rem;
+  --margin-xl: 1.75rem;
+  --margin-xxl: 2.5rem;
 }
 
 body {
-  font-family: var(--fontPrimary);
+  /* font-family: var(--fontPrimary);
+  font: 16px/1.5 var(--fontPrimary); */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: var(--fontSecondary);
+h1 {
+  font: var(--h1);
+}
+h2 {
+  font: var(--h2);
+}
+h3 {
+  font: var(--h3);
+}
+h4 {
+  font: var(--h4);
+}
+strong {
+  font: var(--big);
+}
+p {
+  font: var(--p);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
+    /* scheme */
+    /* --colorPrimary: hsl(55, 80%, 50%);
+    --colorSecondary: hsl(55, 50%, 24%);
+    --colorTertiary: hsl(55, 90%, 10%);
+    --colorQuaternary: hsl(55, 100%, 100%);
+    --colorQuinary: hsl(55, 100%, 50%); */
+
     --colorPrimary: #fdc029;
     --colorBlack: #171820;
     --colorWhite: #f1f1f1;
@@ -76,6 +148,13 @@ h5 {
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* scheme */
+    /* --colorPrimary: hsl(55, 90%, 50%);
+    --colorSecondary: hsl(55, 50%, 14%);
+    --colorTertiary: hsl(55, 100%, 100%);
+    --colorQuaternary: hsl(55, 51%, 23%);
+    --colorQuinary: hsl(55, 100%, 50%); */
+
     --colorPrimary: #fdc029;
     --colorBlack: #171820;
     --colorWhite: #f1f1f1;
