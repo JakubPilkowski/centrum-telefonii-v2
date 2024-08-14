@@ -1,0 +1,47 @@
+.ServiceCard {
+  border-radius: 12px;
+  background-color: var(--colorWhite);
+  box-shadow: rgba(var(--colorWhiteRGB), 0.5) 0px 0px 15px;
+}
+
+.ServiceCardTitle {
+  text-align: center;
+}
+
+.ServiceCardImage {
+  background-blend-mode: multiply;
+  object-fit: contain;
+  transition: transform 0.5s ease-in-out;
+  filter: blur(2px) grayscale(0.1) drop-shadow(0 0 0.75rem var(--colorBlack));
+}
+
+.ServiceCardImage:hover {
+  transform: scale(1.1);
+}
+
+.ServiceCardImageWrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* .ServiceCardImageWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--colorPrimaryRGB), 0.5);
+} */
+
+.ServiceCardPrice {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--colorPrimary);
+  text-align: center;
+}
+
+.ServiceCardDescription {
+  padding: 12px;
+}

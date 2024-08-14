@@ -21,6 +21,12 @@
   aspect-ratio: 1440/320;
 }
 
+.serviceList {
+  display: grid;
+  gap: var(--margin-xxl);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
 .firstSectionContainer,
 .secondSectionContainer {
   display: flex;

@@ -1,15 +1,15 @@
 import React, { forwardRef } from "react";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
-import whiteBrokenPhone from "public/phone_white_d.jpg";
-import blackBrokenPhone from "public/phone_black_d.jpg";
-import whiteFixedPhone from "public/phone_white_r.jpg";
-import blackFixedPhone from "public/phone_black_r.jpg";
+import phoneFixing from "public/phone_fixing.jpg";
+import screenFixing from "public/screen_fixing.jpg";
+import slotFixing from "public/slot_fixing.jpg";
+import cameraFixing from "public/camera_fixing.jpg";
 
 import styles from "./Service.module.css";
-import SwapPhoto from "components/SwapPhoto";
-import ServiceItem from "./ServiceItem";
 import ActionButton from "components/ActionButton";
+import ServiceCard from "./ServiceCard/ServiceCard";
 
 const Service = forwardRef<HTMLElement>(function Service(_, ref) {
   return (
@@ -89,56 +89,47 @@ const Service = forwardRef<HTMLElement>(function Service(_, ref) {
         <div className={styles.secondSectionContainer}>
           <div className={styles.serviceSectionItem}>
             <h1 className={styles.serviceTitle}>Serwis oraz usługi</h1>
-            <ul className={clsx(styles.offerList, styles.serviceList)}>
-              <ServiceItem
-                price="30"
-                title="Wymiana gniazd, baterii, aparatów"
-                className={styles.serviceListItem}
+            <motion.div className={styles.serviceList}>
+              <ServiceCard
+                title="Wymiana"
+                price="30 zł*"
+                index={0}
+                image={slotFixing}
+                imageAlt=""
+                list={["gniazd", "baterii", "aparatów"]}
               />
-              <ServiceItem
-                price="100"
-                title="Wymiana ekranów, modułów"
-                className={styles.serviceListItem}
+              <ServiceCard
+                title="Wymiana"
+                price="100 zł*"
+                index={1}
+                image={screenFixing}
+                imageAlt=""
+                list={["ekranów", "modułów"]}
               />
-              <ServiceItem
-                price="30"
-                title="Naprawa głośników, mikrofonów, aparatów w telefonie"
-                className={styles.serviceListItem}
+              <ServiceCard
+                title="Naprawa"
+                price="30 zł*"
+                index={2}
+                image={cameraFixing}
+                imageAlt=""
+                list={["głośników", "mikrofonów", "aparatów w telefonie"]}
               />
-              <ServiceItem
-                price="40"
-                title="Wgrywanie nowego oprogramowania"
-                className={styles.serviceListItem}
+              <ServiceCard
+                title="Inne"
+                price="30 zł*"
+                index={3}
+                image={phoneFixing}
+                imageAlt=""
+                list={[
+                  "wgrywanie nowego oprogramowania",
+                  "ściąganie simlocków, hasła redmi oraz google",
+                  "czyszczenie telefonów po zalaniu",
+                  "drobne usługi (zgrywanie danych, konfiguracja)",
+                ]}
               />
-              <ServiceItem
-                price="30"
-                title="Ściąganie simlocków, hasła redmi oraz google"
-                className={styles.serviceListItem}
-              />
-              <ServiceItem
-                price="40"
-                title="Czyszczenie telefonów po zalaniu"
-                className={styles.serviceListItem}
-              />
-              <ServiceItem
-                price="40"
-                title="Drobne usługi (zgrywanie danych, konfiguracja)"
-                className={styles.serviceListItem}
-              />
-            </ul>
+            </motion.div>
             <p>* - Cena minimalna</p>
           </div>
-          {/* <div className={styles.serviceSectionItem}>
-            <SwapPhoto
-              frontPhoto={blackBrokenPhone}
-              backPhoto={blackFixedPhone}
-              frontPhotoAlt="Telefon czarny zepsuty"
-              backPhotoAlt="Telefon czarny naprawiony"
-              isInfinity
-              isStarted={false}
-              className={styles.serviceImageContainer}
-            />
-          </div> */}
         </div>
       </div>
     </section>

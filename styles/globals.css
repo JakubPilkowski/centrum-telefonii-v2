@@ -80,12 +80,14 @@ tint - add white
   --gray90: hsl(0, 0%, 90%); */
 
   --h1: bold clamp(2rem, 1.5rem + 2vw, 3.5rem) / 1em var(--fontSecondary);
-  --h2: bold clamp(1.5rem, 1.2rem + 1.5vw, 2.7243rem) / 1.2em
+  --h2: bold clamp(1.5rem, 1.2rem + 1.5vw, 2.8405rem) / 1.2em
     var(--fontSecondary);
-  --h3: bold clamp(1.25rem, 1rem + 1.2vw, 2.1205rem) / 1.2em
+  --h3: bold clamp(1.25rem, 1rem + 1.2vw, 2.3052rem) / 1.2em
     var(--fontSecondary);
-  --h4: clamp(1rem, 0.8rem + 1vw, 1.6505rem) / 1.6em var(--fontSecondary);
-  --big: 1.2847rem/1.6em var(--fontSecondary);
+  --h4: clamp(1rem, 0.8rem + 1vw, 1.8708rem) / 1.6em var(--fontSecondary);
+  --h5: clamp(0.875rem, 0.7rem + 0.8vw, 1.5183rem) / 1.6em var(--fontSecondary);
+  --h6: clamp(0.75rem, 0.6rem + 0.6vw, 1.2322rem) / 1.6em var(--fontSecondary);
+  /* --big: 1.2847rem/1.6em var(--fontSecondary); */
   --p: 1rem/1.5em var(--fontPrimary);
   --caption: 0.8rem/1.5em var(--fontPrimary);
   --small: 0.64rem/1.5em var(--fontPrimary);
@@ -117,11 +119,27 @@ h3 {
 h4 {
   font: var(--h4);
 }
+h5 {
+  font: var(--h5);
+}
+h6 {
+  font: var(--h6);
+}
 strong {
   font: var(--big);
 }
 p {
   font: var(--p);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -143,6 +161,7 @@ p {
 
     --colorBlackRGB: 23, 24, 32;
     --colorPrimaryRGB: 253, 192, 41;
+    --colorWhiteRGB: 241, 241, 241;
   }
 }
 
@@ -165,5 +184,6 @@ p {
 
     --colorBlackRGB: 23, 24, 32;
     --colorPrimaryRGB: 253, 192, 41;
+    --colorWhiteRGB: 241, 241, 241;
   }
 }
