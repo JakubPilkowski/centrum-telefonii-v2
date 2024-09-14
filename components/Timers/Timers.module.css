@@ -1,8 +1,16 @@
 .timers {
   background-color: var(--colorPrimary);
   box-sizing: border-box;
-  padding: 5% 10%;
   position: relative;
+}
+
+.timersContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 5%;
+  display: grid;
+  gap: var(--margin-xl);
+  width: 100%;
 }
 
 .timersTriangle {
@@ -10,6 +18,7 @@
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
   border-bottom: 0 solid transparent;
+  border-color: var(--colorBlack);
 }
 
 .timersWrapper {
@@ -30,18 +39,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .timerIcon {
-  height: 128px;
-  width: 128px;
+  height: 116px;
+  width: 116px;
   color: var(--colorBlack);
-  font-size: 128px !important;
+  font-size: 116px !important;
   margin-bottom: 20px;
 }
 
 .timerItem h1 {
-  font-size: 32px;
+  /* font-size: 32px; */
   margin: 0;
 }
 
@@ -57,7 +67,7 @@
 /* mobile */
 @media (max-width: 480px) {
   .timers .title {
-    font-size: 28px;
+    /* font-size: 28px; */
     margin: 0 0 5%;
   }
 
@@ -90,8 +100,8 @@
 
 @media (min-width: 481px) and (max-width: 1279px) {
   .timers .title {
-    font-size: 30px;
-    margin: 0 0 5%;
+    /* font-size: 30px; */
+    /* margin: 0 0 5%; */
   }
   .timersTriangle {
     border-top: 125px solid var(--colorPrimary);
@@ -123,8 +133,8 @@
 /* dekstop */
 @media (min-width: 1280px) and (max-width: 1536px) {
   .timers .title {
-    font-size: 32px;
-    margin: 0 0 5%;
+    /* font-size: 32px; */
+    /* margin: 0 0 5%; */
   }
   .timersTriangle {
     border-top: 150px solid var(--colorPrimary);
@@ -157,8 +167,8 @@
 
 @media (min-width: 1537px) {
   .timers .title {
-    font-size: 32px;
-    margin: 0 0 80px;
+    /* font-size: 32px; */
+    /* margin: 0 0 80px; */
   }
   .timersTriangle {
     border-top: 150px solid var(--colorPrimary);

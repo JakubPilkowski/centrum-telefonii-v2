@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import React, { FC } from "react";
-import { motion } from "framer-motion";
 
 import styles from "./Accessories.module.css";
 import Accessory from "components/Accessory";
@@ -13,11 +12,7 @@ const Accessories: FC = () => {
       <Wave isReversed className={styles.wave} />
       <div className={styles.accessoriesForeground} />
       <div className={styles.accessoriesSection}>
-        <h1 className={styles.accessoriesTitle}>Akcesoria</h1>
-        <p className={styles.accessoriesDescription}>
-          Nasz sklep oferuje szeroki zakres produktów w najniższych cenach
-          dzięki czemu zaopatrzysz się w:
-        </p>
+        <h1 className={clsx("title", styles.accessoriesTitle)}>Akcesoria</h1>
         <div className={styles.accessoriesList}>
           {accessoryItems.map(({ id, ...props }, index) => (
             <Accessory key={id} {...props} index={index} />

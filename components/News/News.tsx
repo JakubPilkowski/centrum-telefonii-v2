@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import styles from "./News.module.css";
 import { scrollTriggerAnimation } from "utils/animations";
+import clsx from "clsx";
 
 export type NewsCmsAttributes = {
   hasNews: boolean;
@@ -26,7 +27,7 @@ const News: FC<NewsProps> = ({ attributes }) => {
   return hasNews ? (
     <section className={styles.news} id="news">
       <motion.div {...scrollTriggerAnimation}>
-        <h3 className={styles.newsTitle}>{news.title}</h3>
+        <h1 className={clsx("title", styles.newsTitle)}>{news.title}</h1>
         <div className={styles.newsPhotoWrapper}>
           <Image
             src={news.photo}
@@ -35,11 +36,11 @@ const News: FC<NewsProps> = ({ attributes }) => {
             fill
           />
         </div>
-        <h4 className={styles.newsSubtitle}>{news.description}</h4>
-        <h4 className={styles.newsPrice}>
+        <h3 className={styles.newsSubtitle}>{news.description}</h3>
+        <h3 className={styles.newsPrice}>
           <span className={styles.newsPriceAfter}>{news.priceAfter}zł</span>
           <span className={styles.newsPriceBefore}>{news.priceBefore}zł</span>
-        </h4>
+        </h3>
       </motion.div>
     </section>
   ) : null;

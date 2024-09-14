@@ -20,30 +20,30 @@ const Header = forwardRef<HTMLElement>(function Header(_, ref) {
         <div className={styles.jumbotronDetails}>
           <h1 className={styles.jumbotronTitle}>Centrum Telefonii</h1>
           <div className={styles.jumbotronDescription}>
-            <strong>
+            <h3>
               <span className={styles.jumbotronDescriptionBounceSpan}>
                 Najwyższa
               </span>{" "}
               jakość
-            </strong>
-            <strong>
+            </h3>
+            <h3>
               <span className={styles.jumbotronDescriptionBounceSpan}>
                 Najniższe
               </span>{" "}
               ceny
-            </strong>
-            <strong>
+            </h3>
+            <h3>
               <span className={styles.jumbotronDescriptionBounceSpan}>
                 Serwis
               </span>{" "}
               smartfonów
-            </strong>
-            <strong>
+            </h3>
+            <h3>
               <span className={styles.jumbotronDescriptionBounceSpan}>
                 Sprzedaż
               </span>{" "}
               akcesorii
-            </strong>
+            </h3>
           </div>
           <div className={styles.jumbotronButtons}>
             <ActionButton

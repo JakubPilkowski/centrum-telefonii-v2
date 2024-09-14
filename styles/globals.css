@@ -79,6 +79,7 @@ tint - add white
   --gray70: hsl(0, 0%, 70%);
   --gray90: hsl(0, 0%, 90%); */
 
+  /* font sizes */
   --h1: bold clamp(2rem, 1.5rem + 2vw, 3.5rem) / 1em var(--fontSecondary);
   --h2: bold clamp(1.5rem, 1.2rem + 1.5vw, 2.8405rem) / 1.2em
     var(--fontSecondary);
@@ -87,7 +88,6 @@ tint - add white
   --h4: clamp(1rem, 0.8rem + 1vw, 1.8708rem) / 1.6em var(--fontSecondary);
   --h5: clamp(0.875rem, 0.7rem + 0.8vw, 1.5183rem) / 1.6em var(--fontSecondary);
   --h6: clamp(0.75rem, 0.6rem + 0.6vw, 1.2322rem) / 1.6em var(--fontSecondary);
-  /* --big: 1.2847rem/1.6em var(--fontSecondary); */
   --p: 1rem/1.5em var(--fontPrimary);
   --caption: 0.8rem/1.5em var(--fontPrimary);
   --small: 0.64rem/1.5em var(--fontPrimary);
@@ -140,6 +140,12 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-family: var(--fontPrimary);
 }
 
 @media (prefers-color-scheme: light) {

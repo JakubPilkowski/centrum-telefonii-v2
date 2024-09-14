@@ -15,6 +15,8 @@ export type AccessoryProps = {
   index: number;
 };
 
+// TODO: Carousel for accessories
+
 const Accessory: FC<AccessoryProps> = ({
   image,
   imageAlt,
@@ -31,28 +33,23 @@ const Accessory: FC<AccessoryProps> = ({
       viewport={{
         once: true,
       }}
-      custom={index} //Pass the index in the custom prop
+      custom={index}
+      className={styles.accessory}
     >
-      <div className={styles.accessory}>
-        <div className={styles.accessoryImageWrapperOuter}>
-          <div className={styles.accessoryImageWrapperInner}>
-            <Image
-              src={image}
-              alt={imageAlt}
-              className={styles.accessoryImage}
-            />
-          </div>
+      <div className={styles.accessoryImageWrapperOuter}>
+        <div className={styles.accessoryImageWrapperInner}>
+          <Image src={image} alt={imageAlt} className={styles.accessoryImage} />
         </div>
-        <div className={styles.accessoryFooter}>
-          <div className={styles.accessoryIconWrapper}>
-            <span className={clsx("material-icons", styles.accessoryIcon)}>
-              {icon}
-            </span>
-          </div>
-          <div className={styles.accessoryTextWrapper}>
-            <p className={styles.accessoryTextName}>{name}</p>
-            <p className={styles.accessoryTextPrice}>{price}</p>
-          </div>
+      </div>
+      <div className={styles.accessoryFooter}>
+        <div className={styles.accessoryIconWrapper}>
+          <span className={clsx("material-icons", styles.accessoryIcon)}>
+            {icon}
+          </span>
+        </div>
+        <div className={styles.accessoryTextWrapper}>
+          <p className={styles.accessoryTextName}>{name}</p>
+          <p className={styles.accessoryTextPrice}>{price}</p>
         </div>
       </div>
     </motion.div>

@@ -17,6 +17,10 @@
   opacity: 0.03;
 }
 
+.wave {
+  margin-top: -1px;
+}
+
 .wave svg {
   position: static;
 }
@@ -25,50 +29,22 @@
   fill: var(--colorBlack);
 }
 
+.accessoriesSection {
+  padding: 0 5% 100px;
+  display: grid;
+  gap: var(--margin-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .accessoriesTitle {
   text-align: center;
-}
-
-.accessoriesDescription {
-  margin-bottom: 50px;
-}
-
-.accessoriesSection {
-  padding: 0 10% 10%;
+  font-family: var(--fontPrimary);
+  letter-spacing: 0.5px;
 }
 
 .accessoriesList {
-  --grid-layout-gap: 10px;
-  --grid-column-count: 4;
-  --grid-item--min-width: 300px;
-
-  /**
-   * Calculated values.
-   */
-  --gap-count: calc(var(--grid-column-count) - 1);
-  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
-  --grid-item--max-width: calc(
-    (100% - var(--total-gap-width)) / var(--grid-column-count)
-  );
-
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
-  );
-  row-gap: 2rem;
-  column-gap: var(--grid-layout-gap);
-}
-
-@media (max-width: 480px) {
-}
-
-@media (min-width: 481px) and (max-width: 1279px) {
-}
-
-/* dekstop */
-@media (min-width: 1280px) and (max-width: 1536px) {
-}
-
-@media (min-width: 1537px) {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--margin-xxl);
 }

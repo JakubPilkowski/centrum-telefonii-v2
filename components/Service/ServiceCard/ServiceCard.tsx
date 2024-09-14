@@ -2,6 +2,7 @@ import { variants } from "components/Accessory/variants";
 import { motion } from "framer-motion";
 import styles from "./ServiceCard.module.css";
 import Image, { StaticImageData } from "next/image";
+import { Icon } from "@iconify-icon/react";
 
 export default function ServiceCard({
   title,
@@ -19,26 +20,33 @@ export default function ServiceCard({
       viewport={{
         once: true,
       }}
-      custom={index} //Pass the index in the custom prop
+      custom={index}
       className={styles.ServiceCard}
     >
-      <h5 className={styles.ServiceCardTitle}>{title}</h5>
-      <div className={styles.ServiceCardImageWrapper}>
-        <Image
-          src={image}
-          width={300}
-          height={200}
-          alt={imageAlt}
-          className={styles.ServiceCardImage}
-        />
+      <div className={styles.ServiceCardImageOuter}>
+        <div className={styles.ServiceCardImageInner}>
+          <Image
+            src={image}
+            width={300}
+            height={280}
+            alt={imageAlt}
+            className={styles.ServiceCardImage}
+          />
+        </div>
+        <div className={styles.ServiceCardImageIcon}>
+          <Icon icon="mdi:auto-fix" />
+        </div>
+        <h5 className={styles.ServiceCardTitle}>{title}</h5>
       </div>
-      <h5 className={styles.ServiceCardPrice}>{price}</h5>
+      <h6 className={styles.ServiceCardPrice}>{price}</h6>
       <div className={styles.ServiceCardDescription}>
-        {list.map((item) => (
-          <p key={item} className={styles.ServiceCardListItem}>
-            {item}
-          </p>
-        ))}
+        <ul>
+          {list.map((item) => (
+            <li key={item}>
+              <p>{item}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </motion.div>
   );

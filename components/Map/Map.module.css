@@ -1,6 +1,9 @@
 .map {
   position: relative;
-  padding: 0 0 100px;
+  padding: 100px 0 200px;
+  display: grid;
+  gap: var(--spacing-xl);
+  background-color: var(--colorBlack);
 }
 
 /* TODO: add map integration from google api */
@@ -12,44 +15,34 @@
   position: absolute;
 }
 
-.mapTitlewrapperOuter {
+.mapContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  gap: var(--margin-xl);
   width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.mapTitlewrapperInner {
-  background-color: var(--colorPrimary);
-  border-radius: 4px;
 }
 
 .mapTitle {
-  display: inline-block;
-  text-align: center;
+  justify-self: center;
+  padding: 6px 24px;
+  border-radius: 4px;
+  background-color: var(--colorPrimary);
   color: var(--colorBlack);
-  letter-spacing: 0.5px;
-  font-weight: bold;
-  margin: 0;
 }
 
 .maps {
-  /* display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 5% 10%;
-  box-sizing: border-box; */
-
   display: grid;
-  padding: 5% 10%;
   gap: 5%;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .mapWrapper {
   overflow: hidden;
   box-sizing: border-box;
   width: 100%;
+  justify-self: stretch;
 }
 
 .mapIframeHeader {
@@ -71,86 +64,4 @@
   width: 100%;
   border: 1px solid var(--colorPrimary);
   box-sizing: border-box;
-}
-
-/* mobile */
-@media (max-width: 480px) {
-  .map::after {
-    border-top: 100px solid transparent;
-  }
-  .mapTitlewrapperInner {
-    padding: 6px 24px;
-    margin: 20px 0 0;
-  }
-  .mapTitle {
-    font-size: 28px;
-  }
-  .mapWrapper {
-    /* width: 100%; */
-    padding: 5% 0;
-  }
-  .mapWrapper iframe {
-    height: 300px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 1279px) {
-  .map::after {
-    border-top: 125px solid transparent;
-  }
-  .mapTitlewrapperInner {
-    padding: 6px 24px;
-    margin: 50px 0 0;
-  }
-  .mapTitle {
-    font-size: 30px;
-  }
-  .mapWrapper {
-    width: 100%;
-    padding: 5% 0;
-  }
-  .mapWrapper iframe {
-    height: 400px;
-  }
-}
-
-/* dekstop small*/
-@media (min-width: 1280px) and (max-width: 1536px) {
-  .map::after {
-    border-top: 150px solid transparent;
-  }
-  .mapTitlewrapperInner {
-    padding: 6px 24px;
-    margin: 100px 0 0;
-  }
-  .mapTitle {
-    font-size: 32px;
-  }
-  .mapWrapper {
-    /* width: 100%; */
-    padding: 2.5%;
-  }
-  .mapWrapper iframe {
-    height: 500px;
-  }
-}
-
-@media (min-width: 1537px) {
-  .map::after {
-    border-top: 150px solid transparent;
-  }
-  .mapTitlewrapperInner {
-    padding: 6px 24px;
-    margin: 100px 0 0;
-  }
-  .mapTitle {
-    font-size: 32px;
-  }
-  .mapWrapper {
-    /* width: 100%; */
-    padding: 2.5%;
-  }
-  .mapWrapper iframe {
-    height: 500px;
-  }
 }
