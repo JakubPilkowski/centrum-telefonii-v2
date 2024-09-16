@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import textCounterAnimation from "utils/textCounterAnimation";
 
 import styles from "./Timers.module.css";
-import { scrollTriggerAnimation } from "utils/animations";
+import { variants } from "components/Accessory/variants";
 
 function useCounterAnimation(
   ref: RefObject<any>,
@@ -48,7 +48,13 @@ const Timers: FC = () => {
           <div className={styles.timersWrapper}>
             <motion.div
               className={clsx(styles.timerItem)}
-              {...scrollTriggerAnimation}
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={0}
             >
               <span className={clsx("material-icons", styles.timerIcon)}>
                 sentiment_satisfied_alt
@@ -59,7 +65,13 @@ const Timers: FC = () => {
 
             <motion.div
               className={clsx(styles.timerItem)}
-              {...scrollTriggerAnimation}
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={1}
             >
               <span className={clsx("material-icons", styles.timerIcon)}>
                 build
@@ -70,7 +82,13 @@ const Timers: FC = () => {
 
             <motion.div
               className={clsx(styles.timerItem)}
-              {...scrollTriggerAnimation}
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={2}
             >
               <span className={clsx("material-icons", styles.timerIcon)}>
                 calendar_month
@@ -85,7 +103,5 @@ const Timers: FC = () => {
     </>
   );
 };
-
-// TODO: timers animation same as service and accessory items
 
 export default Timers;

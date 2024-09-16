@@ -13,6 +13,7 @@ export type AccessoryProps = {
   name: string;
   price: string;
   index: number;
+  className: string;
 };
 
 // TODO: Carousel for accessories
@@ -24,17 +25,18 @@ const Accessory: FC<AccessoryProps> = ({
   name,
   price,
   index,
+  className,
 }) => {
   return (
-    <motion.div
-      variants={variants}
-      initial="initial"
-      whileInView="animate"
-      viewport={{
-        once: true,
-      }}
-      custom={index}
-      className={styles.accessory}
+    <div
+      // variants={variants}
+      // initial="initial"
+      // whileInView="animate"
+      // viewport={{
+      //   once: true,
+      // }}
+      // custom={index}
+      className={clsx(styles.accessory, className)}
     >
       <div className={styles.accessoryImageWrapperOuter}>
         <div className={styles.accessoryImageWrapperInner}>
@@ -52,7 +54,7 @@ const Accessory: FC<AccessoryProps> = ({
           <p className={styles.accessoryTextPrice}>{price}</p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

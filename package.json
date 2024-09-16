@@ -39,6 +39,9 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "embla-carousel": "^8.3.0",
+    "embla-carousel-auto-scroll": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
     "framer-motion": "^11.3.19",
     "lodash.throttle": "^4.1.1",
     "nanoid": "^4.0.0",

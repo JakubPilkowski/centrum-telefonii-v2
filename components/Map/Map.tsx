@@ -2,8 +2,8 @@ import React, { FC, useCallback } from "react";
 import { motion } from "framer-motion";
 
 import styles from "./Map.module.css";
-import { scrollTriggerAnimation } from "utils/animations";
 import clsx from "clsx";
+import { variants } from "components/Accessory/variants";
 
 const Map: FC = () => {
   return (
@@ -12,7 +12,16 @@ const Map: FC = () => {
         <h1 className={clsx("title", styles.mapTitle)}>Jak dojechać</h1>
 
         <div className={styles.maps}>
-          <motion.div {...scrollTriggerAnimation} className={styles.mapWrapper}>
+          <motion.div
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={0}
+            className={styles.mapWrapper}
+          >
             <header className={styles.mapIframeHeader}>
               <h5 className={styles.mapIframeTitle}>
                 Punkt nr 1: ulica Kościuszki 19/2
@@ -24,7 +33,16 @@ const Map: FC = () => {
             ></iframe>
           </motion.div>
 
-          <motion.div {...scrollTriggerAnimation} className={styles.mapWrapper}>
+          <motion.div
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={1}
+            className={styles.mapWrapper}
+          >
             <header className={styles.mapIframeHeader}>
               <h5 className={styles.mapIframeTitle}>
                 Punkt nr 2: Plac Pułaskiego 7 lokal 62
