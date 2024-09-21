@@ -30,10 +30,17 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
 
   const handleMenuOpen = () => {
     setMenuOpen(true);
+    const htmlElement = document.querySelector("html");
+    if (!htmlElement) return;
+    htmlElement.style.overflow = "hidden";
   };
 
   const handleMenuClose = () => {
     setMenuOpen(false);
+    const htmlElement = document.querySelector("html");
+    if (!htmlElement) return;
+    htmlElement.style.overflow = "auto";
+    // document.body.style.overflow = "auto";
   };
 
   const handleNavigate = (id: string) => () => {
