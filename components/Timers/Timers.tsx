@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import textCounterAnimation from "utils/textCounterAnimation";
 
 import styles from "./Timers.module.css";
-import { scrollTriggerAnimation } from "utils/animations";
+import { variants } from "components/Accessory/variants";
 
 function useCounterAnimation(
   ref: RefObject<any>,
@@ -43,40 +43,60 @@ const Timers: FC = () => {
   return (
     <>
       <section id="timers" className={styles.timers}>
-        <h1 className={styles.title}>Centrum Telefonii to...</h1>
-        <div className={styles.timersWrapper}>
-          <motion.div
-            className={clsx(styles.timerItem)}
-            {...scrollTriggerAnimation}
-          >
-            <span className={clsx("material-icons", styles.timerIcon)}>
-              sentiment_satisfied_alt
-            </span>
-            <h1 ref={clientsTitleRef}>9999</h1>
-            <h2>tysiące zadowolonych klientów</h2>
-          </motion.div>
+        <div className={styles.timersContainer}>
+          <h1 className={styles.title}>Centrum Telefonii to...</h1>
+          <div className={styles.timersWrapper}>
+            <motion.div
+              className={clsx(styles.timerItem)}
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={0}
+            >
+              <span className={clsx("material-icons", styles.timerIcon)}>
+                sentiment_satisfied_alt
+              </span>
+              <h4 ref={clientsTitleRef}>9999</h4>
+              <h5>tysiące zadowolonych klientów</h5>
+            </motion.div>
 
-          <motion.div
-            className={clsx(styles.timerItem)}
-            {...scrollTriggerAnimation}
-          >
-            <span className={clsx("material-icons", styles.timerIcon)}>
-              build
-            </span>
-            <h1 ref={repairsTitleRef}>999</h1>
-            <h2>setki naprawionych telefonów</h2>
-          </motion.div>
+            <motion.div
+              className={clsx(styles.timerItem)}
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={1}
+            >
+              <span className={clsx("material-icons", styles.timerIcon)}>
+                build
+              </span>
+              <h4 ref={repairsTitleRef}>999</h4>
+              <h5>setki naprawionych telefonów</h5>
+            </motion.div>
 
-          <motion.div
-            className={clsx(styles.timerItem)}
-            {...scrollTriggerAnimation}
-          >
-            <span className={clsx("material-icons", styles.timerIcon)}>
-              calendar_month
-            </span>
-            <h1 ref={brandTitleRef}>22</h1>
-            <h2>najdłużej funkcjonująca firma telefoniczna w Olsztynie</h2>
-          </motion.div>
+            <motion.div
+              className={clsx(styles.timerItem)}
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={2}
+            >
+              <span className={clsx("material-icons", styles.timerIcon)}>
+                calendar_month
+              </span>
+              <h4 ref={brandTitleRef}>22</h4>
+              <h5>najdłużej funkcjonująca firma telefoniczna w Olsztynie</h5>
+            </motion.div>
+          </div>
         </div>
       </section>
       <div className={styles.timersTriangle}></div>

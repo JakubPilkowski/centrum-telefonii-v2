@@ -40,7 +40,7 @@ const ActionButton = <T extends ElementType>({
       component={Component}
       {...props}
     >
-      {text && <p>{text}</p>}
+      {text && <h6>{text}</h6>}
       <span className="material-icons"> {icons[iconType]} </span>
     </Box>
   );

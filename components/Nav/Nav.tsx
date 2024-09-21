@@ -66,10 +66,16 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
             onClick={handleNavigate("service")}
             className={styles.navLink}
           >
-            Oferta
+            Serwis
+          </button>
+          <button
+            onClick={handleNavigate("accessories")}
+            className={styles.navLink}
+          >
+            Akcesoria
           </button>
           <button onClick={handleNavigate("map")} className={styles.navLink}>
-            Jak dojechać
+            Dojazd
           </button>
           {hasNews && (
             <button onClick={handleNavigate("news")} className={styles.navLink}>

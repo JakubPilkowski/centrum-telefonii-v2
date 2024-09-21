@@ -1,5 +1,4 @@
 .actionButton {
-  padding: 0;
   border: none;
   outline: none;
   z-index: 500;
@@ -10,13 +9,13 @@
   justify-content: center;
   width: max-content;
   color: var(--colorWhite);
-  /* transition: transform 200ms ease-in, width 200ms ease-in; */
+  transition: transform 200ms ease-in;
   font-size: 16px;
   line-height: 20px;
   box-sizing: border-box;
   font-weight: bold;
   border-radius: 99px;
-  padding: 12px 6px;
+  padding: 12px 9px;
   margin: 5px 0;
   cursor: pointer;
 }

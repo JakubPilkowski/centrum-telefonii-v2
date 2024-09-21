@@ -1,0 +1,55 @@
+.about {
+  box-sizing: border-box;
+  position: relative;
+  font-family: var(--fontPrimary);
+  z-index: 100;
+  background-color: var(--colorPrimary);
+}
+
+.aboutContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  gap: var(--margin-xl);
+}
+
+.aboutTitle {
+  background-color: var(--colorPrimary);
+  border-radius: 4px;
+  width: max-content;
+  justify-self: center;
+  color: var(--colorBlack);
+  padding: 6px 24px;
+}
+
+.aboutAdvantagesContainer {
+  display: flex;
+  width: 100%;
+  gap: 2.5%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aboutAdvantageWrapper {
+  min-width: 150px;
+  text-align: center;
+}
+
+.aboutAdvantageText {
+  margin: 0.5rem;
+}
+
+.aboutAdvantageIcon {
+  font-size: 60px;
+}
+
+.aboutCallButton {
+  width: 100%;
+}
+
+.contentDivider {
+  width: 100%;
+  background: linear-gradient(var(--colorPrimary), var(--colorBlack));
+  aspect-ratio: 1440/320;
+}

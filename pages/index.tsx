@@ -3,7 +3,6 @@ import React from "react";
 import Header from "components/Header";
 import Nav from "components/Nav";
 import Service from "components/Service";
-import Wrapper from "components/Wrapper";
 import Accessories from "components/Accessories";
 import Timers from "components/Timers";
 import Map from "components/Map";
@@ -12,6 +11,7 @@ import News, { NewsCmsAttributes } from "components/News";
 import client from "tina/__generated__/client";
 import { useAnimate, useInView } from "framer-motion";
 import Actions from "components/Actions";
+import About from "components/About";
 
 export type CmsProps = {
   newsAttributes: NewsCmsAttributes;
@@ -30,15 +30,12 @@ export default function Main(props: CmsProps) {
       <Nav hasNews={newsAttributes.hasNews} />
       <Header ref={scope} />
       <Actions isVisible={areFloatingActionsVisible} />
-      <Wrapper type="offer">
-        <Service />
-        <Accessories />
-      </Wrapper>
-      <Wrapper type="main">
-        <Timers />
-        <Map />
-        <News attributes={newsAttributes} />
-      </Wrapper>
+      <About />
+      <Service />
+      <Accessories />
+      <Timers />
+      <Map />
+      <News attributes={newsAttributes} />
       <Footer />
     </>
   );

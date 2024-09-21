@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/google-font-display */
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
@@ -16,7 +17,7 @@ class MyDocument extends Document {
           />
           <meta
             name="keywords"
-            content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, telefonii"
+            content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, smartphone, etui, case, telefonii"
           />
           <meta name="author" content="Jakub Piłkowski" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -24,7 +25,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;700&family=Rosa:ital,wght@0,500;0,700;1,300&display=swap"
+            href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700"
             rel="stylesheet"
           />
           <link
@@ -32,7 +33,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Ole&display=swap"
+            href="https://fonts.googleapis.com/css?family=Quicksand:300,500"
             rel="stylesheet"
           ></link>
         </Head>
