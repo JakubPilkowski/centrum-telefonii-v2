@@ -11,7 +11,7 @@ import glassProtection from "public/szklo_9d.png";
 import carHandle from "public/uchwyt_na_szybe.png";
 import headphones from "public/sluchawki.png";
 
-type AccessoryItem = Omit<AccessoryProps, "index"> & {
+type AccessoryItem = Omit<AccessoryProps, "className"> & {
   id: string;
 };
 
