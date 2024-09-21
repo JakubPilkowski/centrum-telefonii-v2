@@ -149,13 +149,19 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
               onClick={handleNavigate("service")}
               className={styles.hamburgerItem}
             >
-              Oferta
+              Serwis
+            </button>
+            <button
+              onClick={handleNavigate("accessories")}
+              className={styles.hamburgerItem}
+            >
+              Akcesoria
             </button>
             <button
               onClick={handleNavigate("map")}
               className={styles.hamburgerItem}
             >
-              Jak dojechać
+              Dojazd
             </button>
             {hasNews && (
               <button
