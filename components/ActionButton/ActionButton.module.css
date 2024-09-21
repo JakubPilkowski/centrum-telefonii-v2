@@ -1,5 +1,4 @@
 .actionButton {
-  padding: 0;
   border: none;
   outline: none;
   z-index: 500;
@@ -16,7 +15,7 @@
   box-sizing: border-box;
   font-weight: bold;
   border-radius: 99px;
-  padding: 12px 6px;
+  padding: 12px 9px;
   margin: 5px 0;
   cursor: pointer;
 }

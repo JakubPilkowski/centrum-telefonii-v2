@@ -12,7 +12,6 @@ body {
 html {
   overflow-x: hidden;
   font-size: 1rem;
-  /* font-size: clamp(0.75rem, 1.25vw + 0.25rem, 1.125rem); */
 }
 
 ::-moz-focus-inner {
@@ -72,21 +71,14 @@ tint - add white
   --fontPrimary: "Quicksand", sans-serif;
   --fontSecondary: "Archivo Black", sans-serif;
 
-  /* colors */
-  /* --gray10: hsl(0, 0%, 10%);
-  --gray30: hsl(0, 0%, 30%);
-  --gray50: hsl(0, 0%, 50%);
-  --gray70: hsl(0, 0%, 70%);
-  --gray90: hsl(0, 0%, 90%); */
-
   /* font sizes */
   --h1: bold clamp(2rem, 1.5rem + 2vw, 3.5rem) / 1em var(--fontSecondary);
   --h2: bold clamp(1.5rem, 1.2rem + 1.5vw, 2.8405rem) / 1.2em
     var(--fontSecondary);
   --h3: bold clamp(1.25rem, 1rem + 1.2vw, 2.3052rem) / 1.2em
     var(--fontSecondary);
-  --h4: clamp(1rem, 0.8rem + 1vw, 1.8708rem) / 1.6em var(--fontSecondary);
-  --h5: clamp(0.875rem, 0.7rem + 0.8vw, 1.5183rem) / 1.6em var(--fontSecondary);
+  --h4: clamp(1.15rem, 0.8rem + 1vw, 1.8708rem) / 1.6em var(--fontSecondary);
+  --h5: clamp(1rem, 0.8rem + 0.8vw, 1.5183rem) / 1.6em var(--fontSecondary);
   --h6: clamp(0.75rem, 0.6rem + 0.6vw, 1.2322rem) / 1.6em var(--fontSecondary);
   --p: 1rem/1.5em var(--fontPrimary);
   --caption: 0.8rem/1.5em var(--fontPrimary);
@@ -100,11 +92,6 @@ tint - add white
   --margin-l: 1.25rem;
   --margin-xl: 1.75rem;
   --margin-xxl: 2.5rem;
-}
-
-body {
-  /* font-family: var(--fontPrimary);
-  font: 16px/1.5 var(--fontPrimary); */
 }
 
 h1 {
@@ -151,12 +138,6 @@ p {
 @media (prefers-color-scheme: light) {
   :root {
     /* scheme */
-    /* --colorPrimary: hsl(55, 80%, 50%);
-    --colorSecondary: hsl(55, 50%, 24%);
-    --colorTertiary: hsl(55, 90%, 10%);
-    --colorQuaternary: hsl(55, 100%, 100%);
-    --colorQuinary: hsl(55, 100%, 50%); */
-
     --colorPrimary: #fdc029;
     --colorBlack: #171820;
     --colorWhite: #f1f1f1;
@@ -174,12 +155,6 @@ p {
 @media (prefers-color-scheme: dark) {
   :root {
     /* scheme */
-    /* --colorPrimary: hsl(55, 90%, 50%);
-    --colorSecondary: hsl(55, 50%, 14%);
-    --colorTertiary: hsl(55, 100%, 100%);
-    --colorQuaternary: hsl(55, 51%, 23%);
-    --colorQuinary: hsl(55, 100%, 50%); */
-
     --colorPrimary: #fdc029;
     --colorBlack: #171820;
     --colorWhite: #f1f1f1;

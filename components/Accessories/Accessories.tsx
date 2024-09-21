@@ -36,10 +36,11 @@ const Accessories: FC = () => {
                 key={id}
                 {...props}
                 className={clsx(styles.emblaSlide)}
-                index={index}
               />
             ))}
           </div>
+          <div className={styles.emblaShadowRight} />
+          <div className={styles.emblaShadowLeft} />
         </div>
       </div>
     </section>

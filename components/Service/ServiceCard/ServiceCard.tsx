@@ -38,7 +38,7 @@ export default function ServiceCard({
         </div>
         <h5 className={styles.ServiceCardTitle}>{title}</h5>
       </div>
-      <h6 className={styles.ServiceCardPrice}>{price}</h6>
+      <h5 className={styles.ServiceCardPrice}>{price}</h5>
       <div className={styles.ServiceCardDescription}>
         <ul>
           {list.map((item) => (

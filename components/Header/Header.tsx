@@ -47,13 +47,13 @@ const Header = forwardRef<HTMLElement>(function Header(_, ref) {
           </div>
           <div className={styles.jumbotronButtons}>
             <ActionButton
-              text="Wycena naprawy?"
+              text="Wycena naprawy"
               component="a"
               href="tel:+48 (89)533-71-32"
               iconType="call"
             />
             <ActionButton
-              text="Jak dojechać?"
+              text="Dojazd"
               component="button"
               onClick={handleNavigate("map")}
               iconType="direction"

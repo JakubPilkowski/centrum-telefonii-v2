@@ -141,7 +141,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* margin: 0 5%; */
+  gap: var(--margin-xl);
 }
 
 .floatingButtonWrapper {
@@ -157,29 +157,19 @@
   .jumbotron {
     min-height: 100vh;
   }
-  .jumbotronTitle {
-    /* margin: 20px 0 20px 5%; */
-  }
-  .jumbotronDescription {
-    /* margin: 20px 0 20px 5%; */
-  }
   .jumbotronButtons {
     flex-direction: column-reverse;
     align-items: flex-start;
+    gap: var(--margin-s);
   }
 }
 
 /* tablet horizontal */
 @media (min-width: 768px) and (max-width: 1279px) and (max-height: 800px) {
-  .jumbotronTitle {
-    /* margin: 20px 0 20px 5%; */
-  }
-  .jumbotronDescription {
-    /* margin: 30px 0 30px 5%; */
-  }
   .jumbotronButtons {
     flex-direction: column-reverse;
     align-items: flex-start;
+    gap: var(--margin-s);
   }
 }
 
@@ -187,15 +177,10 @@
   .jumbotron {
     min-height: 100vh;
   }
-  .jumbotronTitle {
-    /* margin: 20px 0 20px 5%; */
-  }
-  .jumbotronDescription {
-    /* margin: 30px 0 30px 5%; */
-  }
   .jumbotronButtons {
     flex-direction: column-reverse;
     align-items: flex-start;
+    gap: var(--margin-s);
   }
 }
 
@@ -203,17 +188,10 @@
   .jumbotron {
     min-height: 100vh;
   }
-  .jumbotronTitle {
-    /* margin: 30px 0 30px 5%; */
-  }
-
-  .jumbotronDescription {
-    /* font-size: 30px; */
-    /* margin: 30px 0 30px 5%; */
-  }
   .jumbotronButtons {
     flex-direction: column-reverse;
     align-items: flex-start;
+    gap: var(--margin-s);
   }
 }
 
@@ -222,26 +200,10 @@
   .jumbotron {
     min-height: 100vh;
   }
-  .jumbotronTitle {
-    /* margin: 40px 0 40px 5%; */
-  }
-
-  .jumbotronDescription {
-    /* margin: 40px 0 40px 5%; */
-  }
 }
 
 @media (min-width: 1537px) {
   .jumbotron {
     min-height: 100vh;
-  }
-
-  .jumbotronTitle {
-    /* font-size: 75px; */
-    /* margin: 50px 0 50px 5%; */
-  }
-
-  .jumbotronDescription {
-    /* margin: 50px 0 50px 5%; */
   }
 }

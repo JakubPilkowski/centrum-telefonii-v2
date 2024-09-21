@@ -45,12 +45,36 @@
 
 .embla {
   overflow: hidden;
+  position: relative;
+}
+
+.emblaShadowRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  z-index: 10;
+  box-shadow: inset -15px 0 8px -8px var(--colorPrimary);
+}
+
+.emblaShadowLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  z-index: 10;
+  box-shadow: inset 15px 0 8px -8px var(--colorPrimary);
 }
 
 .emblaContainer {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 300px;
+  user-select: none;
+  touch-action: none;
+  pointer-events: none;
 }
 
 .emblaSlide {

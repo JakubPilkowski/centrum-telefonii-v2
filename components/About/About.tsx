@@ -1,58 +1,118 @@
 import clsx from "clsx";
 import styles from "./About.module.css";
 import ActionButton from "components/ActionButton";
+import { motion } from "framer-motion";
+import { variants } from "components/Accessory/variants";
 
 export default function About() {
   return (
     <>
       <section id="about" className={styles.about}>
         <div className={styles.aboutContainer}>
-          <h1 className={clsx("title", styles.aboutTitle)}>
-            Czym się zajmujemy?
-          </h1>
-          <h6>
+          <motion.h1
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            className={clsx("title", styles.aboutTitle)}
+          >
+            O nas
+          </motion.h1>
+          <motion.h5
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+          >
             Specjalizujemy się w naprawie telefonów komórkowych, smartfonów oraz
             urządzeń elektrycznych takich jak komputery, słuchawki, aparaty.
-          </h6>
-          <h6>Każdą usługę w naszej firmie cechuje:</h6>
+          </motion.h5>
+          <motion.h5
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+          >
+            Każdą usługę w naszej firmie cechuje:
+          </motion.h5>
           <div className={styles.aboutAdvantagesContainer}>
-            <div className={styles.aboutAdvantageWrapper}>
+            <motion.div
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={0}
+              className={styles.aboutAdvantageWrapper}
+            >
               <span
                 className={clsx("material-icons", styles.aboutAdvantageIcon)}
               >
                 attach_money
               </span>
-              <h6 className={styles.aboutAdvantageText}>
+              <h5 className={styles.aboutAdvantageText}>
                 najniższe ceny na rynku
-              </h6>
-            </div>
-            <div className={styles.aboutAdvantageWrapper}>
+              </h5>
+            </motion.div>
+            <motion.div
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={1}
+              className={styles.aboutAdvantageWrapper}
+            >
               <span
                 className={clsx("material-icons", styles.aboutAdvantageIcon)}
               >
                 access_time
               </span>
-              <h6 className={styles.aboutAdvantageText}>krótki czas naprawy</h6>
-            </div>
-            <div className={styles.aboutAdvantageWrapper}>
+              <h5 className={styles.aboutAdvantageText}>krótki czas naprawy</h5>
+            </motion.div>
+            <motion.div
+              variants={variants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={2}
+              className={styles.aboutAdvantageWrapper}
+            >
               <span
                 className={clsx("material-icons", styles.aboutAdvantageIcon)}
               >
                 workspace_premium
               </span>
-              <h6 className={styles.aboutAdvantageText}>
+              <h5 className={styles.aboutAdvantageText}>
                 3-miesięczna gwarancja
-              </h6>
-            </div>
+              </h5>
+            </motion.div>
           </div>
-          <h6>
+          <motion.h5
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+          >
             Dzięki {new Date().getFullYear() - 1998}-letniemu doświadczeniu
             wykonujemy nasze usługi z najwyższą jakością oraz największa
             precyzją zapewniając <b>100% </b>
             satysfakcji z wykonanej usługi.
-          </h6>
+          </motion.h5>
           <ActionButton
-            text="Wycena naprawy?"
+            text="Wycena naprawy"
             iconType="call"
             type="a"
             href="tel:+48 (89)533-71-32"

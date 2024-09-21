@@ -1,10 +1,8 @@
 import React, { FC, useCallback, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
-import { motion } from "framer-motion";
 
 import styles from "./Accessory.module.css";
-import { variants } from "./variants";
 
 export type AccessoryProps = {
   image: string | StaticImageData;
@@ -12,11 +10,8 @@ export type AccessoryProps = {
   icon: string;
   name: string;
   price: string;
-  index: number;
   className: string;
 };
-
-// TODO: Carousel for accessories
 
 const Accessory: FC<AccessoryProps> = ({
   image,
@@ -24,20 +19,10 @@ const Accessory: FC<AccessoryProps> = ({
   icon,
   name,
   price,
-  index,
   className,
 }) => {
   return (
-    <div
-      // variants={variants}
-      // initial="initial"
-      // whileInView="animate"
-      // viewport={{
-      //   once: true,
-      // }}
-      // custom={index}
-      className={clsx(styles.accessory, className)}
-    >
+    <div className={clsx(styles.accessory, className)}>
       <div className={styles.accessoryImageWrapperOuter}>
         <div className={styles.accessoryImageWrapperInner}>
           <Image src={image} alt={imageAlt} className={styles.accessoryImage} />
