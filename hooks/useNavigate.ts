@@ -5,7 +5,7 @@ export default function useNavigate() {
     const element = document.getElementById(id);
     if (!element) return;
 
-    scrollIntoView(element, { behavior: "smooth", block: "nearest" });
+    scrollIntoView(element, { behavior: "smooth", block: "start" });
   };
 
   return [handleNavigate];
