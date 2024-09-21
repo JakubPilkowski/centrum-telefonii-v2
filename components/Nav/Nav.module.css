@@ -11,7 +11,7 @@
   border-bottom-color: transparent;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  height: 90px;
+  height: 70px;
   justify-content: space-between;
   padding: 0 5%;
 }
@@ -50,9 +50,8 @@
 }
 
 .brandImage {
-  width: 70px;
-  height: 70px;
-  transition: width 200ms ease-in-out, height 200ms ease-in-out;
+  width: 50px;
+  height: 50px;
 }
 
 .brandBell {
@@ -73,7 +72,6 @@
 .navBackground {
   background-color: var(--colorBlack);
   border-bottom-color: var(--colorPrimary);
-  height: 70px;
 }
 
 .navBackground .brandImage {
@@ -196,7 +194,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0% 20%;
+  margin: 5px 0% 20%;
   padding: 0 5%;
   box-sizing: border-box;
   width: 100%;

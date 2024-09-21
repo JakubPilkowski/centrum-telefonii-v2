@@ -9,7 +9,7 @@ const Map: FC = () => {
   return (
     <section id="map" className={styles.map}>
       <div className={styles.mapContainer}>
-        <h1 className={clsx("title", styles.mapTitle)}>Jak dojechać</h1>
+        <h1 className={clsx("title", styles.mapTitle)}>Dojazd</h1>
 
         <div className={styles.maps}>
           <motion.div

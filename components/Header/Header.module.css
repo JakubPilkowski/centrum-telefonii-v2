@@ -157,6 +157,9 @@
   .jumbotron {
     min-height: 100vh;
   }
+  .jumbotronCard {
+    margin-top: 35px;
+  }
   .jumbotronButtons {
     flex-direction: column-reverse;
     align-items: flex-start;
