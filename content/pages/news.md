@@ -4,4 +4,4 @@ title: Promocja!!!
 photo: /uploads/szklo_9d.png
 ---
 
-##### Szkła hartowane 9D od 10zł!!!
+##### Szkła hartowane od 10zł!!!
