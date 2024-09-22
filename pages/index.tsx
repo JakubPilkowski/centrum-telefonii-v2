@@ -45,7 +45,7 @@ export const getStaticProps = async () => {
   let postResponse;
   try {
     postResponse = await client.queries.pages({
-      relativePath: "news.json",
+      relativePath: "news.md",
     });
   } catch (err) {
     // swallow errors related to document creation

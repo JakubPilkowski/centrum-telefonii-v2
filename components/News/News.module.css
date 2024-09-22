@@ -21,6 +21,11 @@
   object-fit: contain;
 }
 
+.newsDescription {
+  text-align: center;
+  margin: 0;
+}
+
 .newsSubtitle {
   text-align: center;
   margin: 0;

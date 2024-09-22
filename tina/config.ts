@@ -29,56 +29,34 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: "pages",
         label: "Strony",
+        name: "pages",
         path: "content/pages",
-        format: "json",
+        format: "md",
         fields: [
           {
             type: "boolean",
-            label: "Czy są aktualności?",
+            label: "Czy wyświetlić news?",
             name: "hasNews",
           },
           {
-            type: "object",
-            label: "Ogłoszenie",
-            name: "news",
-            // Define inner fields for the 'news' object here
-            // Example:
-            fields: [
-              {
-                type: "string",
-                label: "Tytuł ogłoszenia",
-                name: "title",
-              },
-              {
-                type: "image",
-                label: "Zdjęcie",
-                name: "photo",
-              },
-              {
-                type: "string",
-                label: "Opis",
-                name: "description",
-              },
-              {
-                label: "Cena przed",
-                type: "string",
-                name: "priceBefore",
-              },
-              {
-                label: "Cena po",
-                name: "priceAfter",
-                type: "string",
-              },
-            ],
+            type: "string",
+            label: "Tytuł ogłoszenia",
+            name: "title",
+          },
+          {
+            type: "image",
+            label: "Zdjęcie",
+            name: "photo",
+          },
+          {
+            type: "rich-text",
+            label: "Opis",
+            name: "body",
+            isBody: true,
           },
         ],
       },
-      // ui: {
-      //   // This is an DEMO router. You can remove this to fit your site
-      //   router: ({ document }) => `/demo/blog/${document._sys.filename}`,
-      // },
     ],
   },
 });

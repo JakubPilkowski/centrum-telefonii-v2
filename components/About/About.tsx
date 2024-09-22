@@ -52,11 +52,9 @@ export default function About() {
               custom={0}
               className={styles.aboutAdvantageWrapper}
             >
-              <span
-                className={clsx("material-icons", styles.aboutAdvantageIcon)}
-              >
-                attach_money
-              </span>
+              <div className={styles.aboutAdvantageIcon}>
+                <span className={clsx("material-icons")}>attach_money</span>
+              </div>
               <h5 className={styles.aboutAdvantageText}>
                 najniższe ceny na rynku
               </h5>
@@ -71,11 +69,9 @@ export default function About() {
               custom={1}
               className={styles.aboutAdvantageWrapper}
             >
-              <span
-                className={clsx("material-icons", styles.aboutAdvantageIcon)}
-              >
-                access_time
-              </span>
+              <div className={styles.aboutAdvantageIcon}>
+                <span className={clsx("material-icons")}>access_time</span>
+              </div>
               <h5 className={styles.aboutAdvantageText}>krótki czas naprawy</h5>
             </motion.div>
             <motion.div
@@ -88,11 +84,11 @@ export default function About() {
               custom={2}
               className={styles.aboutAdvantageWrapper}
             >
-              <span
-                className={clsx("material-icons", styles.aboutAdvantageIcon)}
-              >
-                workspace_premium
-              </span>
+              <div className={styles.aboutAdvantageIcon}>
+                <span className={clsx("material-icons")}>
+                  workspace_premium
+                </span>
+              </div>
               <h5 className={styles.aboutAdvantageText}>
                 3-miesięczna gwarancja
               </h5>

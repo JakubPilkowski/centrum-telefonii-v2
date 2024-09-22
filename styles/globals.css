@@ -44,6 +44,10 @@ a {
   z-index: 500;
 }
 
+.material-icons {
+  font-size: inherit !important;
+}
+
 /* color theory */
 
 /* 
