@@ -50,6 +50,11 @@ export default defineConfig({
             name: "photo",
           },
           {
+            type: "string",
+            label: "Opis zdjęcia",
+            name: "photoDescription",
+          },
+          {
             type: "rich-text",
             label: "Opis",
             name: "body",

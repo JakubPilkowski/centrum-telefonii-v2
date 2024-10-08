@@ -1,16 +1,29 @@
 import React, { FC } from "react";
 
 import styles from "./Footer.module.css";
+import clsx from "clsx";
 
 const Footer: FC = () => {
   return (
-    <footer id="footer" className={styles.footer}>
+    <footer
+      id="footer"
+      className={styles.footer}
+      aria-labelledby="footer-title"
+    >
+      <span id="footer-title" className="visually-hidden">
+        Kontakt
+      </span>
       <div className={styles.row}>
-        <h4 className={styles.label}>Centrum Telefonii s.c. ®</h4>
-        <p className={styles.text}>E-mail: centrumtelefoniiolsztyn@gmail.com</p>
+        <p className={clsx("h4", styles.label)}>Centrum Telefonii s.c. ®</p>
+        <a
+          className={styles.text}
+          href="mailto:centrumtelefoniiolsztyn@gmail.com"
+        >
+          centrumtelefoniiolsztyn@gmail.com
+        </a>
       </div>
       <div className={styles.row}>
-        <h4 className={styles.label}>CT na ulicy Kościuszki</h4>
+        <p className={clsx("h4", styles.label)}>CT na ulicy Kościuszki</p>
         <a className={styles.text} href="tel:668-226-158">
           {" "}
           668-226-158{" "}
@@ -24,7 +37,7 @@ const Footer: FC = () => {
         <p className={styles.text}>Sobota: 9:00-15:00</p>
       </div>
       <div className={styles.row}>
-        <h4 className={styles.label}>CT w Manhattanie</h4>
+        <p className={clsx("h4", styles.label)}>CT w Manhattanie</p>
         <a className={styles.text} href="tel:698-390-390">
           {" "}
           698-390-390{" "}

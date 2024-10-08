@@ -15,6 +15,7 @@ const Wave: FC<WaveProps> = ({ className, isReversed = false }) => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
         className={clsx(styles.Wave)}
+        aria-hidden="true"
       >
         {isReversed ? (
           <path

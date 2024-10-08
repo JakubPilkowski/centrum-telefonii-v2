@@ -11,9 +11,8 @@ export type NewsCmsAttributes = {
   hasNews: boolean;
   title: string;
   photo: string;
+  photoDescription: string;
   body: TinaMarkdownContent;
-  // priceBefore: string;
-  // priceAfter: string;
 };
 
 export type NewsProps = {
@@ -21,31 +20,25 @@ export type NewsProps = {
 };
 
 const News: FC<NewsProps> = ({ attributes }) => {
-  const { hasNews, title, photo, body } = attributes;
+  const { hasNews, title, photo, photoDescription, body } = attributes;
 
   return hasNews ? (
-    <section className={styles.news} id="news">
+    <section className={styles.news} id="news" aria-labelledby="news-title">
       <motion.div {...scrollTriggerAnimation}>
-        <h1 className={clsx("title", styles.newsTitle)}>{title}</h1>
+        <h2 id="news-title" className={clsx("title", "h1", styles.newsTitle)}>
+          {title}
+        </h2>
         <div className={styles.newsPhotoWrapper}>
           <Image
             src={photo}
             className={styles.newsPhoto}
-            alt="News photo"
+            alt={photoDescription}
             fill
           />
         </div>
         <div className={styles.newsDescription}>
-          <TinaMarkdown
-            // className={styles.newsbody}
-            content={body}
-          />
+          <TinaMarkdown content={body} />
         </div>
-        {/* <h3 className={styles.newsSubtitle}>{news.description}</h3>
-        <h3 className={styles.newsPrice}>
-          <span className={styles.newsPriceAfter}>{news.priceAfter}zł</span>
-          <span className={styles.newsPriceBefore}>{news.priceBefore}zł</span>
-        </h3> */}
       </motion.div>
     </section>
   ) : null;

@@ -1,6 +1,5 @@
 .actionButton {
   border: none;
-  outline: none;
   z-index: 500;
   font-family: var(--fontPrimary);
   box-sizing: border-box;
