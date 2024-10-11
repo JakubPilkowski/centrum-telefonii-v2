@@ -4,7 +4,6 @@ export const variants = {
     y: 100,
   },
   animate: (index: number) => ({
-    //use the custom value here
     opacity: 1,
     y: 0,
     transition: {

@@ -124,6 +124,8 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
           className={styles.hamburgerIcon}
           onClick={handleMenuOpen}
           aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="hamburger-menu"
         >
           <div className={styles.hamburgerBell}></div>
           <div className={styles.hamburgerBell}></div>
@@ -144,7 +146,12 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
           exitDone: styles.menuCloseEnd,
         }}
       >
-        <div className={styles.hamburgerMenu}>
+        <div
+          className={styles.hamburgerMenu}
+          id="hamburger-menu"
+          role="navigation"
+          aria-label="Menu główne"
+        >
           <div className={styles.hamburgerContainer}>
             <div className={styles.hamburgerHeader}>
               <button

@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 
 import useNavigate from "hooks/useNavigate";
 
@@ -10,7 +10,7 @@ import Nav from "components/Nav";
 import Actions from "components/Actions";
 import { useAnimate, useInView } from "framer-motion";
 
-const Header = forwardRef<HTMLDivElement, Props>(function Header({ hasNews }) {
+const Header = ({ hasNews }: Props) => {
   const [navigate] = useNavigate();
   const [scope] = useAnimate();
   const isInView = useInView(scope, { amount: 0.5 });
@@ -83,7 +83,7 @@ const Header = forwardRef<HTMLDivElement, Props>(function Header({ hasNews }) {
       <Actions isVisible={areFloatingActionsVisible} />
     </header>
   );
-});
+};
 
 type Props = {
   hasNews: boolean;
