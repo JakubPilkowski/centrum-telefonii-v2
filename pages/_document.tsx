@@ -5,11 +5,8 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
-        <Head
-          title="Centrum Telefonii s.c. - Naprawa Telefonów Olsztyn. Akcesoria Do
-            telefonów."
-        >
+      <Html lang="pl">
+        <Head>
           <meta
             name="description"
             content="Firma telekomunikacyjna zajmująca się naprawą telefonów oraz sprzedażą akcesorii i

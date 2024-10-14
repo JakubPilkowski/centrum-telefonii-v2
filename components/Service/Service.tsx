@@ -12,9 +12,15 @@ import ServiceCard from "./ServiceCard/ServiceCard";
 
 const Service = forwardRef<HTMLElement>(function Service(_, ref) {
   return (
-    <section id="service" className={clsx(styles.service)}>
+    <section
+      id="service"
+      className={clsx(styles.service)}
+      aria-labelledby="service-title"
+    >
       <div className={styles.serviceContainer}>
-        <h1 className={styles.serviceTitle}>Serwis</h1>
+        <h1 id="service-title" className={styles.serviceTitle}>
+          Serwis
+        </h1>
         <motion.div className={styles.serviceList}>
           <ServiceCard
             title="Wymiana"
@@ -24,14 +30,6 @@ const Service = forwardRef<HTMLElement>(function Service(_, ref) {
             imageAlt="Wymiana ekranu"
             list={["ekranów", "modułów", "gniazd", "baterii", "aparatów"]}
           />
-          {/* <ServiceCard
-            title="Wymiana"
-            price="30 zł*"
-            index={0}
-            image={slotFixing}
-            imageAlt="Rozkręcanie gniazda ładowania"
-            list={["gniazd", "baterii", "aparatów"]}
-          /> */}
           <ServiceCard
             title="Naprawa"
             price="30 zł*"
@@ -54,7 +52,9 @@ const Service = forwardRef<HTMLElement>(function Service(_, ref) {
             ]}
           />
         </motion.div>
-        <h6 className={styles.serviceAdnotation}>* - Cena minimalna</h6>
+        <p className={clsx("h6", styles.serviceAdnotation)}>
+          * - Cena minimalna
+        </p>
       </div>
     </section>
   );

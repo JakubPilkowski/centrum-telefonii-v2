@@ -21,11 +21,20 @@ const Accessories: FC = () => {
   }, [emblaApi]);
 
   return (
-    <section id="accessories" className={clsx(styles.accessories)}>
+    <section
+      id="accessories"
+      className={clsx(styles.accessories)}
+      aria-labelledby="accessories-title"
+    >
       <Wave isReversed className={styles.wave} />
       <div className={styles.accessoriesForeground} />
       <div className={styles.accessoriesSection}>
-        <h1 className={clsx("title", styles.accessoriesTitle)}>Akcesoria</h1>
+        <h1
+          id="accessories-title"
+          className={clsx("title", styles.accessoriesTitle)}
+        >
+          Akcesoria
+        </h1>
         <div
           className={clsx(styles.embla, styles.accessoriesList)}
           ref={emblaRef}

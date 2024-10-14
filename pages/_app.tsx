@@ -8,10 +8,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <meta
-          name="viewport"
-          content="user-scalable=no, width=device-width, initial-scale=1"
-        />
+        <title>
+          Centrum Telefonii s.c. - Naprawa Telefonów Olsztyn. Akcesoria Do
+          telefonów.
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Component {...pageProps} />
     </>

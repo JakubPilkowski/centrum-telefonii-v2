@@ -42,9 +42,15 @@ const Timers: FC = () => {
 
   return (
     <>
-      <section id="timers" className={styles.timers}>
+      <section
+        id="timers"
+        className={styles.timers}
+        aria-labelledby="timers-title"
+      >
         <div className={styles.timersContainer}>
-          <h1 className={styles.title}>Centrum Telefonii to...</h1>
+          <h1 id="timers-title" className={styles.title}>
+            Centrum Telefonii to...
+          </h1>
           <div className={styles.timersWrapper}>
             <motion.div
               className={clsx(styles.timerItem)}
@@ -59,8 +65,10 @@ const Timers: FC = () => {
               <span className={clsx("material-icons", styles.timerIcon)}>
                 sentiment_satisfied_alt
               </span>
-              <h4 ref={clientsTitleRef}>9999</h4>
-              <h5>tysiące zadowolonych klientów</h5>
+              <h2 className="h4" ref={clientsTitleRef}>
+                9999
+              </h2>
+              <h2 className="h5">tysiące zadowolonych klientów</h2>
             </motion.div>
 
             <motion.div
@@ -76,8 +84,10 @@ const Timers: FC = () => {
               <span className={clsx("material-icons", styles.timerIcon)}>
                 build
               </span>
-              <h4 ref={repairsTitleRef}>999</h4>
-              <h5>setki naprawionych telefonów</h5>
+              <h2 className="h4" ref={repairsTitleRef}>
+                999
+              </h2>
+              <h2 className="h5">setki naprawionych telefonów</h2>
             </motion.div>
 
             <motion.div
@@ -93,8 +103,12 @@ const Timers: FC = () => {
               <span className={clsx("material-icons", styles.timerIcon)}>
                 calendar_month
               </span>
-              <h4 ref={brandTitleRef}>22</h4>
-              <h5>najdłużej funkcjonująca firma telefoniczna w Olsztynie</h5>
+              <h2 className="h4" ref={brandTitleRef}>
+                22
+              </h2>
+              <h2 className="h5">
+                najdłużej funkcjonująca firma telefoniczna w Olsztynie
+              </h2>
             </motion.div>
           </div>
         </div>

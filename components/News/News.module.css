@@ -26,6 +26,10 @@
   margin: 0;
 }
 
+.newsDescription h2 {
+  font: var(--h5);
+}
+
 .newsSubtitle {
   text-align: center;
   margin: 0;

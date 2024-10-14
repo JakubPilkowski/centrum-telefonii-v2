@@ -8,6 +8,7 @@ import brandImage from "public/ct_icon_white.png";
 
 import styles from "./Nav.module.css";
 import { useMotionValueEvent, useScroll } from "framer-motion";
+import clsx from "clsx";
 
 type NavProps = {
   hasNews: boolean;
@@ -50,9 +51,20 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
 
   return (
     <>
-      <nav className={styles.nav} ref={ref}>
+      <nav
+        className={styles.nav}
+        ref={ref}
+        aria-labelledby="primary-navigation"
+      >
+        <span id="primary-navigation" className="visually-hidden">
+          Nawigacja główna
+        </span>
         <div className={styles.navMain}>
-          <button className={styles.navBrand} onClick={handleNavigate("home")}>
+          <button
+            className={styles.navBrand}
+            onClick={handleNavigate("home")}
+            aria-label="Przejdź do strony głównej"
+          >
             <div className={styles.brandImageContainer}>
               <Image
                 src={brandImage}
@@ -62,9 +74,9 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
             </div>
             <div className={styles.brandBell}></div>
 
-            <h2 className={styles.brandName}>
+            <h1 className={clsx("h2", styles.brandName)}>
               Centrum <br /> Telefonii
-            </h2>
+            </h1>
           </button>
         </div>
         {/* is-desktop */}
@@ -72,29 +84,49 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
           <button
             onClick={handleNavigate("service")}
             className={styles.navLink}
+            aria-label="Przejdź do sekcji serwis"
           >
             Serwis
           </button>
           <button
             onClick={handleNavigate("accessories")}
             className={styles.navLink}
+            aria-label="Przejdź do sekcji akcesoria"
           >
             Akcesoria
           </button>
-          <button onClick={handleNavigate("map")} className={styles.navLink}>
+          <button
+            onClick={handleNavigate("map")}
+            className={styles.navLink}
+            aria-label="Przejdź do sekcji dojazd"
+          >
             Dojazd
           </button>
           {hasNews && (
-            <button onClick={handleNavigate("news")} className={styles.navLink}>
+            <button
+              onClick={handleNavigate("news")}
+              className={styles.navLink}
+              aria-label="Przejdź do sekcji aktualności"
+            >
               Aktualności
             </button>
           )}
-          <button onClick={handleNavigate("footer")} className={styles.navLink}>
+          <button
+            onClick={handleNavigate("footer")}
+            className={styles.navLink}
+            aria-label="Przejdź do sekcji kontakt"
+          >
             Kontakt
           </button>
         </div>
         {/* is-mobile is-tablet */}
-        <button className={styles.hamburgerIcon} onClick={handleMenuOpen}>
+        <button
+          className={styles.hamburgerIcon}
+          onClick={handleMenuOpen}
+          aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="hamburger-menu"
+        >
           <div className={styles.hamburgerBell}></div>
           <div className={styles.hamburgerBell}></div>
           <div className={styles.hamburgerBell}></div>
@@ -114,28 +146,35 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
           exitDone: styles.menuCloseEnd,
         }}
       >
-        <div className={styles.hamburgerMenu}>
+        <div
+          className={styles.hamburgerMenu}
+          id="hamburger-menu"
+          role="navigation"
+          aria-label="Menu główne"
+        >
           <div className={styles.hamburgerContainer}>
             <div className={styles.hamburgerHeader}>
               <button
                 className={styles.navBrand}
                 onClick={handleNavigate("home")}
+                aria-label="Przejdź do strony głównej"
               >
                 <div className={styles.brandImageContainer}>
                   <Image
                     src={brandImage}
-                    alt="Ikona aplikacji"
+                    alt="Ikona aplikacji Centrum Telefonii"
                     className={styles.brandImage}
                   />
                 </div>
                 <div className={styles.brandBell}></div>
-                <h2 className={styles.brandName}>
+                <p className={clsx(styles.brandName, "h2")}>
                   Centrum <br /> Telefonii
-                </h2>
+                </p>
               </button>
               <button
                 className={styles.hamburgerClose}
                 onClick={handleMenuClose}
+                aria-label="Zamknij menu"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -143,6 +182,7 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
                   height="45"
                   viewBox="0 0 24 24"
                   id="vector"
+                  aria-hidden="true"
                 >
                   <path
                     id="path"
@@ -155,18 +195,21 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
             <button
               onClick={handleNavigate("service")}
               className={styles.hamburgerItem}
+              aria-label="Przejdź do sekcji serwis"
             >
               Serwis
             </button>
             <button
               onClick={handleNavigate("accessories")}
               className={styles.hamburgerItem}
+              aria-label="Przejdź do sekcji akcesoria"
             >
               Akcesoria
             </button>
             <button
               onClick={handleNavigate("map")}
               className={styles.hamburgerItem}
+              aria-label="Przejdź do sekcji dojazd"
             >
               Dojazd
             </button>
@@ -174,6 +217,7 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
               <button
                 onClick={handleNavigate("news")}
                 className={styles.hamburgerItem}
+                aria-label="Przejdź do sekcji aktualności"
               >
                 Aktualności
               </button>
@@ -181,6 +225,7 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
             <button
               onClick={handleNavigate("footer")}
               className={styles.hamburgerItem}
+              aria-label="Przejdź do sekcji kontakt"
             >
               Kontakt
             </button>

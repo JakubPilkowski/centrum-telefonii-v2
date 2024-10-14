@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import styles from "./ServiceCard.module.css";
 import Image, { StaticImageData } from "next/image";
 import { Icon } from "@iconify-icon/react";
+import clsx from "clsx";
 
 export default function ServiceCard({
   title,
@@ -36,14 +37,14 @@ export default function ServiceCard({
         <div className={styles.ServiceCardImageIcon}>
           <Icon icon="mdi:auto-fix" />
         </div>
-        <h5 className={styles.ServiceCardTitle}>{title}</h5>
+        <h2 className={clsx("h5", styles.ServiceCardTitle)}>{title}</h2>
       </div>
-      <h5 className={styles.ServiceCardPrice}>{price}</h5>
+      <h2 className={clsx("h5", styles.ServiceCardPrice)}>{price}</h2>
       <div className={styles.ServiceCardDescription}>
         <ul>
           {list.map((item) => (
             <li key={item}>
-              <p>{item}</p>
+              <h3 className="p">{item}</h3>
             </li>
           ))}
         </ul>
