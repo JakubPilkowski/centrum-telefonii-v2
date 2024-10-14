@@ -50,20 +50,6 @@
   margin-bottom: 20px;
 }
 
-.timerItem h1 {
-  /* font-size: 32px; */
-  margin: 0;
-}
-
-.timerItem h2 {
-  margin: 0;
-  font-family: var(--fontPrimary);
-  color: rgba(var(--colorBlackRGB), 0.8);
-  text-align: center;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
 /* mobile */
 @media (max-width: 480px) {
   .timers .title {

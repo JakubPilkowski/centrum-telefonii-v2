@@ -10,11 +10,11 @@ const Footer: FC = () => {
       className={styles.footer}
       aria-labelledby="footer-title"
     >
-      <span id="footer-title" className="visually-hidden">
+      <h1 id="footer-title" className="visually-hidden">
         Kontakt
-      </span>
+      </h1>
       <div className={styles.row}>
-        <p className={clsx("h4", styles.label)}>Centrum Telefonii s.c. ®</p>
+        <h2 className={clsx("h4", styles.label)}>Centrum Telefonii s.c. ®</h2>
         <a
           className={styles.text}
           href="mailto:centrumtelefoniiolsztyn@gmail.com"
@@ -23,7 +23,7 @@ const Footer: FC = () => {
         </a>
       </div>
       <div className={styles.row}>
-        <p className={clsx("h4", styles.label)}>CT na ulicy Kościuszki</p>
+        <h2 className={clsx("h4", styles.label)}>CT na ulicy Kościuszki</h2>
         <a className={styles.text} href="tel:668-226-158">
           {" "}
           668-226-158{" "}
@@ -37,7 +37,7 @@ const Footer: FC = () => {
         <p className={styles.text}>Sobota: 9:00-15:00</p>
       </div>
       <div className={styles.row}>
-        <p className={clsx("h4", styles.label)}>CT w Manhattanie</p>
+        <h2 className={clsx("h4", styles.label)}>CT w Manhattanie</h2>
         <a className={styles.text} href="tel:698-390-390">
           {" "}
           698-390-390{" "}

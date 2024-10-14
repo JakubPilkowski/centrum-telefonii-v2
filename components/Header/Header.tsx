@@ -29,30 +29,30 @@ const Header = ({ hasNews }: Props) => {
           <div className={styles.jumbotronDetails}>
             <h1 className={styles.jumbotronTitle}>Centrum Telefonii</h1>
             <div className={styles.jumbotronDescription}>
-              <p className="h3">
+              <h2 className="h3">
                 <span className={styles.jumbotronDescriptionBounceSpan}>
                   Najwyższa
                 </span>{" "}
                 jakość
-              </p>
-              <p className="h3">
+              </h2>
+              <h2 className="h3">
                 <span className={styles.jumbotronDescriptionBounceSpan}>
                   Najniższe
                 </span>{" "}
                 ceny
-              </p>
-              <p className="h3">
+              </h2>
+              <h2 className="h3">
                 <span className={styles.jumbotronDescriptionBounceSpan}>
                   Serwis
                 </span>{" "}
                 smartfonów
-              </p>
-              <p className="h3">
+              </h2>
+              <h2 className="h3">
                 <span className={styles.jumbotronDescriptionBounceSpan}>
                   Sprzedaż
                 </span>{" "}
                 akcesorii
-              </p>
+              </h2>
             </div>
             <div className={styles.jumbotronButtons}>
               <ActionButton

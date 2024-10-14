@@ -35,8 +35,8 @@ const Accessory: FC<AccessoryProps> = ({
           </span>
         </div>
         <div className={styles.accessoryTextWrapper}>
-          <h3 className={clsx("p", styles.accessoryTextName)}>{name}</h3>
-          <h3 className={clsx("p", styles.accessoryTextPrice)}>{price}</h3>
+          <h2 className={clsx("p", styles.accessoryTextName)}>{name}</h2>
+          <h2 className={clsx("p", styles.accessoryTextPrice)}>{price}</h2>
         </div>
       </div>
     </div>

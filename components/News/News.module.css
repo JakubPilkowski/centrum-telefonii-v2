@@ -26,7 +26,7 @@
   margin: 0;
 }
 
-.newsDescription p {
+.newsDescription h2 {
   font: var(--h5);
 }
 

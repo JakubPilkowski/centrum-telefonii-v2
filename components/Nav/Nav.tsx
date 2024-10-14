@@ -74,9 +74,9 @@ const Nav: FC<NavProps> = ({ hasNews }) => {
             </div>
             <div className={styles.brandBell}></div>
 
-            <h2 className={styles.brandName}>
+            <h1 className={clsx("h2", styles.brandName)}>
               Centrum <br /> Telefonii
-            </h2>
+            </h1>
           </button>
         </div>
         {/* is-desktop */}

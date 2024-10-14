@@ -25,9 +25,9 @@ const News: FC<NewsProps> = ({ attributes }) => {
   return hasNews ? (
     <section className={styles.news} id="news" aria-labelledby="news-title">
       <motion.div {...scrollTriggerAnimation}>
-        <h2 id="news-title" className={clsx("title", "h1", styles.newsTitle)}>
+        <h1 id="news-title" className={clsx("title", styles.newsTitle)}>
           {title}
-        </h2>
+        </h1>
         <div className={styles.newsPhotoWrapper}>
           <Image
             src={photo}

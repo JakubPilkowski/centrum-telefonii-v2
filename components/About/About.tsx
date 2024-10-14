@@ -13,7 +13,7 @@ export default function About() {
         aria-labelledby="about-title"
       >
         <div className={styles.aboutContainer}>
-          <motion.h2
+          <motion.h1
             variants={variants}
             initial="initial"
             whileInView="animate"
@@ -24,8 +24,8 @@ export default function About() {
             id="about-title"
           >
             O nas
-          </motion.h2>
-          <motion.h3
+          </motion.h1>
+          <motion.p
             variants={variants}
             initial="initial"
             whileInView="animate"
@@ -36,8 +36,8 @@ export default function About() {
           >
             Specjalizujemy się w naprawie telefonów komórkowych, smartfonów oraz
             urządzeń elektrycznych takich jak komputery, słuchawki, aparaty.
-          </motion.h3>
-          <motion.h3
+          </motion.p>
+          <motion.p
             variants={variants}
             initial="initial"
             whileInView="animate"
@@ -47,7 +47,7 @@ export default function About() {
             className="h5"
           >
             Każdą usługę w naszej firmie cechuje:
-          </motion.h3>
+          </motion.p>
           <div className={styles.aboutAdvantagesContainer}>
             <motion.div
               variants={variants}
@@ -59,12 +59,12 @@ export default function About() {
               custom={0}
               className={styles.aboutAdvantageWrapper}
             >
-              <div className={styles.aboutAdvantageIcon}>
+              <div className={styles.aboutAdvantageIcon} aria-hidden="true">
                 <span className={clsx("material-icons")}>attach_money</span>
               </div>
-              <h3 className={clsx("h5", styles.aboutAdvantageText)}>
+              <h2 className={clsx("h5", styles.aboutAdvantageText)}>
                 najniższe ceny na rynku
-              </h3>
+              </h2>
             </motion.div>
             <motion.div
               variants={variants}
@@ -76,12 +76,12 @@ export default function About() {
               custom={1}
               className={styles.aboutAdvantageWrapper}
             >
-              <div className={styles.aboutAdvantageIcon}>
+              <div className={styles.aboutAdvantageIcon} aria-hidden="true">
                 <span className={clsx("material-icons")}>access_time</span>
               </div>
-              <h3 className={clsx("h5", styles.aboutAdvantageText)}>
+              <h2 className={clsx("h5", styles.aboutAdvantageText)}>
                 krótki czas naprawy
-              </h3>
+              </h2>
             </motion.div>
             <motion.div
               variants={variants}
@@ -98,12 +98,12 @@ export default function About() {
                   workspace_premium
                 </span>
               </div>
-              <h3 className={clsx("h5", styles.aboutAdvantageText)}>
+              <h2 className={clsx("h5", styles.aboutAdvantageText)}>
                 3-miesięczna gwarancja
-              </h3>
+              </h2>
             </motion.div>
           </div>
-          <motion.h3
+          <motion.p
             variants={variants}
             initial="initial"
             whileInView="animate"
@@ -116,11 +116,11 @@ export default function About() {
             wykonujemy nasze usługi z najwyższą jakością oraz największa
             precyzją zapewniając <b>100% </b>
             satysfakcji z wykonanej usługi.
-          </motion.h3>
+          </motion.p>
           <ActionButton
             text="Wycena naprawy"
             iconType="call"
-            aria-label="Zadzwoń aby wycenić naprawy"
+            aria-label="Zadzwoń aby wycenić naprawę"
             type="a"
             href="tel:+48 (89)533-71-32"
             className={styles.aboutCallButton}

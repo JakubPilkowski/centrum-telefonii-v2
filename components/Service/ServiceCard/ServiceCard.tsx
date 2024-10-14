@@ -37,14 +37,14 @@ export default function ServiceCard({
         <div className={styles.ServiceCardImageIcon}>
           <Icon icon="mdi:auto-fix" />
         </div>
-        <h3 className={clsx("h5", styles.ServiceCardTitle)}>{title}</h3>
+        <h2 className={clsx("h5", styles.ServiceCardTitle)}>{title}</h2>
       </div>
-      <h3 className={clsx("h5", styles.ServiceCardPrice)}>{price}</h3>
+      <h2 className={clsx("h5", styles.ServiceCardPrice)}>{price}</h2>
       <div className={styles.ServiceCardDescription}>
         <ul>
           {list.map((item) => (
             <li key={item}>
-              <h4 className="p">{item}</h4>
+              <h3 className="p">{item}</h3>
             </li>
           ))}
         </ul>

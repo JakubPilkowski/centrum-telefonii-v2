@@ -18,9 +18,9 @@ const Service = forwardRef<HTMLElement>(function Service(_, ref) {
       aria-labelledby="service-title"
     >
       <div className={styles.serviceContainer}>
-        <h2 id="service-title" className={styles.serviceTitle}>
+        <h1 id="service-title" className={styles.serviceTitle}>
           Serwis
-        </h2>
+        </h1>
         <motion.div className={styles.serviceList}>
           <ServiceCard
             title="Wymiana"

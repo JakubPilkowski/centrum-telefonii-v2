@@ -29,12 +29,12 @@ const Accessories: FC = () => {
       <Wave isReversed className={styles.wave} />
       <div className={styles.accessoriesForeground} />
       <div className={styles.accessoriesSection}>
-        <h2
+        <h1
           id="accessories-title"
-          className={clsx("title", "h1", styles.accessoriesTitle)}
+          className={clsx("title", styles.accessoriesTitle)}
         >
           Akcesoria
-        </h2>
+        </h1>
         <div
           className={clsx(styles.embla, styles.accessoriesList)}
           ref={emblaRef}
