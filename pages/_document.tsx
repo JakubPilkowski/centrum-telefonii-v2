@@ -14,10 +14,9 @@ class MyDocument extends Document {
           />
           <meta
             name="keywords"
-            content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, smartphone, etui, case, telefonii"
+            content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, smartphone, etui, case, telefon"
           />
           <meta name="author" content="Jakub Piłkowski" />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
           <link rel="icon" type="image/png" href="images/ct_icon_orange.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
