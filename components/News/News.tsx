@@ -28,14 +28,16 @@ const News: FC<NewsProps> = ({ attributes }) => {
         <h1 id="news-title" className={clsx("title", styles.newsTitle)}>
           {title}
         </h1>
-        <div className={styles.newsPhotoWrapper}>
-          <Image
-            src={photo}
-            className={styles.newsPhoto}
-            alt={photoDescription}
-            fill
-          />
-        </div>
+        {photo && (
+          <div className={styles.newsPhotoWrapper}>
+            <Image
+              src={photo}
+              className={styles.newsPhoto}
+              alt={photoDescription}
+              fill
+            />
+          </div>
+        )}
         <div className={styles.newsDescription}>
           <TinaMarkdown content={body} />
         </div>

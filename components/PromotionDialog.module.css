@@ -1,0 +1,81 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(var(--colorBlackRGB), 0.5);
+  z-index: 500;
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--colorWhite);
+  padding: var(--margin-xl);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 500;
+  width: 90%;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content {
+    max-width: 50rem;
+    padding: var(--margin-xxl);
+  }
+}
+
+.title {
+  font: var(--h3);
+  text-align: center;
+  margin-top: var(--margin-xxl);
+  margin-bottom: var(--margin-l);
+  color: var(--colorBlack);
+}
+
+.description {
+  font: var(--h4);
+  text-align: center;
+  color: var(--colorPrimary);
+  margin-bottom: var(--margin-m);
+}
+
+.descriptionSecondary {
+  font: var(--p);
+  text-align: center;
+  color: var(--colorBlack);
+  margin-bottom: var(--margin-xl);
+}
+
+.buttonContainer {
+  position: absolute;
+  top: var(--margin-m);
+  right: var(--margin-m);
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--colorPrimary);
+  color: var(--colorBlack);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.closeButton:hover {
+  background-color: var(--colorRoadButton);
+  color: var(--colorWhite);
+  transform: scale(1.1);
+}
+
+.icon {
+  font-size: 1.25rem;
+}
