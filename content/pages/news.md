@@ -1,8 +1,8 @@
 ---
 hasNews: true
 title: " \U0001F389 Specjalna Promocja! \U0001F389"
-photo: ''
-photoDescription: ''
+photo: ""
+photoDescription: ""
 ---
 
 ## -50% na wszystkie akcesoria!

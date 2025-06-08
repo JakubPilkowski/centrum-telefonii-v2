@@ -6,8 +6,9 @@
   max-height: calc(100vh - 70px);
 }
 
-/* .newsTitle {
-} */
+.newsTitle {
+  margin-bottom: var(--margin-xxl);
+}
 
 .newsPhotoWrapper {
   position: relative;

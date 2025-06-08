@@ -10,11 +10,11 @@ class MyDocument extends Document {
           <meta
             name="description"
             content="Firma telekomunikacyjna zajmująca się naprawą telefonów oraz sprzedażą akcesorii i
-                                      telefonów komórkowych. Jesteśmy najdłużej działającą firmą w Olsztynie."
+                                      telefonów komórkowych. Jesteśmy najdłużej działającą firmą w Olsztynie. Specjalna promocja: -50% na wszystkie akcesoria!"
           />
           <meta
             name="keywords"
-            content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, smartphone, etui, case, telefon"
+            content="telefony, akcesoria, serwis, olsztyn, naprawa, centrum, smartphone, etui, case, telefon, promocja, wyprzedaż, rabat"
           />
           <meta name="author" content="Jakub Piłkowski" />
           <link rel="icon" type="image/png" href="images/ct_icon_orange.png" />

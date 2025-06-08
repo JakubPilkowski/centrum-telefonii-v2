@@ -9,6 +9,7 @@ import Footer from "components/Footer";
 import News, { NewsCmsAttributes } from "components/News";
 import client from "tina/__generated__/client";
 import About from "components/About";
+import PromotionDialog from "components/PromotionDialog";
 
 export type CmsProps = {
   newsAttributes: NewsCmsAttributes;
@@ -23,6 +24,7 @@ export default function Main(props: CmsProps) {
         Przejdź do głównej treści
       </a>
       <Header hasNews={newsAttributes.hasNews} />
+      <PromotionDialog />
       <main id="main-content">
         <About />
         <Service />
