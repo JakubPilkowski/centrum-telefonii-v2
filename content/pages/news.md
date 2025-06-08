@@ -1,8 +1,10 @@
 ---
 hasNews: true
-title: Promocja!!!
-photo: /uploads/szklo_9d.png
-photoDescription: Szkło hartowane marki 9D
+title: " \U0001F389 Specjalna Promocja! \U0001F389"
+photo: ''
+photoDescription: ''
 ---
 
-## Szkła hartowane od 10zł!!!
+## -50% na wszystkie akcesoria!
+
+Skorzystaj z naszej wyjątkowej oferty i zaopatrz się w akcesoria do swojego telefonu w super cenach!
