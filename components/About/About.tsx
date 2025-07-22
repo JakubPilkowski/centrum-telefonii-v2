@@ -121,7 +121,7 @@ export default function About() {
             text="Wycena naprawy"
             iconType="call"
             aria-label="Zadzwoń aby wycenić naprawę"
-            type="a"
+            component="a"
             href="tel:+48 604-436-345"
             className={styles.aboutCallButton}
           />
