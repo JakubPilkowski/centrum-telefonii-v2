@@ -58,7 +58,7 @@ const Header = ({ hasNews }: Props) => {
               <ActionButton
                 text="Wycena naprawy"
                 component="a"
-                href="tel:+48 (89)533-71-32"
+                href="tel:+48 604-436-345"
                 iconType="call"
               />
               <ActionButton

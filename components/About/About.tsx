@@ -122,7 +122,7 @@ export default function About() {
             iconType="call"
             aria-label="Zadzwoń aby wycenić naprawę"
             type="a"
-            href="tel:+48 (89)533-71-32"
+            href="tel:+48 604-436-345"
             className={styles.aboutCallButton}
           />
         </div>
