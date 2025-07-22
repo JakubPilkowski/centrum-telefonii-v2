@@ -24,13 +24,8 @@ const Footer: FC = () => {
       </div>
       <div className={styles.row}>
         <h2 className={clsx("h4", styles.label)}>CT na ulicy Kościuszki</h2>
-        <a className={styles.text} href="tel:668-226-158">
-          {" "}
-          668-226-158{" "}
-        </a>
-        <a className={styles.text} href="tel:+48 (89)533-71-32">
-          {" "}
-          +48 (89)533-71-32{" "}
+        <a className={styles.text} href="tel:+48 604-436-345">
+          604-436-345
         </a>
         <p className={styles.text}>ul.Kościuszki 19/2 Olsztyn</p>
         <p className={styles.text}>Poniedziałek-Piątek: 9:00-18:00</p>
@@ -38,13 +33,9 @@ const Footer: FC = () => {
       </div>
       <div className={styles.row}>
         <h2 className={clsx("h4", styles.label)}>CT w Manhattanie</h2>
-        <a className={styles.text} href="tel:698-390-390">
+        <a className={styles.text} href="tel:604-436-345">
           {" "}
-          698-390-390{" "}
-        </a>
-        <a className={styles.text} href="tel:+48(89)533-71-32">
-          {" "}
-          +48 (89)533-71-32{" "}
+          604-436-345{" "}
         </a>
         <p className={styles.text}>Plac Pułaskiego 7 lokal 62 Olsztyn</p>
         <p className={styles.text}>Poniedziałek-Piątek: 10:00-18:00</p>

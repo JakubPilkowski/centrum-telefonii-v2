@@ -15,7 +15,7 @@ const Actions = ({ isVisible }: Props) => {
     <>
       <ActionButton
         component="a"
-        href="tel:+48 (89)533-71-32"
+        href="tel:+48 604-436-345"
         iconType="call"
         aria-hidden="true"
         tabIndex={-1}
