@@ -26,30 +26,7 @@ const Map: FC = () => {
           >
             <header className={styles.mapIframeHeader}>
               <h2 className={clsx("h5", styles.mapIframeTitle)}>
-                Punkt nr 1: ulica Kościuszki 19/2
-              </h2>
-            </header>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1178.6821797835114!2d20.494077557566143!3d53.78300233965278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e2793305f876e3%3A0x6aeeae6bfa02a819!2sCentrum+Telefonii+s.c.!5e0!3m2!1spl!2spl!4v1557851864282!5m2!1spl!2spl"
-              title="Mapa google z lokalizacją serwisu na ulicy Kościuszki 19/2"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </motion.div>
-
-          <motion.div
-            variants={variants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={1}
-            className={styles.mapWrapper}
-          >
-            <header className={styles.mapIframeHeader}>
-              <h2 className={clsx("h5", styles.mapIframeTitle)}>
-                Punkt nr 2: Plac Pułaskiego 7 lokal 62
+                Plac Pułaskiego 7 lokal 62
               </h2>
             </header>
             <iframe
