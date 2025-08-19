@@ -22,15 +22,7 @@ const Footer: FC = () => {
           centrumtelefoniiolsztyn@gmail.com
         </a>
       </div>
-      <div className={styles.row}>
-        <h2 className={clsx("h4", styles.label)}>CT na ulicy Kościuszki</h2>
-        <a className={styles.text} href="tel:+48 604-436-345">
-          604-436-345
-        </a>
-        <p className={styles.text}>ul.Kościuszki 19/2 Olsztyn</p>
-        <p className={styles.text}>Poniedziałek-Piątek: 9:00-18:00</p>
-        <p className={styles.text}>Sobota: 9:00-15:00</p>
-      </div>
+
       <div className={styles.row}>
         <h2 className={clsx("h4", styles.label)}>CT w Manhattanie</h2>
         <a className={styles.text} href="tel:604-436-345">
