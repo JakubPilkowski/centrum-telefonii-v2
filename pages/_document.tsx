@@ -7,10 +7,11 @@ class MyDocument extends Document {
     return (
       <Html lang="pl">
         <Head>
+          <meta name="robots" content="noindex, nofollow" />
+          <link rel="canonical" href="https://uratuj-smartfona.pl" />
           <meta
             name="description"
-            content="Firma telekomunikacyjna zajmująca się naprawą telefonów oraz sprzedażą akcesorii i
-                                      telefonów komórkowych. Jesteśmy najdłużej działającą firmą w Olsztynie. Specjalna promocja: -50% na wszystkie akcesoria!"
+            content="Strona została przeniesiona na nowy adres: uratuj-smartfona.pl"
           />
           <meta
             name="keywords"

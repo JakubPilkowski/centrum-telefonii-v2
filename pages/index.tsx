@@ -1,55 +1,46 @@
 import React from "react";
 
-import Header from "components/Header";
-import Service from "components/Service";
-import Accessories from "components/Accessories";
-import Timers from "components/Timers";
-import Map from "components/Map";
-import Footer from "components/Footer";
-import News, { NewsCmsAttributes } from "components/News";
-import client from "tina/__generated__/client";
-import About from "components/About";
-import PromotionDialog from "components/PromotionDialog";
-
-export type CmsProps = {
-  newsAttributes: NewsCmsAttributes;
-};
-
-export default function Main(props: CmsProps) {
-  const { newsAttributes } = props;
-
+export default function Main() {
   return (
-    <>
-      <a href="#main-content" className="visually-hidden">
-        Przejdź do głównej treści
-      </a>
-      <Header hasNews={newsAttributes.hasNews} />
-      <PromotionDialog />
-      <main id="main-content">
-        <About />
-        <Service />
-        <Accessories />
-        <Timers />
-        <Map />
-        <News attributes={newsAttributes} />
-      </main>
-      <Footer />
-    </>
+    <div
+      style={{
+        backgroundColor: "#000",
+        color: "#fff",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "Arial, sans-serif",
+        padding: "20px",
+        textAlign: "center",
+      }}
+    >
+      <div style={{ maxWidth: "600px" }}>
+        <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+          Strona została przeniesiona
+        </h1>
+        <p style={{ fontSize: "1.2rem", lineHeight: "1.6" }}>
+          Strona internetowa www.centrum-telefonii.pl została przeniesiona na
+          nowy adres{" "}
+          <a
+            href="https://uratuj-smartfona.pl"
+            style={{
+              color: "#ff6b35",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLAnchorElement).style.textDecoration =
+                "underline")
+            }
+            onMouseOut={(e) =>
+              ((e.target as HTMLAnchorElement).style.textDecoration = "none")
+            }
+          >
+            www.uratuj-smartfona.pl
+          </a>
+        </p>
+      </div>
+    </div>
   );
 }
-
-export const getStaticProps = async () => {
-  let postResponse;
-  try {
-    postResponse = await client.queries.pages({
-      relativePath: "news.md",
-    });
-  } catch (err) {
-    // swallow errors related to document creation
-  }
-  return {
-    props: {
-      newsAttributes: postResponse?.data.pages,
-    },
-  };
-};
