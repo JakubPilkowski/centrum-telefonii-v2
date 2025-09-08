@@ -40,6 +40,26 @@ export default function Main() {
             www.uratuj-smartfona.pl
           </a>
         </p>
+        <p style={{ fontSize: "1.2rem", lineHeight: "1.6", marginTop: "1rem" }}>
+          Kontakt telefoniczny:{" "}
+          <a
+            href="tel:604-436-345"
+            style={{
+              color: "#ff6b35",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+            onMouseOver={(e) =>
+              ((e.target as HTMLAnchorElement).style.textDecoration =
+                "underline")
+            }
+            onMouseOut={(e) =>
+              ((e.target as HTMLAnchorElement).style.textDecoration = "none")
+            }
+          >
+            604-436-345
+          </a>
+        </p>
       </div>
     </div>
   );
